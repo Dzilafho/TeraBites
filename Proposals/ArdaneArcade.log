@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.10)  2 MAY 2016 00:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.10)  2 MAY 2016 02:07
 entering extended mode
 **./ArdaneArcade.tex
 (ArdaneArcade.tex
@@ -72,8 +72,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box26
 \@float@everytoks=\toks16
 \@floatcapt=\box27
-)
-No file ArdaneArcade.aux.
+) (ArdaneArcade.aux)
 \openout1 = `ArdaneArcade.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -447,30 +446,30 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 484--484
  []| 
  []
 
-
-Overfull \hbox (10.0pt too wide) in paragraph at lines 495--495
- | 
- []
-
 [10]
-Overfull \hbox (10.0pt too wide) in paragraph at lines 497--497
- []| 
- []
-
-[11]
-Overfull \hbox (10.0pt too wide) in paragraph at lines 508--509
+Overfull \hbox (10.0pt too wide) in paragraph at lines 496--496
  | 
  []
 
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 511--511
+Overfull \hbox (10.0pt too wide) in paragraph at lines 498--498
  []| 
  []
 
-[12] (ArdaneArcade.aux) ) 
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 508--508
+ | 
+ []
+
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 510--510
+ []| 
+ []
+
+[11] (ArdaneArcade.aux) ) 
 Here is how much of TeX's memory you used:
- 1243 strings out of 493634
- 17046 string characters out of 3145355
+ 1245 strings out of 493634
+ 17078 string characters out of 3145355
  73271 words of memory out of 3000000
  4659 multiletter control sequences out of 15000+200000
  8179 words of font info for 29 fonts, out of 3000000 for 9000
@@ -480,9 +479,9 @@ Here is how much of TeX's memory you used:
 onts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/dZiLafho/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/dZiLafho/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on ArdaneArcade.pdf (13 pages, 355776 bytes).
+Output written on ArdaneArcade.pdf (12 pages, 355133 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 58 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
