@@ -2,7 +2,6 @@
 \contentsline {section}{\numberline {1}Introduction}{1}
 \contentsline {paragraph}{\indent }{1}
 \contentsline {section}{\numberline {2}Vision}{1}
-\contentsline {paragraph}{\indent }{1}
 \contentsline {section}{\numberline {3}Background}{1}
 \contentsline {paragraph}{\indent }{1}
 \contentsline {section}{\numberline {4}Architecture Requirements}{2}
