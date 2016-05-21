@@ -80,12 +80,14 @@
 			\paragraph\indent
 							The following quality aspects needs to be addressed:
 			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
+				\item \textbf{Perfomance:} Performance is the most important quality requirement for this application. This requirement pertains to how fast the application responds to certain actions within a set time interval.The application will be compiler based and since compiler converts the program to native code of the target machine (object code), faster performance can be expected. 
 				\item \textbf{Scalability:} The system will be used by mimmum of one administrator and the number of players (potential employees) is infinitely.
 				\item \textbf{Security:} Passwords will be hashed with the SHA512 hashing algorithm.
 				\item \textbf{Reliability:} An automatic partial dump backup can be done everyday at 00:00 and each back up will be kept for a week. On top of this a full dump will be done once a week and will be kept for at most 3 weeks. Alternatively the backup can be done by an external program. 
 				\item \textbf{Audibility:} Every change should be logged and the person responsible for that log will be recorded. This will allow the administrators to track the users information/data.
-				\item \textbf{Maintainability:} Data that is deleted will only be moved to another database that might be a little slower. This will help alleviate some pressure off the main database.
-				\item \textbf{Cost:}
+				\item \textbf{Maintainability:} Maintainability is amongst the most important quality requirements for the application. Since the 					future of the application may require total change of the esolang developers should be able to easily
+					and relatively quickly change aspects of the functionality the system provides or add new functionality to the system. 
+				
 			\end{list}
 
 			
