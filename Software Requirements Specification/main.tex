@@ -69,10 +69,24 @@
 	\section{Architecture Requirements}
 		\subsection{Access channel requirements}
 			\paragraph\indent
+			The system requires two interfaces:
+			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
+				\item Web interface
+				\item Android app (Could also be a mobile website)
+			\end{list}
 
 
 		\subsection{Quality requirements}
 			\paragraph\indent
+							The following quality aspects needs to be addressed:
+			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
+				\item \textbf{Scalability:} The system will be used by mimmum of one administrator and the number of players (potential employees) is infinitely.
+				\item \textbf{Security:} Passwords will be hashed with the SHA512 hashing algorithm.
+				\item \textbf{Reliability:} An automatic partial dump backup can be done everyday at 00:00 and each back up will be kept for a week. On top of this a full dump will be done once a week and will be kept for at most 3 weeks. Alternatively the backup can be done by an external program. 
+				\item \textbf{Audibility:} Every change should be logged and the person responsible for that log will be recorded. This will allow the administrators to track the users information/data.
+				\item \textbf{Maintainability:} Data that is deleted will only be moved to another database that might be a little slower. This will help alleviate some pressure off the main database.
+				\item \textbf{Cost:}
+			\end{list}
 
 			
 		\subsection{Integration requirements}
