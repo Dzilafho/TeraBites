@@ -53,7 +53,7 @@
 	\tableofcontents
 
 	\pagenumbering{arabic}
-	\newpage
+	t\newpage
 	
 	\section{Introduction}
 		 The project is called \textit{Arcane Arcade}, which references the esoteric language users will have to use, as well as the gamification approach to try and make it as fun as possible.
@@ -81,13 +81,13 @@
 			\paragraph\indent
 							The following quality aspects needs to be addressed:
 			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-				\item \textbf{Perfomance:} Performance is the most important quality requirement for this application. This requirement pertains to how fast the application responds to certain actions within a set time interval.The application will be compiler based and since compiler converts the program to native code of the target machine (object code), faster performance can be expected. 
-				\item \textbf{Scalability:} The system will be used by mimmum of one administrator and the number of players (potential employees) is infinitely.
+				\item \textbf{Perfomance:} Performance is the most important quality requirement for this 							application. This requirement pertains to how fast the application responds to certain actions 						within a set time interval.The application will be compiler based and since compiler converts the 					program to native code of the target machine (object code), faster performance can be expected. 
+				\item \textbf{Scalability:} The system will be used by mimmum of one administrator and the number 					of players (potential employees) is infinitely.
 				\item \textbf{Security:} Passwords will be hashed with the SHA512 hashing algorithm.
-				\item \textbf{Reliability:} An automatic partial dump backup can be done everyday at 00:00 and each back up will be kept for a week. On top of this a full dump will be done once a week and will be kept for at most 3 weeks. Alternatively the backup can be done by an external program. 
-				\item \textbf{Audibility:} Every change should be logged and the person responsible for that log will be recorded. This will allow the administrators to track the users information/data.
-				\item \textbf{Maintainability:} Maintainability is amongst the most important quality requirements for the application. Since the 					future of the application may require total change of the esolang developers should be able to easily
-					and relatively quickly change aspects of the functionality the system provides or add new functionality to the system. 
+				\item \textbf{Reliability:} An automatic partial dump backup can be done everyday at 00:00 and each 					back up will be kept for a week. On top of this a full dump will be done once a week and will be 					kept for at most 3 weeks. Alternatively the backup can be done by an external program. 
+				\item \textbf{Audibility:} Every change should be logged and the person responsible for that log 					will be recorded. This will allow the administrators to track the users information/data.
+				\item \textbf{Maintainability:} Maintainability is amongst the most important quality requirements 					for the application. Since the 					future of the application may require total 						change of the esolang developers should be able to easily
+				and relatively quickly change aspects of the functionality the system provides or add new 							functionality to the system. 
 				
 			\end{list}
 
@@ -106,7 +106,21 @@
          support community.
        \end{itemize}
 		\subsubsection{Architectural patterns/frameworks}
-			
+		\subsubsection{Three-tier Architecture}
+		The main reason for using three-tier architecture is to allow any of the three tiers to be upgraded or    			replaced independently, when changes in requirements or technology require such upgrades or           				replacements.Thus addressing \textbf{maintainability} the application.
+		
+		\vspace{0.5cm}
+		
+		
+		\begin{itemize}
+			\item \textbf{The three tiers in a three-tier architecture are:}
+			\begin{itemize}
+		\item \textbf{Presentation-tier:} This will be represented the front-end of the management or maintenance 			portal which will communicate with other tiers by sending results to the browser and other tiers in the       		network.
+		\item \textbf{Application-tier:} This is the logical tier which provides the application's functionality.	
+		\item \textbf{Data tier:} All the data persistence mechanisms which will be used.Data in this tier is kept independent of application servers or business logic. 	
+	  \end{itemize}
+				\end{itemize}
+				
 	
 	\newpage
 	\section{Functional requirements and application design}
