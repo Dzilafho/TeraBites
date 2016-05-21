@@ -1,9 +1,12 @@
 \documentclass[english]{article}
 
+
 \usepackage{graphicx}
 \usepackage{grffile}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
+
+
 
 \title{\scshape\Large Team members}
 \author{
@@ -84,6 +87,7 @@
 				\item \textbf{Perfomance:} Performance is the most important quality requirement for this 							application. This requirement pertains to how fast the application responds to certain actions 						within a set time interval.The application will be compiler based and since compiler converts the 					program to native code of the target machine (object code), faster performance can be expected. 
 				\item \textbf{Scalability:} The system will be used by mimmum of one administrator and the number 					of players (potential employees) is infinitely.
 				\item \textbf{Security:} Passwords will be hashed with the SHA512 hashing algorithm.
+				Authentification will be achieved via the Authentification module of the website. Players 					need to log in with a valid username before they can use any functionality of the website.
 				\item \textbf{Reliability:} An automatic partial dump backup can be done everyday at 00:00 and each 					back up will be kept for a week. On top of this a full dump will be done once a week and will be 					kept for at most 3 weeks. Alternatively the backup can be done by an external program. 
 				\item \textbf{Audibility:} Every change should be logged and the person responsible for that log 					will be recorded. This will allow the administrators to track the users information/data.
 				\item \textbf{Maintainability:} Maintainability is amongst the most important quality requirements 					for the application. Since the 					future of the application may require total 						change of the esolang developers should be able to easily
@@ -95,7 +99,7 @@
 		\subsection{Integration requirements}
 			\paragraph\indent
 
-			
+		\setcounter{secnumdepth}{5}
 		\subsection{Architecture constraints}
 			\subsubsection{Technologies}
 			\begin{itemize}
@@ -105,8 +109,8 @@
           implementation which is available across platforms and for which there is a large and very competent
          support community.
        \end{itemize}
-		\subsubsection{Architectural patterns/frameworks}
-		\subsubsection{Three-tier Architecture}
+		\subsubsection{Architectural patterns/frameworks} % level 1
+		\paragraph{Three-tier Architecture} % level 2
 		The main reason for using three-tier architecture is to allow any of the three tiers to be upgraded or    			replaced independently, when changes in requirements or technology require such upgrades or           				replacements.Thus addressing \textbf{maintainability} the application.
 		
 		\vspace{0.5cm}
@@ -120,13 +124,16 @@
 		\item \textbf{Data tier:} All the data persistence mechanisms which will be used.Data in this tier is kept independent of application servers or business logic. 	
 	  \end{itemize}
 				\end{itemize}
-		\subsubsection{Authentication Enforcer pattern}
+		\paragraph{Authentication Enforcer pattern} % level 3
+		
 		This pattern will help us improve security of the system while keeping
 		the scalability and performance well maintained since the Authentica
 		tion Enforcer pattern provides a consistent and structured way to handle
 		authentication and verication of requests across actions within Web-tier
 		components and also supports MVC architecture without duplicating the
 		code.	
+		
+		
 	
 	\newpage
 	\section{Functional requirements and application design}
