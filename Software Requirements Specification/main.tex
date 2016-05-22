@@ -76,7 +76,7 @@
 			The system requires two interfaces:
 			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
 				\item Web interface
-				\item Android app (Could also be a mobile website)
+				\item Mobile app (Could also be a mobile friendly website)
 			\end{list}
 
 
@@ -84,14 +84,12 @@
 			\paragraph\indent
 							The following quality aspects needs to be addressed:
 			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-				\item \textbf{Perfomance:} Performance is the most important quality requirement for this 							application. This requirement pertains to how fast the application responds to certain actions 						within a set time interval.The application will be compiler based and since compiler converts the 					program to native code of the target machine (object code), faster performance can be expected. 
-				\item \textbf{Scalability:} The system will be used by mimmum of one administrator and the number 					of players (potential employees) is infinitely.
-				\item \textbf{Security:} Passwords will be hashed with the SHA512 hashing algorithm.
-				Authentification will be achieved via the Authentification module of the website. Players 					need to log in with a valid username before they can use any functionality of the website.
-				\item \textbf{Reliability:} An automatic partial dump backup can be done everyday at 00:00 and each 					back up will be kept for a week. On top of this a full dump will be done once a week and will be 					kept for at most 3 weeks. Alternatively the backup can be done by an external program. 
-				\item \textbf{Audibility:} Every change should be logged and the person responsible for that log 					will be recorded. This will allow the administrators to track the users information/data.
-				\item \textbf{Maintainability:} Maintainability is amongst the most important quality requirements 					for the application. Since the 					future of the application may require total 						change of the esolang developers should be able to easily
-				and relatively quickly change aspects of the functionality the system provides or add new 							functionality to the system. 
+				\item \textbf{Perfomance:} Performance is the most important quality requirement for this application. This requirement pertains to how fast the application responds to certain actions within a set time interval. The application will use a compiler instead of an interpreter which will translate the esoteric language into object code, which performs better than an interpreter.
+				\item \textbf{Scalability:} The system should be able to service at least one administrator and a few users (potential employees).
+				\item \textbf{Security:} The system should be secure enough so that no unauthorized users will be able to access it and data integrity should be maintained.
+				\item \textbf{Reliability:} The system should be reliable in all functions, especially when compiling the user's code in order to avoid wrong results.
+				\item \textbf{Maintainability:} Maintainability is amongst the most important quality requirements for the application. Since the future of the application may require total change of the esolang, developers should be able to easily and relatively quickly change aspects of the functionality the system provides or add new functionality to the system. This means that care should be given to modularity.
+				\item \textbf{Cost:} Since some users will be accessing the application via mobile internet, care should be given to keep the required bandwidth to a minimum.
 				
 			\end{list}
 
