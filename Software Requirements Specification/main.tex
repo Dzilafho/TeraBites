@@ -75,8 +75,8 @@
 			\paragraph\indent
 			The system requires two interfaces:
 			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-				\item Web interface
-				\item Mobile app (Could also be a mobile friendly website)
+				\item Web interface( Maintenance portion)
+				\item It is preferred that the game portion be built to run on a tablet device
 			\end{list}
 
 
@@ -136,12 +136,36 @@
 	\newpage
 	\section{Functional requirements and application design}
 		\subsection{Use case prioritization}
-		The Use Case Prioritisation is specified for each use case in the next section.
 		
+		\subsubsection{Critical}
+		\begin{itemize}
 		
-		\subsection{Use case/Services contracts}
-		Use Case Prioritisation and Service Contracts are described below.
-				
+	  	\item Add user
+		\item Remove user
+		\item User Authentication[Login/Logout]
+		\item Change keywords usecases
+		\item Manage challenges(Add/Remove/Change Challenge)
+		\item View challenges
+		\item Quit challenge
+		\item Start challenge
+		\item Web interface for both maintenance and game 
+	   \end{itemize} 
+		
+		\subsubsection{Important}
+		\begin{itemize}
+		
+	  	\item View score
+	  	\item Tablet Interface 
+		
+	   \end{itemize} 
+	   
+	   \subsubsection{Nice to have}
+		\begin{itemize}
+		
+	  	\item Buy hints
+		\item Email score
+	   \end{itemize} 
+			
 		\subsection{Required functionality}
 		\subsubsection{User interaction}
 		\begin{description}
@@ -161,45 +185,304 @@
 		\end{description}
 
 		
-		\subsection{Process specifications}
-			\paragraph\indent
+		\subsection{Use case/Services contracts}
+		Use Case and Service Contracts are described below.
+		
+		
+		
+		\subsubsection{The Login}
+		\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is an admninistrator
+				\item The user is a player
+				\item The login credentials are valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item The user is successfully logged into the system
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}[H]
 			
-		\subsubsection{Use-Case Diagrams}
+			\end{figure}
+
+\end{itemize}
+
+		\subsubsection* {The login use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically mobile app(tablet app), to login into the system.
+		\end{itemize}
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{login.jpg}\\
 		
-		\subsubsection* {The add user usecase.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{addUser.jpg}
 		
-		\subsubsection* {The remove user usecase.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{removeUser.jpg}
+		\subsubsection{The Add User}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item User must be an administrator
+				\item No user with the same email exists.
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item User is added to the system
+			\item User( Player) is emailed a link with the username
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}[H]
+			
+			\end{figure}
+
+\end{itemize}
+		
+		
+		\subsubsection* {The add user use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the web client since the maintenence 					portal will be web based, to add a user.
+		\end{itemize}
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{addUser.jpg}
+		
+		
+		\subsubsection{The Remove User}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item User must be an administrator
+				\item User(player) must exist.
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item User is removed from the system.
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}[H]
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The remove user use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the web client since the maintenence 					portal will be web based, to remove a user.
+		\end{itemize}
+		
+	
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{removeUser.jpg}
+		
+				
+		
+		\subsubsection{The Change Keywords}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item User must be logged in as an administrator
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item Keywords changed
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}[H]
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The change keywords use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the web client since the maintenence 					portal will be web based, to change keywords on the system.
+		\end{itemize}
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{keyWords.jpg}		
+		
+		\subsubsection{The View Challenges}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item User must be logged in as player
+				
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item All the available challenges are displayed on the system
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}[H]
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The view challenges use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the mobile app(tablet app), to view all available challenges on the system.
+		\end{itemize}
+		
+	
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{viewChallenges.jpg}
+		
+		\subsubsection{The Start Challenge}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				
+				\item User must be logged in as a player
+			\end{enumerate}
+		\item Post-Conditions 
+			\begin{enumerate}
+			\item The challenge is started and timed
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}[H]
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The start challenge use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the mobile app(tablet app), to start a challenge on the system.
+		\end{itemize}
+		
+	
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{startChallenge.jpg}
+		
+		\subsubsection{The Buy Hints}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				
+				\item User must be logged in as a player
+				\item Player should have started the challenge
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item A hint is bought and displayed to assist the player, while player coins are decreased.
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}[H]
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The buy hints use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the mobile app(tablet app), to buy hints 
+			during gameplay.
+		\end{itemize}
+		
+	
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{BuyHints.jpg}	
+		
+			\subsubsection{The Quit Challenge}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				
+				\item User must be logged in as a player
+				\item Player should have started the challenge
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item Challenge is stopped. 
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}[H]
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The quit challenge use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the mobile app(tablet app), to quit the cahllenge during gameplay on the system.
+		\end{itemize}	
+		
+		
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{quitChallenge.jpg}
+		
+				\subsubsection{The Logout}
+		\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged into the system 
+			
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item The user will be logged out of the system
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}[H]
+			
+			\end{figure}
+
+\end{itemize}
+
+		\subsubsection* {The logout use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically mobile app(tablet app), to logout of the system.
+		\end{itemize}
+		
+	
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{logOut.jpg}
 		
 		\subsubsection* {The manage challenges usecase.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{Challenge.jpg}		
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{Challenge.jpg}
 		
-		\subsubsection* {The change keywords usecases.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{keyWords.jpg}		
-		
-		\subsubsection* {The login usecase.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{login.jpg}\\
-		
-		\subsubsection* {The view challenges usecase.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{viewChallenges.jpg}
-		
-		\subsubsection* {The start challenge usecase.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{startChallenge.jpg}
-		
-		\subsubsection* {The buy hints usecase.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{BuyHints.jpg}		
-		
-		\subsubsection* {The quit challenge usecase.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{quitChallenge.jpg}
-		
-		\subsubsection* {The logout usecase.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{logOut.jpg}
-		
-		\subsubsection{Activity Diagrams}		
+		\subsection{Activity Diagrams}		
 		
 		\subsubsection* {The Login activity diagram.}
-		\includegraphics[width=14cm,height=8cm,keepaspectratio]{model.jpg}		
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{Model.jpg}		
 		
 		
 		\subsection{Domain Model}
