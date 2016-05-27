@@ -113,28 +113,18 @@
          support community.
        \end{itemize}
 		\subsubsection{Architectural patterns/frameworks} % level 1
-		\paragraph{Three-tier Architecture} % level 2
-		The main reason for using three-tier architecture is to allow any of the three tiers to be upgraded or    			replaced independently, when changes in requirements or technology require such upgrades or           				replacements.Thus addressing \textbf{maintainability} the application.
+		\textbf{Three-tier Architecture} % level 2
+		The main reason for using three-tier architecture is to allow any of the three tiers to be upgraded or replaced independently, when changes in requirements or technology require such upgrades or replacements. Thus addressing \textbf{maintainability} of the application. By having a dedicated application-tier which can run on a capable server, \textbf{performance} is also addressed since the client side is freed from the more demanding computations such as the compilation of the user code.
 		
-		\vspace{0.5cm}
+		\vspace{0.5cm}		
 		
-		
-		\begin{itemize}
-			\item \textbf{The three tiers in a three-tier architecture are:}
+		\textbf{The three tiers are:}
 			\begin{itemize}
-		\item \textbf{Presentation-tier:} This will be represented the front-end of the management or maintenance 			portal which will communicate with other tiers by sending results to the browser and other tiers in the       		network.
-		\item \textbf{Application-tier:} This is the logical tier which provides the application's functionality.	
-		\item \textbf{Data tier:} All the data persistence mechanisms which will be used.Data in this tier is kept independent of application servers or business logic. 	
-	  \end{itemize}
-				\end{itemize}
-		\paragraph{Authentication Enforcer pattern} % level 3
-		
-		This pattern will help us improve security of the system while keeping
-		the scalability and performance well maintained since the Authentica
-		tion Enforcer pattern provides a consistent and structured way to handle
-		authentication and verication of requests across actions within Web-tier
-		components and also supports MVC architecture without duplicating the
-		code.	
+			\item \textbf{Presentation-tier:} This will be represented the front-end of the management or maintenance portal which will communicate with other tiers by sending results to the browser and other tiers in the network.
+			\item \textbf{Application-tier:} This is the logical tier which provides the application's functionality.	
+			\item \textbf{Data tier:} All the data persistence mechanisms which will be used.Data in this tier is kept independent of application servers or business logic. 	
+			\end{itemize}
+	
 		
 		
 	
