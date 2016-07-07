@@ -16,7 +16,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 public class EsoLangBaseVisitorImp extends EsoLangBaseVisitor<Integer>{
     
     
-        Map<String, Object> variables = new HashMap<String, Object>();
+        Map<String, Object>  variables = new HashMap<String, Object>();
         
         Map<String, Boolean> comparisons = new HashMap<String, Boolean>();
         //Stores previous values
