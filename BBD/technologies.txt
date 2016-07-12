@@ -33,5 +33,3 @@ DAL: jdbi
 Services layer: DropWizard
 
 Front-End: KnockoutJS + BootStrap 
-
-
