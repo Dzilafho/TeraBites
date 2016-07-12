@@ -6,45 +6,47 @@ package com.bbd.arcane.domainModel;
  */
 public class ValidateCodeRequest {
     
-    private CompileCodeRequest compileCodeRequest;
-    private UserCode usercode;
+    private UserCode userCode;
+    private CompileCodeRequest compileRequest;
+
+    /**
+     * @return the userCode
+     */
     
-    public ValidateCodeRequest()
+    ValidateCodeRequest()
     {
-        this.compileCodeRequest = null;
-        this.usercode = null;
+        this.userCode = null;
+        this.compileRequest = null;
     }
-    public ValidateCodeRequest(CompileCodeRequest mCompileCodeRequest, UserCode mUserCode)
+    
+     ValidateCodeRequest(UserCode userCode,CompileCodeRequest compileRequest)
     {
-        this.compileCodeRequest = mCompileCodeRequest;
-        this.usercode = mUserCode;
+        this.userCode = userCode;
+        this.compileRequest = compileRequest;
+    }
+    
+    public UserCode getUserCode() {
+        return userCode;
     }
 
     /**
-     * @return the compileCodeRequest
+     * @param userCode the userCode to set
      */
-    public CompileCodeRequest getCompileCodeRequest() {
-        return compileCodeRequest;
+    public void setUserCode(UserCode userCode) {
+        this.userCode = userCode;
     }
 
     /**
-     * @param compileCodeRequest the compileCodeRequest to set
+     * @return the compileRequest
      */
-    public void setCompileCodeRequest(CompileCodeRequest compileCodeRequest) {
-        this.compileCodeRequest = compileCodeRequest;
+    public CompileCodeRequest getCompileRequest() {
+        return compileRequest;
     }
 
     /**
-     * @return the usercode
+     * @param compileRequest the compileRequest to set
      */
-    public UserCode getUsercode() {
-        return usercode;
-    }
-
-    /**
-     * @param usercode the usercode to set
-     */
-    public void setUsercode(UserCode usercode) {
-        this.usercode = usercode;
+    public void setCompileRequest(CompileCodeRequest compileRequest) {
+        this.compileRequest = compileRequest;
     }
 }
