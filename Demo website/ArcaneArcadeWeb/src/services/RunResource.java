@@ -18,8 +18,8 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
  
  
-@Path("Mypath")
-public class MypathResource {
+@Path("run")
+public class RunResource {
 
     
      @POST
@@ -33,11 +33,10 @@ public class MypathResource {
         ParseTree tree = parser.body().declarations();
         EsoLangBaseVisitorImp  visitor = new EsoLangBaseVisitorImp();
         visitor.visit(tree);
-       visitor.visit(tree.getParent().getChild(5));
+        visitor.visit(tree.getParent().getChild(5));
         visitor.visit(tree.getParent().getChild(1));
         
         return "<h1>"+visitor.getAnswer()+"</h1>";
-         
     }
     
 } 
