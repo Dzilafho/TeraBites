@@ -1,0 +1,456 @@
+\documentclass[english]{article}
+
+
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+
+
+
+\title{\scshape\Large Team members}
+\author{
+	NG Maluleke\\
+	\texttt{13229908}
+	\and
+	D Mulugisi\\
+	\texttt{13071603}
+	\and
+	C Nel\\
+	\texttt{14029368}
+	\and
+	LE Tom\\
+	\texttt{13325095}
+}
+
+
+\graphicspath{{Pictures/}}
+
+\begin{document}
+
+	
+	\begin{figure}
+		\includegraphics[width=\linewidth]{up_logo.png}
+	\end{figure}
+	
+	\begin{center}
+	 \line(1,0){370}
+	\\[0.2cm]
+    {\scshape\Large Functional specification \par}
+	\vspace{0.1cm}
+	\line(1,0){370}
+	\\[0.8cm]
+	
+	{\scshape\large Project name: Arcane Arcade\par}	
+	\vspace{1cm}
+	{\scshape\large Client: Tony vd Linden\par}
+	\vspace{1cm}
+	{\scshape\large Team name: Terabites\par}
+	\vspace{1cm}
+	{\let\newpage\relax\maketitle}
+	\end{center}
+	
+	
+	\pagenumbering{gobble}
+	\newpage
+	\tableofcontents
+
+	\pagenumbering{arabic}
+	\newpage
+	
+	\section{Introduction}
+		 The project is called \textit{Arcane Arcade}, which references the esoteric language users will have to use, as well as the gamification approach to try and make it as fun as possible.
+
+	\section{Vision}
+		The vision is to provide a fun and easily accessible platform that can be used to gauge the programming aptitude and capabilities of existing or future software developers using a custom esoteric programming language.
+
+	\section{Background}
+		There are many models in which to ascertain whether a prospective employee has the required skills or aptitude to be a valuable software developer. Online assessments are easy to execute, but lack the insight provided by manual and proprietary testing of how the candidate reasons. Manual and proprietary testing on the other hand is time-consuming and expensive to execute. In addition, company proprietary tests become stale and are leakined into the industry reducing the value tests may have.
+		
+		BBD has thus opted to use an esoteric programming language in order to test the skills and aptitude of prospective employees, regardless of their programming experience or preferred programming language. A mobile and online platform is thus required to test prospective employees while keeping the tests fun by using gamification principles. The tests should also indicate in which area the user is likely to be better suited, by looking at how the user completed the challenges, such as whether the user used any hints.
+
+	\newpage
+	\section{Functional requirements and application design}
+		\subsection{Use case prioritization}
+		
+		\subsubsection{Critical}
+		\begin{itemize}
+		
+	  	\item Add user
+		\item Remove user
+		\item User Authentication[Login/Logout]
+		\item Change keywords usecases
+		\item Manage challenges(Add/Remove/Change Challenge)
+		\item View challenges
+		\item Quit challenge
+		\item Start challenge
+		\item Web interface for both maintenance and game 
+	   \end{itemize} 
+		
+		\subsubsection{Important}
+		\begin{itemize}
+		
+	  	\item View score
+	  	\item Tablet Interface 
+		
+	   \end{itemize} 
+	   
+	   \subsubsection{Nice to have}
+		\begin{itemize}
+		
+	  	\item Buy hints
+		\item Email score
+	   \end{itemize} 
+			
+		\subsection{Required functionality}
+		\subsubsection{User interaction}
+		\begin{description}
+			\item[$\bullet$] The user may log in to the system if registered.
+			\item[$\bullet$] User may view available challenges.
+			\item[$\bullet$] User may choose a challenge to do.
+			\item[$\bullet$] User may receive a hint for the active challenge, if the user can afford it.
+			\item[$\bullet$] After doing a challenge, the user can then send his/her code to be compiled.
+			\item[$\bullet$] The user can finish a challenge if his/her code compiled and returned correctly.
+		\end{description}
+		
+		\subsubsection{Admin interaction}
+		\begin{description}
+			\item[$\bullet$] The administrator may add or remove users from the system.
+			\item[$\bullet$] The admin may change esolang keywords.
+			\item[$\bullet$] The admin may add, remove or change challenges.
+		\end{description}
+
+		
+		\subsection{Use case/Services contracts}
+		Use Case and Service Contracts are described below.
+		
+		
+		
+		\subsubsection{The Login}
+		\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is an admninistrator
+				\item The user is a player
+				\item The login credentials are valid
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item The user is successfully logged into the system
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}
+			
+			\end{figure}
+
+\end{itemize}
+
+		\subsubsection* {The login use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically mobile app(tablet app), to login into the system.
+		\end{itemize}
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{login.jpg}\\
+		
+		
+		\subsubsection{The Add User}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item User must be an administrator
+				\item No user with the same email exists.
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item User is added to the system
+			\item User( Player) is emailed a link with the username
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}
+			
+			\end{figure}
+
+\end{itemize}
+		
+		
+		\subsubsection* {The add user use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the web client since the maintenence 					portal will be web based, to add a user.
+		\end{itemize}
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{addUser.jpg}
+		
+		
+		\subsubsection{The Remove User}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item User must be an administrator
+				\item User(player) must exist.
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item User is removed from the system.
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The remove user use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the web client since the maintenence 					portal will be web based, to remove a user.
+		\end{itemize}
+		
+	
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{removeUser.jpg}
+		
+				
+		
+		\subsubsection{The Change Keywords}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item User must be logged in as an administrator
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item Keywords changed
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The change keywords use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the web client since the maintenence portal will be web based, to change keywords on the system.
+		\end{itemize}
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{keyWords.jpg}		
+		
+		\subsubsection{The View Challenges}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item User must be logged in as player
+				
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item All the available challenges are displayed on the system
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The view challenges use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the mobile app(tablet app), to view all available challenges on the system.
+		\end{itemize}
+		
+	
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{viewChallenges.jpg}
+		
+		\subsubsection{The Start Challenge}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				
+				\item User must be logged in as a player
+			\end{enumerate}
+		\item Post-Conditions 
+			\begin{enumerate}
+			\item The challenge is started and timed
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The start challenge use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the mobile app(tablet app), to start a challenge on the system.
+		\end{itemize}
+		
+	
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{startChallenge.jpg}
+		
+		\subsubsection{The Buy Hints}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				
+				\item User must be logged in as a player
+				\item Player should have started the challenge
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item A hint is bought and displayed to assist the player, while player coins are decreased.
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The buy hints use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the mobile app(tablet app), to buy hints 
+			during gameplay.
+		\end{itemize}
+		
+	
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{BuyHints.jpg}	
+		
+			\subsubsection{The Quit Challenge}
+		
+			\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				
+				\item User must be logged in as a player
+				\item Player should have started the challenge
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item Challenge is stopped. 
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}
+			
+			\end{figure}
+
+		\end{itemize}
+		
+		
+		\subsubsection* {The quit challenge use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically the mobile app(tablet app), to quit the cahllenge during gameplay on the system.
+		\end{itemize}	
+		
+		
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{quitChallenge.jpg}
+		
+				\subsubsection{The Logout}
+		\begin{itemize}
+	
+		
+		\item Pre-Conditions
+			\begin{enumerate}
+				\item The user is succesfully logged into the system 
+			
+			\end{enumerate}
+		\item Post-Conditions
+			\begin{enumerate}
+			\item The user will be logged out of the system
+						
+			\end{enumerate}
+		\item Service Contract
+			\begin{figure}
+			
+			\end{figure}
+
+\end{itemize}
+
+		\subsubsection* {The logout use case diagram}
+		\begin{itemize}
+			\item Description\\
+			This use case will be used by the REST clients, specifically mobile app(tablet app), to logout of the system.
+		\end{itemize}
+		
+	
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{logOut.jpg}
+		
+		\subsubsection* {The manage challenges usecase.}
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{Challenge.jpg}
+		
+		\subsection{Activity Diagrams}		
+		
+		\subsubsection* {The Login activity diagram.}
+		\includegraphics[width=10cm,height=6cm,keepaspectratio]{Model.jpg}		
+		
+		\subsubsection* {The LogOut activity diagram.}
+		\includegraphics[width=10cm,height=6cm,keepaspectratio]{LogOut.jpg}	
+		
+			\subsubsection* {The View Challenges activity diagram.}
+			\includegraphics[width=10cm,height=6cm,keepaspectratio]{ViewChallenges.jpg}	
+		
+		 \subsubsection* {The Add user activity diagram.}
+		 \includegraphics[width=10cm,height=6cm,keepaspectratio]{addUser1.jpg}	
+		 
+		 \subsubsection* {The Remove user activity diagram.}
+		 \includegraphics[width=10cm,height=6cm,keepaspectratio]{RemoveUser1.jpg}	
+		 
+		 \subsubsection* {The View Challenges activity diagram.}
+		 \includegraphics[width=10cm,height=6cm,keepaspectratio]{ViewChallenges.jpg}
+		 
+		  \subsubsection* {The Start Challenge activity diagram.}
+		  \includegraphics[width=10cm,height=6cm,keepaspectratio]{startChallenge.jpg}
+		  
+		   \subsubsection* {The Change keywords activity diagram.}
+		   \includegraphics[width=10cm,height=6cm,keepaspectratio]{ChangeKeywords.jpg}
+		 
+		 
+		 \subsection{Domain Model}
+		 \includegraphics[width=15cm,height=15cm,keepaspectratio]{domainModel.png}
+			
+	
+		
+
+	\newpage
+	\section{Open Issues}		
+
+
+		
+\end{document}

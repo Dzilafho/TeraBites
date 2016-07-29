@@ -1,0 +1,152 @@
+\documentclass[english]{article}
+
+
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+
+
+
+\title{\scshape\Large Team members}
+\author{
+	NG Maluleke\\
+	\texttt{13229908}
+	\and
+	D Mulugisi\\
+	\texttt{13071603}
+	\and
+	C Nel\\
+	\texttt{14029368}
+	\and
+	LE Tom\\
+	\texttt{13325095}
+}
+
+
+\graphicspath{{Pictures/}}
+
+\begin{document}
+
+	
+	\begin{figure}
+	      \includegraphics[width=\linewidth]{up_logo.png}
+	\end{figure}
+	
+	\begin{center}
+	 \line(1,0){370}
+	\\[0.2cm]
+    {\scshape\Large Architecture specification \par}
+	\vspace{0.1cm}
+	\line(1,0){370}
+	\\[0.8cm]
+	
+	{\scshape\large Project name: Arcane Arcade\par}	
+	\vspace{1cm}
+	{\scshape\large Client: Tony vd Linden\par}
+	\vspace{1cm}
+	{\scshape\large Team name: Terabites\par}
+	\vspace{1cm}
+	{\let\newpage\relax\maketitle}
+	\end{center}
+	
+	
+	\pagenumbering{gobble}
+	\newpage
+	\tableofcontents
+
+	\pagenumbering{arabic}
+	\newpage
+	
+	\section{Introduction}
+		 The project is called \textit{Arcane Arcade}, which references the esoteric language users will have to use, as well as the gamification approach to try and make it as fun as possible.
+
+	\section{Vision}
+		The vision is to provide a fun and easily accessible platform that can be used to gauge the programming aptitude and capabilities of existing or future software developers using a custom esoteric programming language.
+
+	\section{Background}
+		There are many models in which to ascertain whether a prospective employee has the required skills or aptitude to be a valuable software developer. Online assessments are easy to execute, but lack the insight provided by manual and proprietary testing of how the candidate reasons. Manual and proprietary testing on the other hand is time-consuming and expensive to execute. In addition, company proprietary tests become stale and are leakined into the industry reducing the value tests may have.
+		
+		BBD has thus opted to use an esoteric programming language in order to test the skills and aptitude of prospective employees, regardless of their programming experience or preferred programming language. A mobile and online platform is thus required to test prospective employees while keeping the tests fun by using gamification principles. The tests should also indicate in which area the user is likely to be better suited, by looking at how the user completed the challenges, such as whether the user used any hints.
+
+	\newpage
+	\section{Architecture Requirements}
+		\subsection{Access channel requirements}
+			\paragraph\indent
+			The system requires two interfaces:
+			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
+				\item Web interface( Maintenance portion)
+				\item It is preferred that the game portion be built to run on a tablet device
+			\end{list}
+
+
+		\subsection{Quality requirements}
+			\paragraph\indent
+							The following quality aspects needs to be addressed:
+			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
+				\item \textbf{Perfomance:} Performance is the most important quality requirement for this application. This requirement pertains to how fast the application responds to certain actions within a set time interval. The application will use a compiler instead of an interpreter which will translate the esoteric language into object code, which performs better than an interpreter.
+				
+				\item \textbf{Reliability:} Reliability is the second most important quality requirement. Care should be given to make the application as reliable as possible without sacrificing performance. The application should have maximum uptime and proper fault tolerance. The application should help the user in avoiding errors, such as submitting incompatible values.
+				
+				\item \textbf{Maintainability:} Maintainability is the third most important quality requirement for the application. Since the future of the application may require total change of the esolang, developers should be able to easily and relatively quickly change aspects of the functionality the system provides or be able to add new functionality to the system. This means that care should be given to modularity and in making the system clear to understand for future developers. Technologies to be used should also be expected to be available for long.
+				
+				\item \textbf{Scalability:} The system should be able to service at least one administrator and a few users (potential employees).
+				
+				\item \textbf{Security:} The system should be secure enough so that no unauthorized users will be able to access it and data integrity should be maintained.				
+				
+				\item \textbf{Cost:} Since some users will be accessing the application via mobile internet, care should be given to keep the required bandwidth to a minimum.
+				
+			\end{list}
+			
+			\subsection{Architecture styles}
+			\begin{itemize}
+				\item REST
+			\end{itemize}
+
+			
+		\subsection{Integration requirements}
+			\par The system will be primarily used via a web interface which will interact with the server through a RESTful API, decoupling the client from the server as best as possible.
+			
+		\setcounter{secnumdepth}{5}
+		\subsection{Architecture constraints}
+			\subsubsection{Technologies}
+			\begin{itemize}
+		  \item HTML and JavaScript for the front end functionality for both the browser and game application
+		  \item Java Standard Edition (J2SE) will be used for backend functionality.
+		  \item PostgreSQL for persistence because it is a mature, efficient and reliable relational database
+          implementation which is available across platforms and for which there is a large and very competent
+         support community.
+       \end{itemize}
+       
+		\subsubsection{Architectural patterns/frameworks} % level 1
+		\textbf{Three-tier Architecture} % level 2
+		The main reason for using three-tier architecture is to allow any of the three tiers to be upgraded or replaced independently, when changes in requirements or technology require such upgrades or replacements. Thus addressing \textbf{maintainability} of the application. By having a dedicated application-tier which can run on a capable server, \textbf{performance} is also addressed since the client side is freed from the more demanding computations such as the compilation of the user code.
+		
+		\vspace{0.5cm}		
+		
+		\textbf{The three tiers are:}
+			\begin{itemize}
+			\item \textbf{Presentation-tier:} This will be represented the front-end of the management or maintenance portal which will communicate with other tiers by sending results to the browser and other tiers in the network.
+			\item \textbf{Application-tier:} This is the logical tier which provides the application's functionality.	
+			\item \textbf{Data tier:} All the data persistence mechanisms which will be used. Data in this tier is kept independent of application servers or business logic. 	
+			\end{itemize}	
+			
+			\vspace{0.5cm}
+    \newpage
+	\textbf{Frameworks} % level 2
+
+	
+	\textbf{AngularJS}
+	\begin{itemize}
+		\item 	Which is a powerful flexible framework with good modularization and extensive module
+		repositories. With Angular.js there is, however, a higher risk for the application to degenerate
+		into an inconsistent and difficult to maintain web application as it does not enforce a consistent
+		way of developing the application. The two-way binding
+		and the updating of athe virtual DOM is also less efficient in Angular.js.
+
+	\end{itemize}
+	
+	
+		
+	
+\end{document}
