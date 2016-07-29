@@ -7,6 +7,17 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
 	<script src="js/mobile.js" type="text/javascript"></script>
+	<script src="js/jquery-3.1.0.min.js"></script>
+
+	<script>
+		/*$(document).ready(function(){
+		
+			$(".button").click(function(){
+				$("#header").hide();
+			});
+			
+		});*/
+	</script>
 </head>
 <body>
  <div class="container">
@@ -15,13 +26,66 @@
 	<div id="page">
 		<div id="header">
 			<div>
-				<center><a id="image"href="index.html"><img src="images/logo.png" width="320" class="img-rounded img-responsive center-block" alt="logo"></a></center>
+				<center><a id="image"href="index.html"><img src="images/logo.jpg" width="320" class="img-rounded img-responsive center-block" alt="logo"></a></center>
 			</div>
 		</div>
 		
+		<div id="Questions">
+		
 		<div class="form">
+			<h1><center>Challenge Management</center></h1>
+			<form action="">
+				<h2>Add challenge:</h2>
+				<label>Challenge name:</label><input type="text" name="question"><br>
+				<input class="button" type="submit" value="Add Challenge" > 
+			</form>
+			<br>
+			
+			<form action="">
+				<h2>Remove challenge:</h2>
+				<label>Challenge name:</label><input type="text" name="question"><br>
+				<input class="button" type="submit" value="Remove Challenge" > 
+			</form>
+			<br>
+			
+			<form action="">
+				<h2>View challenges:</h2>
+				<input class="button" type="submit" value="View Challenges" > 
+			</form>
+			<br>
+			
+		</div>
+		
+		<div class="form">
+
+			<h1><center>Level Management</center></h1>
+			<form action="">
+				<h2>Add level:</h2>
+				<label>Level name:</label><input type="text" name="question"><br>
+				<label>Challenge under:</label> <input type="text" name="answer"><br>
+				<input class="button" type="submit" value="Add Level" > 
+			</form>
+			<br>
+			
+			<form action="">
+				<h2>Remove level:</h2>
+				<label>Level name:</label><input type="text" name="question"><br>
+				<input class="button" type="submit" value="Remove Level" > 
+			</form>
+			<br>
+			
+			<form action="">
+				<h2>View Levels:</h2>
+				<input class="button" type="submit" value="View Levels" > 
+			</form>
+			<br>
+			
+		</div>
+		
+		<div class="form">
+			
 			<h1><center>Question Management</center></h1>
-			<form method="post" action="http://localhost:41114/ArcaneArcadeWeb/webresources/addQuestion">
+			<form action="">
 				<h2>Add questions:</h2>
 				<label>Question:</label><input type="text" name="question"><br>
 				<label>Correct Answer:</label> <input type="text" name="answer"><br>
@@ -37,6 +101,9 @@
 			</form>
 			<br><br>
 		</div>
+		<div>
+		
+		<div id="Users">
 		
 		<div class="form">
 			<h1><center>User Management</center></h1>
@@ -60,11 +127,12 @@
 			
 			<form action="">
 				<h2>View all users:</h2>
-				<input class="button" type="submit" value="View Players" > 
+				<input class="button" type="submit" value="View Users" > 
 			</form>
-			
 			<br>
 			<br>
+		</div>
+		
 		</div>
 		
 		<div id="footer">
