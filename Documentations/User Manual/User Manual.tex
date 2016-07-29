@@ -60,18 +60,98 @@
 	
 	\section{Introduction}
 		 The project is called \textit{Arcane Arcade}, which references the esoteric language users will have to use, as well as the gamification approach to try and make it as fun as possible.
+		 
+		 Arcane Arcade is a revolutionary system to be used by employers to determine the level of skills and classification if potential employees through the use of an esotoric language in a game-like environment. The company responsible for the idea behind the system is BBD and the team responsible for implementing it is team TeraBites. 
+		 
+		 This document presents the Arcane Arcade system, it's uses and how to use it.
 
 	\section{Project Background}
+	This section outlines the background behind the project.
 		\subsection{Problems Experienced}
+		The software engineering industry have tried various models over the years to ascertain whether a prospective employee has the required skills or aptitude to be a valuable software developer. These range from automated online screening assessments that pushes the boundaries of the person’s intellectual capability, to manually executed proprietary company tests using specific programming languages to test development competencies. Online assessments are popular and easy to execute, but lacks the insight provided by manual and proprietary testing of how the candidate reasons, where manual and proprietary testing is time-consuming and expensive to execute. In addition, company proprietary tests become stale and are leaked into the industry reducing the value tests may have.
+		
+		BBD have used both approaches over the years and has found that online assessments are adequate when the prospective employee has little to no professional development experience. This is however not enough to demonstrate software development capability for existing professional developers and the company was forced to create a programming test for this group of people. These days, it is becoming difficult to maintain a landscape for an array of different programming languages used by BBD, while ensuring that the quality is maintained.
+
 		\subsection{Arcane Arcade as the Solution}
+		The candidate is presented with a problem and must use an unfamiliar and custom esoteric programing languages (esolang) to solve the problem. The test must make use of gamification principles such as making new keywords available that can be used in following challenges when a specific challenge is completed. 
+		
+		Each challenge is harder than the previous and all incorporate some programming principle such as general arithmetic, condition checking, iteration, recursion, functions and embedded functions. The platform must have the ability to interpret or compile the esolang and to allow the candidate to “run” the program. The platform must be available online or on a tablet device and be secure enough to disallow unauthorized use. The candidate will be emailed a link and a username to access the platform. 
+		
+		All the challenges are be timed and all results and times must be persisted. Once the candidate completes the whole challenge or decides to stop before the last challenge, a final score is shown. The candidate cannot access the challenge again once it reaches this state. In addition to the challenge/game, an administrator must be able to manage users, questions, esolang keywords (dependent on time) and result online.
+		
 		
 	\section{System Overview}
-	\section{System Installation}
-	\section{System Configuration}
-	\section{System Usage}
-		\subsection{Administrative Use}
-		\subsection{Candidate Use}
+	The project is called the Arcane Arcade and the name references both gaming as well as esoteric (intended for or likely to be understood by only a 		small number of people with a specialized knowledge or interest, arcane: mysterious or understood by few) programming languages.
 	
+	\section{System Configuration}
+	The system requires a Windows/Unix based host to run the server. This
+host must have the associated technologies installed (the installation of these
+technologies will be discussed below). The host must be connected to the
+internet in order to allow any required dependencies to be installed and set
+up for the operating system environment. The conguration of the server
+requires an active email account to facilitate communication between the
+system and end users.
+	
+	End users will only require a PC equipped with a web browser such as Mozilla,
+Chrome or Internet Explorer, as well as an active internet connection. The
+types of data that will communicated and stored will be data of the NoSQL
+database MongoDB. The menu items that the cafeteria manager will add to
+the menu as well as images thereof, will be stored in the database, to be
+5
+communicated/displayed on the menu page. The inventory items that these
+menu items entail will be stored too. The categories that can be added to
+the menu by the cafeteria manager will also be stored in the database in
+order to populate the navigation bar, the actual dynamic pages and various
+other places in which these are displayed. The cafeteria manager is the only
+user who is able to retrieve the menu and inventory data, in order to edit
+or delete it. The other users will just be able to view the menu data on the
+menu page. The user's sign up informtation will also be stored and will be
+communicated on the prole page of the user. Each user will only have access
+to their own information. The superuser, however, will be able to search for
+users and update their IDs or delete them from the system. The branding
+information such as the cover image, the theme, and the canteen name will
+also be stored to be communicated on various pages. The superuser is the
+only user who be able to edit and add this information. Other settings that
+the superuser can congure, such as the system limit and the roles of the
+users will be stored and used for determining the privileges associated with
+the various roles and the checks done on the users' personal spending limits.
+The nance manager will have access to the order history of each user in
+order to view their bills and invoices. The cashier will also have access to the
+orders placed in order to process them i.e. mark an order as ready and as
+completed. All the crucial information such as the order history and other
+changes made will be stored in an auditing table.
+6
+	
+	
+	\section{System Usage}
+	Arcane Arcade is primarily accessed through any web browser. The system has different pages that outline the functionalities that the different types of users can access. The users can be either administrators or candidates. 
+		
+	Administrators have global access to the whole system which also grants them management capabilities. The can modify the structure of the challenges and how the candidates interact with the system by disabling and enabling access, adding and removing challenges amongst others.
+		
+	Candidates only have access to the challenges page and all-sub pages that can be found/clicked in that particular page.
+	
+		\subsection{Administrative Use}
+			\subsubsection{User Management}
+				\includegraphics[width=\linewidth]{UserManagement.jpg}
+			\subsubsection{Challenge Management}
+				\includegraphics[width=\linewidth]{Login.jpg}
+			\subsubsection{Level Management}
+				\includegraphics[width=\linewidth]{Login.jpg}
+			\subsubsection{Question Management}
+				\includegraphics[width=\linewidth]{QuestionManagement.jpg}
+			
+		\subsection{Candidate Use}
+			\subsubsection{Login}
+				\includegraphics[width=\linewidth]{Login.jpg}
+			\subsubsection{Take Challenge}
+				\includegraphics[width=\linewidth]{Login.jpg}
+			\subsubsection{Run Code}
+				\includegraphics[width=\linewidth]{Login.jpg}
+			\subsubsection{View Code Output}
+				\includegraphics[width=\linewidth]{Login.jpg}
+			\subsubsection{Stop Challenge}
+				\includegraphics[width=\linewidth]{Login.jpg}
+			
 	\section{Troubleshooting}
 		\subsection{Administrative Problems}
 		\subsection{Candidate Problems}
