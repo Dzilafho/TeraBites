@@ -63,10 +63,10 @@
 		 
 		 Arcane Arcade is a revolutionary system to be used by employers to determine the level of skills and classification if potential employees through the use of an esotoric language in a game-like environment. The company responsible for the idea behind the system is BBD and the team responsible for implementing it is team TeraBites. 
 		 
-		 This document presents the Arcane Arcade system, it's uses and how to use it.
+		 This document presents the Arcane Arcade system, it's uses and how it is to be put to use.
 
 	\section{Project Background}
-	This section outlines the background behind the project.
+	This section outlines the background behind the project Arcane Arcade.
 		\subsection{Problems Experienced}
 		The software engineering industry have tried various models over the years to ascertain whether a prospective employee has the required skills or aptitude to be a valuable software developer. These range from automated online screening assessments that pushes the boundaries of the person’s intellectual capability, to manually executed proprietary company tests using specific programming languages to test development competencies. Online assessments are popular and easy to execute, but lacks the insight provided by manual and proprietary testing of how the candidate reasons, where manual and proprietary testing is time-consuming and expensive to execute. In addition, company proprietary tests become stale and are leaked into the industry reducing the value tests may have.
 		
@@ -88,39 +88,30 @@
 host must have the associated technologies installed (the installation of these
 technologies will be discussed below). The host must be connected to the
 internet in order to allow any required dependencies to be installed and set
-up for the operating system environment. The conguration of the server
+up for the operating system environment. The configuration of the server
 requires an active email account to facilitate communication between the
 system and end users.
 	
 	End users will only require a PC equipped with a web browser such as Mozilla,
 Chrome or Internet Explorer, as well as an active internet connection. The
-types of data that will communicated and stored will be data of the NoSQL
-database MongoDB. The menu items that the cafeteria manager will add to
-the menu as well as images thereof, will be stored in the database, to be
-5
-communicated/displayed on the menu page. The inventory items that these
-menu items entail will be stored too. The categories that can be added to
-the menu by the cafeteria manager will also be stored in the database in
+types of data that will communicated and stored will be in a PostgresSQL database. The challenges that are to be passed to the candidate's system reside in the database, there will have to be retrieved from there to be communicated/displayed on the menu page. The levels and questions that the
+challenges entail will be stored too. The challanges that the system houses can be added to
+the home page by the administrator in
 order to populate the navigation bar, the actual dynamic pages and various
-other places in which these are displayed. The cafeteria manager is the only
-user who is able to retrieve the menu and inventory data, in order to edit
-or delete it. The other users will just be able to view the menu data on the
+other places in which these are displayed. The administrators are the only
+user who are able to retrieve the menu and challenge data, in order to edit
+or delete it. The candidate users will just be able to view thechallenges on the
 menu page. The user's sign up informtation will also be stored and will be
-communicated on the prole page of the user. Each user will only have access
+communicated on the profle page of the user. Each user will only have access
 to their own information. The superuser, however, will be able to search for
-users and update their IDs or delete them from the system. The branding
-information such as the cover image, the theme, and the canteen name will
-also be stored to be communicated on various pages. The superuser is the
+users and update their IDs or delete them from the system. s. The superuser is the
 only user who be able to edit and add this information. Other settings that
-the superuser can congure, such as the system limit and the roles of the
+the superuser can configure, such as the system limit and the roles of the
 users will be stored and used for determining the privileges associated with
 the various roles and the checks done on the users' personal spending limits.
-The nance manager will have access to the order history of each user in
-order to view their bills and invoices. The cashier will also have access to the
-orders placed in order to process them i.e. mark an order as ready and as
-completed. All the crucial information such as the order history and other
-changes made will be stored in an auditing table.
-6
+The administrators will have access to the challenge history of each user in
+order to view their attempts and performance.
+
 	
 	
 	\section{System Usage}
@@ -134,24 +125,20 @@ changes made will be stored in an auditing table.
 			\subsubsection{User Management}
 				\includegraphics[width=\linewidth]{UserManagement.jpg}
 			\subsubsection{Challenge Management}
-				\includegraphics[width=\linewidth]{Login.jpg}
+				\includegraphics[width=\linewidth]{challengeManagement.jpg}
 			\subsubsection{Level Management}
-				\includegraphics[width=\linewidth]{Login.jpg}
+				\includegraphics[width=\linewidth]{levelManagement.jpg}
 			\subsubsection{Question Management}
 				\includegraphics[width=\linewidth]{QuestionManagement.jpg}
 			
 		\subsection{Candidate Use}
 			\subsubsection{Login}
 				\includegraphics[width=\linewidth]{Login.jpg}
-			\subsubsection{Take Challenge}
-				\includegraphics[width=\linewidth]{Login.jpg}
-			\subsubsection{Run Code}
-				\includegraphics[width=\linewidth]{Login.jpg}
+			\subsubsection{Answer Question}
+				\includegraphics[width=\linewidth]{question.jpg}
 			\subsubsection{View Code Output}
-				\includegraphics[width=\linewidth]{Login.jpg}
-			\subsubsection{Stop Challenge}
-				\includegraphics[width=\linewidth]{Login.jpg}
-			
+				\includegraphics[width=\linewidth]{outResults.jpg}
+	
 	\section{Troubleshooting}
 		\subsection{Administrative Problems}
 		\subsection{Candidate Problems}
