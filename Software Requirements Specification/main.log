@@ -1,0 +1,372 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.10)  27 MAY 2016 22:33
+entering extended mode
+**./main.tex
+(main.tex
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9n> and hyphenation patterns for 69 languages loaded.
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cl
+s"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo
+"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphi
+cx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval
+.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphi
+cs.sty"
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.s
+ty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\graphi
+cs.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdft
+ex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infw
+arerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxc
+mds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grffil
+e.sty"
+Package: grffile 2012/04/05 v1.16 Extended file name support for graphics (HO)
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpd
+f.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxet
+ex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvopti
+ons.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvse
+tkeys.sty"
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etex
+cmds.sty"
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\iflu
+atex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdft
+excmds.sty"
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grffile Info: Option `multidot' is set to `true'.
+Package grffile Info: Option `extendedchars' is set to `false'.
+Package grffile Info: Option `space' is set to `true'.
+Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
+)
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.st
+y"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.s
+ty"
+Package: babel 2016/01/08 3.9n The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\bblopt
+s.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-english\e
+nglish.ldf"
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.d
+ef"
+File: babel.def 2016/01/08 3.9n Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen105
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)) (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf
+.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count89
+\scratchdimen=\dimen106
+\scratchbox=\box26
+\nofMPsegments=\count90
+\nofMParguments=\count91
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count92
+\MPscratchDim=\dimen107
+\MPnumerator=\count93
+\makeMPintoPDFobject=\count94
+\everyMPtoPDFconversion=\toks16
+) <Pictures/up_logo.png, id=1, 376.40625pt x 112.92188pt>
+File: Pictures/up_logo.png Graphic file (type png)
+
+<use Pictures/up_logo.png>
+Package pdftex.def Info: Pictures/up_logo.png used on input line 33.
+(pdftex.def)             Requested size: 345.0pt x 103.50685pt.
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 37--38
+ | 
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 41--42
+ []| 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 50.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 50.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 50.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 50.
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) [1
+
+{C:/Users/dZiLafho/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Pictur
+es/up_logo.png>] (main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 6.
+)
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ [1] [2] [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 109.
+
+
+("C:\Users\dZiLafho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 109.
+ [4]
+Overfull \hbox (1.07353pt too wide) in paragraph at lines 135--135
+[]\T1/cmr/bx/n/14.4 Functional re-quire-ments and ap-pli-ca-tion de-sign 
+ []
+
+[5]
+Overfull \hbox (6.86356pt too wide) in paragraph at lines 215--217
+\T1/cmr/m/n/10 This use case will be used by the REST clients, specif-i-cally m
+o-bile app(tablet
+ []
+
+<Pictures/login.jpg, id=31, 878.28125pt x 509.905pt>
+File: Pictures/login.jpg Graphic file (type jpg)
+ <use Pictures/login.jpg>
+Package pdftex.def Info: Pictures/login.jpg used on input line 218.
+(pdftex.def)             Requested size: 294.05518pt x 170.72003pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+[6 <./Pictures/login.jpg>]
+<Pictures/addUser.jpg, id=36, 641.39626pt x 371.88937pt>
+File: Pictures/addUser.jpg Graphic file (type jpg)
+
+<use Pictures/addUser.jpg>
+Package pdftex.def Info: Pictures/addUser.jpg used on input line 250.
+(pdftex.def)             Requested size: 294.43907pt x 170.71936pt.
+ [7 <./Pictures/addUser.jpg>]
+<Pictures/removeUser.jpg, id=40, 642.14906pt x 373.395pt>
+File: Pictures/removeUser.jpg Graphic file (type jpg)
+
+<use Pictures/removeUser.jpg>
+Package pdftex.def Info: Pictures/removeUser.jpg used on input line 283.
+(pdftex.def)             Requested size: 293.58925pt x 170.71544pt.
+
+<Pictures/keyWords.jpg, id=41, 888.31876pt x 542.025pt>
+File: Pictures/keyWords.jpg Graphic file (type jpg)
+
+<use Pictures/keyWords.jpg>
+Package pdftex.def Info: Pictures/keyWords.jpg used on input line 314.
+(pdftex.def)             Requested size: 279.78122pt x 170.71396pt.
+ [8 <./Pictures/removeUser.jpg>]
+<Pictures/viewChallenges.jpg, id=45, 641.39626pt x 374.14781pt>
+File: Pictures/viewChallenges.jpg Graphic file (type jpg)
+
+<use Pictures/viewChallenges.jpg>
+Package pdftex.def Info: Pictures/viewChallenges.jpg used on input line 346.
+(pdftex.def)             Requested size: 292.65785pt x 170.71707pt.
+ [9 <./Pictures/keyWords.jpg>]
+<Pictures/startChallenge.jpg, id=49, 681.29532pt x 371.13657pt>
+File: Pictures/startChallenge.jpg Graphic file (type jpg)
+
+<use Pictures/startChallenge.jpg>
+Package pdftex.def Info: Pictures/startChallenge.jpg used on input line 378.
+(pdftex.def)             Requested size: 313.38925pt x 170.71922pt.
+ [10 <./Pictures/viewChallenges.jpg>]
+<Pictures/BuyHints.jpg, id=53, 888.31876pt x 542.025pt>
+File: Pictures/BuyHints.jpg Graphic file (type jpg)
+
+<use Pictures/BuyHints.jpg>
+Package pdftex.def Info: Pictures/BuyHints.jpg used on input line 412.
+(pdftex.def)             Requested size: 279.78122pt x 170.71396pt.
+ [11 <./Pictures/startChallenge.jpg>]
+<Pictures/quitChallenge.jpg, id=57, 639.89063pt x 372.64218pt>
+File: Pictures/quitChallenge.jpg Graphic file (type jpg)
+
+<use Pictures/quitChallenge.jpg>
+Package pdftex.def Info: Pictures/quitChallenge.jpg used on input line 445.
+(pdftex.def)             Requested size: 293.14253pt x 170.7124pt.
+ [12 <./Pictures/BuyHints.jpg>]
+Overfull \hbox (6.86356pt too wide) in paragraph at lines 470--472
+\T1/cmr/m/n/10 This use case will be used by the REST clients, specif-i-cally m
+o-bile app(tablet
+ []
+
+<Pictures/logOut.jpg, id=62, 653.44125pt x 309.155pt>
+File: Pictures/logOut.jpg Graphic file (type jpg)
+
+<use Pictures/logOut.jpg>
+Package pdftex.def Info: Pictures/logOut.jpg used on input line 475.
+(pdftex.def)             Requested size: 360.83954pt x 170.71977pt.
+
+Overfull \hbox (30.83954pt too wide) in paragraph at lines 475--476
+[][] 
+ []
+
+[13 <./Pictures/quitChallenge.jpg>]
+<Pictures/Challenge.jpg, id=66, 888.31876pt x 542.025pt>
+File: Pictures/Challenge.jpg Graphic file (type jpg)
+
+<use Pictures/Challenge.jpg>
+Package pdftex.def Info: Pictures/Challenge.jpg used on input line 478.
+(pdftex.def)             Requested size: 279.78122pt x 170.71396pt.
+
+<Pictures/Model.jpg, id=67, 878.28125pt x 509.905pt>
+File: Pictures/Model.jpg Graphic file (type jpg)
+ <use Pictures/Model.jpg>
+Package pdftex.def Info: Pictures/Model.jpg used on input line 483.
+(pdftex.def)             Requested size: 284.52672pt x 165.18808pt.
+
+[14 <./Pictures/logOut.jpg> <./Pictures/Challenge.jpg>]
+<Pictures/LogOut.jpg, id=71, 653.44125pt x 309.155pt>
+File: Pictures/LogOut.jpg Graphic file (type jpg)
+
+<use Pictures/LogOut.jpg>
+Package pdftex.def Info: Pictures/LogOut.jpg used on input line 486.
+(pdftex.def)             Requested size: 284.52382pt x 134.61342pt.
+
+<Pictures/domainModel.png, id=72, 516.42938pt x 459.96844pt>
+File: Pictures/domainModel.png Graphic file (type png)
+
+<use Pictures/domainModel.png>
+Package pdftex.def Info: Pictures/domainModel.png used on input line 490.
+(pdftex.def)             Requested size: 426.8081pt x 380.1454pt.
+
+Overfull \hbox (81.8081pt too wide) in paragraph at lines 490--491
+[] 
+ []
+
+[15 <./Pictures/Model.jpg> <./Pictures/LogOut.jpg>] [16 <./Pictures/domainModel
+.png>] [17] (main.aux) ) 
+Here is how much of TeX's memory you used:
+ 2170 strings out of 493634
+ 31299 string characters out of 3145355
+ 90585 words of memory out of 3000000
+ 5533 multiletter control sequences out of 15000+200000
+ 15463 words of font info for 36 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 36i,6n,23p,584b,310s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\dZiLafho\AppData\Local\MiKTeX\2.9\fonts\pk\l
+jfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\dZiLafho\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\dZiLafho\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\dZiLa
+fho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C
+:\Users\dZiLafho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
+bx1440.pk> <C:\Users\dZiLafho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
+\ec\dpi600\ectt1200.pk> <C:\Users\dZiLafho\AppData\Local\MiKTeX\2.9\fonts\pk\lj
+four\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\dZiLafho\AppData\Local\MiKTeX\2.
+9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\dZiLafho\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk><C:/Users/dZiLafh
+o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (18 pages, 809794 bytes).
+PDF statistics:
+ 390 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+

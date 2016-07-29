@@ -121,8 +121,8 @@
 		\end{description}
 
 		
-		\subsection{Use case/Services contracts}
-		Use Case and Service Contracts are described below.
+		\subsection{Use case}
+		Use Case are described below.
 		
 		
 		
@@ -141,10 +141,9 @@
 			\item The user is successfully logged into the system
 						
 			\end{enumerate}
-		\item Service Contract
-			\begin{figure}
+		
 			
-			\end{figure}
+		
 
 \end{itemize}
 
@@ -172,10 +171,7 @@
 			\item User( Player) is emailed a link with the username
 						
 			\end{enumerate}
-		\item Service Contract
-			\begin{figure}
-			
-			\end{figure}
+	
 
 \end{itemize}
 		
@@ -183,7 +179,7 @@
 		\subsubsection* {The add user use case diagram}
 		\begin{itemize}
 			\item Description\\
-			This use case will be used by the REST clients, specifically the web client since the maintenence 					portal will be web based, to add a user.
+			This use case will be used by the REST clients, specifically the web client since the maintenence portal will be web based, to add a user.
 		\end{itemize}
 		\includegraphics[width=14cm,height=6cm,keepaspectratio]{addUser.jpg}
 		
@@ -203,10 +199,7 @@
 			\item User is removed from the system.
 						
 			\end{enumerate}
-		\item Service Contract
-			\begin{figure}
-			
-			\end{figure}
+	
 
 		\end{itemize}
 		
@@ -236,12 +229,12 @@
 			\item Keywords changed
 						
 			\end{enumerate}
-		\item Service Contract
-			\begin{figure}
-			
-			\end{figure}
+		
 
 		\end{itemize}
+		
+		
+		
 		
 		
 		\subsubsection* {The change keywords use case diagram}
@@ -249,7 +242,35 @@
 			\item Description\\
 			This use case will be used by the REST clients, specifically the web client since the maintenence portal will be web based, to change keywords on the system.
 		\end{itemize}
-		\includegraphics[width=14cm,height=6cm,keepaspectratio]{keyWords.jpg}		
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{keyWords.jpg}	
+		
+		
+			\subsubsection{The manage challenges usecase.}
+			
+			\begin{itemize}
+				
+				
+				\item Pre-Conditions
+				\begin{enumerate}
+					\item User must be logged in as an administrator
+				\end{enumerate}
+				\item Post-Conditions
+				\begin{enumerate}
+					\item Challenge added
+					\item Challenge changed
+					\item Remove User
+					
+				\end{enumerate}
+				
+				
+			\end{itemize}	
+			
+			\subsubsection* {The manage challenges usecase.}
+			\begin{itemize}
+			   \item Description\\
+				This use case will be used by the REST clients, specifically the web client since the maintenence portal will be web based,to add challenges,change       challenges and to remove challenges.
+			\end{itemize}
+			\includegraphics[width=14cm,height=6cm,keepaspectratio]{Challenge.jpg}	
 		
 		\subsubsection{The View Challenges}
 		
@@ -266,10 +287,7 @@
 			\item All the available challenges are displayed on the system
 						
 			\end{enumerate}
-		\item Service Contract
-			\begin{figure}
-			
-			\end{figure}
+	
 
 		\end{itemize}
 		
@@ -281,7 +299,7 @@
 		\end{itemize}
 		
 	
-		\includegraphics[width=14cm,height=6cm,keepaspectratio]{viewChallenges.jpg}
+		\includegraphics[width=14cm,height=6cm,keepaspectratio]{viewChallenge.jpg}
 		
 		\subsubsection{The Start Challenge}
 		
@@ -298,10 +316,7 @@
 			\item The challenge is started and timed
 						
 			\end{enumerate}
-		\item Service Contract
-			\begin{figure}
-			
-			\end{figure}
+	
 
 		\end{itemize}
 		
@@ -331,10 +346,7 @@
 			\item A hint is bought and displayed to assist the player, while player coins are decreased.
 						
 			\end{enumerate}
-		\item Service Contract
-			\begin{figure}
-			
-			\end{figure}
+	
 
 		\end{itemize}
 		
@@ -365,10 +377,7 @@
 			\item Challenge is stopped. 
 						
 			\end{enumerate}
-		\item Service Contract
-			\begin{figure}
-			
-			\end{figure}
+		
 
 		\end{itemize}
 		
@@ -396,10 +405,7 @@
 			\item The user will be logged out of the system
 						
 			\end{enumerate}
-		\item Service Contract
-			\begin{figure}
-			
-			\end{figure}
+	
 
 \end{itemize}
 
@@ -410,10 +416,8 @@
 		\end{itemize}
 		
 	
-		\includegraphics[width=14cm,height=6cm,keepaspectratio]{logOut.jpg}
 		
-		\subsubsection* {The manage challenges usecase.}
-		\includegraphics[width=14cm,height=6cm,keepaspectratio]{Challenge.jpg}
+	
 		
 		\subsection{Activity Diagrams}		
 		
@@ -436,7 +440,7 @@
 		 \includegraphics[width=10cm,height=6cm,keepaspectratio]{ViewChallenges.jpg}
 		 
 		  \subsubsection* {The Start Challenge activity diagram.}
-		  \includegraphics[width=10cm,height=6cm,keepaspectratio]{startChallenge.jpg}
+		  \includegraphics[width=10cm,height=6cm,keepaspectratio]{StartChallenge1.jpg}
 		  
 		   \subsubsection* {The Change keywords activity diagram.}
 		   \includegraphics[width=10cm,height=6cm,keepaspectratio]{ChangeKeywords.jpg}
