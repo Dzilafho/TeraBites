@@ -60,24 +60,25 @@
 	
 	\section{Introduction}
 		 The project is called \textit{Arcane Arcade}, which references the esoteric language users will have to use, as well as the gamification approach to try and make it as fun as possible.
-		 
-		 Arcane Arcade is a revolutionary system to be used by employers to determine the level of skills and classification if potential employees through the use of an esotoric language in a game-like environment. The company responsible for the idea behind the system is BBD and the team responsible for implementing it is team TeraBites. 
-		 
+		 \\[12pt]
+		 Arcane Arcade is a revolutionary system to be used by employers to determine the level of skills and classification if potential employees through the use of an esoteric language in a game-like environment. The company responsible for the idea behind the system is BBD and the team responsible for implementing it is team TeraBites. 
+		 \\[12pt]
 		 This document presents the Arcane Arcade system, it's uses and how it is to be put to use.
 
 	\section{Project Background}
 	This section outlines the background behind the project Arcane Arcade.
 		\subsection{Problems Experienced}
-		The software engineering industry have tried various models over the years to ascertain whether a prospective employee has the required skills or aptitude to be a valuable software developer. These range from automated online screening assessments that pushes the boundaries of the person’s intellectual capability, to manually executed proprietary company tests using specific programming languages to test development competencies. Online assessments are popular and easy to execute, but lacks the insight provided by manual and proprietary testing of how the candidate reasons, where manual and proprietary testing is time-consuming and expensive to execute. In addition, company proprietary tests become stale and are leaked into the industry reducing the value tests may have.
-		
+		The software engineering industry have tried various models over the years to ascertain whether a prospective employee has the required skills or aptitude to be a valuable software developer. These range from automated online screening assessments that pushes the boundaries of the person's intellectual capability, to manually executed proprietary company tests using specific programming languages to test development competencies. Online assessments are popular and easy to execute, but lacks the insight provided by manual and proprietary testing of how the candidate reasons, where manual and proprietary testing is time-consuming and expensive to execute. In addition, company proprietary tests become stale and are leaked into the industry reducing the value tests may have.
+		\\[12pt]
 		BBD have used both approaches over the years and has found that online assessments are adequate when the prospective employee has little to no professional development experience. This is however not enough to demonstrate software development capability for existing professional developers and the company was forced to create a programming test for this group of people. These days, it is becoming difficult to maintain a landscape for an array of different programming languages used by BBD, while ensuring that the quality is maintained.
 
+		\newpage
 		\subsection{Arcane Arcade as the Solution}
-		The candidate is presented with a problem and must use an unfamiliar and custom esoteric programing languages (esolang) to solve the problem. The test must make use of gamification principles such as making new keywords available that can be used in following challenges when a specific challenge is completed. 
-		
-		Each challenge is harder than the previous and all incorporate some programming principle such as general arithmetic, condition checking, iteration, recursion, functions and embedded functions. The platform must have the ability to interpret or compile the esolang and to allow the candidate to “run” the program. The platform must be available online or on a tablet device and be secure enough to disallow unauthorized use. The candidate will be emailed a link and a username to access the platform. 
-		
-		All the challenges are be timed and all results and times must be persisted. Once the candidate completes the whole challenge or decides to stop before the last challenge, a final score is shown. The candidate cannot access the challenge again once it reaches this state. In addition to the challenge/game, an administrator must be able to manage users, questions, esolang keywords (dependent on time) and result online.
+		The candidate is presented with a problem and must use an unfamiliar and custom esoteric programming languages (esolang) to solve the problem. The test must make use of gamification principles such as making new keywords available that can be used in following challenges when a specific challenge is completed. 
+		\\[12pt]
+		Each challenge is harder than the previous and all incorporate some programming principle such as general arithmetic, condition checking, iteration, recursion, functions and embedded functions. The platform must have the ability to interpret or compile the esolang and to allow the candidate to “run” the program. The platform must be available on-line or on a tablet device and be secure enough to disallow unauthorized use. The candidate will be emailed a link and a user-name to access the platform. 
+		\\[12pt]
+		All the challenges are be timed and all results and times must be persisted. Once the candidate completes the whole challenge or decides to stop before the last challenge, a final score is shown. The candidate cannot access the challenge again once it reaches this state. In addition to the challenge/game, an administrator must be able to manage users, questions, esolang keywords (dependent on time) and result on-line.
 		
 		
 	\section{System Overview}
@@ -86,59 +87,77 @@
 	\section{System Configuration}
 	The system requires a Windows/Unix based host to run the server. This
 host must have the associated technologies installed (the installation of these
-technologies will be discussed below). The host must be connected to the
+technologies will be discussed). The host must be connected to the
 internet in order to allow any required dependencies to be installed and set
 up for the operating system environment. The configuration of the server
-requires an active email account to facilitate communication between the
+requires an active internet connection to facilitate communication between the
 system and end users.
-	
-	End users will only require a PC equipped with a web browser such as Mozilla,
-Chrome or Internet Explorer, as well as an active internet connection. The
-types of data that will communicated and stored will be in a PostgresSQL database. The challenges that are to be passed to the candidate's system reside in the database, there will have to be retrieved from there to be communicated/displayed on the menu page. The levels and questions that the
-challenges entail will be stored too. The challanges that the system houses can be added to
-the home page by the administrator in
-order to populate the navigation bar, the actual dynamic pages and various
-other places in which these are displayed. The administrators are the only
-user who are able to retrieve the menu and challenge data, in order to edit
-or delete it. The candidate users will just be able to view thechallenges on the
-menu page. The user's sign up informtation will also be stored and will be
-communicated on the profle page of the user. Each user will only have access
-to their own information. The superuser, however, will be able to search for
-users and update their IDs or delete them from the system. s. The superuser is the
-only user who be able to edit and add this information. Other settings that
-the superuser can configure, such as the system limit and the roles of the
-users will be stored and used for determining the privileges associated with
-the various roles and the checks done on the users' personal spending limits.
-The administrators will have access to the challenge history of each user in
-order to view their attempts and performance.
+	\\[12pt]
+ The types of data that will communicated and stored will be in a PostgresSQL database. The challenges that are to be passed to the candidate's system reside in the database, there will have to be retrieved for display in the pages. The levels and questions that the challenges entail will be stored too. The challenges that the system houses can be added to
+the home page by the administrator in order to populate the navigation bar and pages. The administrators are the only users who are able to  edit any data in the database.
+\newpage
+ The candidate users will just be able to view the challenges on the page. The user's sign up information will also be stored and will be used on the user's profile page. Each user will only have access to their own information. The administrators, however, will be able to search for users and update their IDs or delete them from the system. The administrators will have access to the challenge history of each user in order to view their attempts and performance.
 
 	
 	
 	\section{System Usage}
-	Arcane Arcade is primarily accessed through any web browser. The system has different pages that outline the functionalities that the different types of users can access. The users can be either administrators or candidates. 
-		
-	Administrators have global access to the whole system which also grants them management capabilities. The can modify the structure of the challenges and how the candidates interact with the system by disabling and enabling access, adding and removing challenges amongst others.
-		
-	Candidates only have access to the challenges page and all-sub pages that can be found/clicked in that particular page.
+	Arcane Arcade is primarily accessed through a web browser. The system has different pages that outline the functionalities that the different types of users can access. The users can be either administrators or candidates. 
+		\\[12pt]
+	Administrators have global access to the whole system which also grants them management capabilities. The administrators can modify the structure of the challenges and how the candidates interact with the system controlling access, modifying questions, adding challenges, and others.
+		\\[12pt]
+	Candidates only have access to the challenges page and all-sub pages that can be found/clicked from that particular page.
 	
 		\subsection{Administrative Use}
+		Arcane Arcade initially starts with a couple of administrator user accounts. These accounts have access to the management web page which can be used to cater for the following.
 			\subsubsection{User Management}
 				\includegraphics[width=\linewidth]{UserManagement.jpg}
+				The very first section in the administration page is user management. This is used to manage the user accounts related to the system.
+				\\[12pt]
+				To add a new user into the system, the user's information is registered into a database. The user is registered by completely filling in the form under the Add User heading with the new user's details. 
+				\\[12pt]
+				Once the form is completely and correctly filled in and the type of user has been selected clicking on the Add User button creates the user account and the system will display an appropriate response.
+				\\[12pt]	
+				To remove an existing user, the administrator simply enters the person's special unique user-name in the field under a Remove User heading.If the specified user-name is associated with an account then the account is removed from the system and access is revoked.
+					\\[12pt]
+				To view a table of all the accounts which have access to the system, one has to click on the View Users button which is under the View all Users heading.	
+				
 			\subsubsection{Challenge Management}
 				\includegraphics[width=\linewidth]{challengeManagement.jpg}
+				Challenges are the hosts of the smaller more interactive elements of the system. Challenges house the Levels which in turn house the Questions.
+				\\[12pt]
+				To add a new Challenge you simply specify the Challenge name and click on the Add Challenge button. This creates an  empty challenge into which you can add levels.
+				\\[12pt]
+				Removing a Challenge is similar to adding but removing a non-empty Challenge removes also all it's levels and those levels' questions. You enter the name of the challenge to remove and click on the remove challenge button.
+				\\[12pt]
+				To view a list of all available challenges you would click on the View Challenges button.
 			\subsubsection{Level Management}
 				\includegraphics[width=\linewidth]{levelManagement.jpg}
+				To add a new Level you fill in the form under Level Management by entering the name of the new Level and the Challenge that it falls under. Clicking the Add Level button adds the Level under the specified Challenge.
+				\\[12pt]
+				To remove a Level you simply specify the name of the level in the form then click the Remove Level button. The level will then be removed from the Challenge which it was under.
+				\\[12pt]
+				To view all the different Levels in table format you simply click the View all Levels button.
 			\subsubsection{Question Management}
 				\includegraphics[width=\linewidth]{QuestionManagement.jpg}
+				Adding a new question requires completion of the form under the Add Questions heading. The form has to be filled in completely and correctly, this is achieving by providing the Question, the Answer to the Question, the Level under which the question falls and the Challenge. Clicking on the Add Question button then puts it in the system accordingly.
+				\\[12pt]
+				To view the list of all Questions in the system you click on the View Questions button.
 			
 		\subsection{Candidate Use}
 			\subsubsection{Login}
 				\includegraphics[width=\linewidth]{Login.jpg}
+				Upon opening the address to the Arcane Arcade system the user is greeted with a login screen. The login screen asks for the user's user-name and password. 
+				\\[12pt]
+				You fill in the two fields with required registered information then click on the Login button to get access to the system.
+			
+\newpage			
 			\subsubsection{Answer Question}
 				\includegraphics[width=\linewidth]{question.jpg}
+				When the user successfully logs in they are directed to a menu which presents them with a question. The user has to then answer that question as it is used by typing in a series of character that is recognized as the Arcane Arcade esoteric language.
 			\subsubsection{View Code Output}
 				\includegraphics[width=\linewidth]{outResults.jpg}
-	
+				After inserting the question string it gets interpreted and executed. The result page then shows what the esoteric language question means in regular or well known syntax. The user has click on the send button in the middle of the screen.
+		
 	\section{Troubleshooting}
 		\subsection{Administrative Problems}
 		\subsection{Candidate Problems}

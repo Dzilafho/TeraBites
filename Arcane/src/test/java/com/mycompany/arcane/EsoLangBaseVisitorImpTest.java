@@ -1,15 +1,21 @@
+package com.mycompany.arcane;
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.arcane;
 
-import org.junit.After;
-import org.junit.AfterClass;
+import com.mycompany.arcane.EsoLangBaseVisitorImp;
+import com.mycompany.arcane.language.EsoLangLexer;
+import com.mycompany.arcane.language.EsoLangParser;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
@@ -18,54 +24,67 @@ import static org.junit.Assert.*;
  */
 public class EsoLangBaseVisitorImpTest {
     
+    static String expression;
+    static EsoLangLexer lexer;
+    static EsoLangParser parser;
+    static ParseTree tree;
+    static EsoLangBaseVisitorImp  visitor;
+    
     public EsoLangBaseVisitorImpTest() {
+        
     }
     
+    //Generate the parse tree
     @BeforeClass
     public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
+        
+        expression = "[$ ... ! { ... : ... > ... . : . > .... } & . \\:: .. | . : 1 .. : 5 ... : 1 .... : 1]";
+        lexer = new EsoLangLexer(new ANTLRInputStream(expression));
+        parser = new EsoLangParser(new CommonTokenStream(lexer));
+        tree = parser.body().declarations();
+        
+        visitor = new EsoLangBaseVisitorImp();
     }
     
     @Before
     public void setUp() {
+        expression = "[$ ... ! { ... : ... > ... . : . > .... } & . \\:: .. | . : 1 .. : 5 ... : 1 .... : 1]";
+        lexer = new EsoLangLexer(new ANTLRInputStream(expression));
+        parser = new EsoLangParser(new CommonTokenStream(lexer));
+        tree = parser.body().declarations();
+        visitor.visit(tree);
     }
+
     
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of visitCondition method, of class EsoLangBaseVisitorImp.
-     */
-    @org.junit.Test
-    public void testVisitCondition() {
-        System.out.println("visitCondition");
-        EsoLangParser.ConditionContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitCondition(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
     /**
      * Test of visitDeclarations method, of class EsoLangBaseVisitorImp.
      */
     @org.junit.Test
     public void testVisitDeclarations() {
         System.out.println("visitDeclarations");
-        EsoLangParser.DeclarationsContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitDeclarations(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+         System.out.println(visitor.getVariable("."));
+        assertEquals(visitor.getVariable("."), 1);
+        assertEquals(visitor.getVariable(".."), 5);
+        assertEquals(visitor.getVariable("..."), 1);
+        assertEquals(visitor.getVariable("...."), 1);
+        
     }
+    
+    /**
+     * Test of visitCondition method, of class EsoLangBaseVisitorImp.
+     */
+    @org.junit.Test
+    public void testVisitCondition() {
+        System.out.println("visitCondition");
+        
+        visitor.visit(tree.getParent().getChild(5));
+        
+        //If condition passes the value of dot will be changed
+        assertNotEquals(visitor.getVariable("."), 1);
+        
+        
+    }
+
 
     /**
      * Test of visitExpression method, of class EsoLangBaseVisitorImp.
@@ -73,29 +92,34 @@ public class EsoLangBaseVisitorImpTest {
     @org.junit.Test
     public void testVisitExpression() {
         System.out.println("visitExpression");
-        EsoLangParser.ExpressionContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitExpression(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+      
+        //The statement in Java code
+        int a = 1;
+        int b = 5;
+        int c = 1;
+        int d = 1;
+        
+        System.out.println("Initial value of C is: "+c);
+        
+        do
+        {
+            c = c + c;
+            a = a + d;
+        }
+        while(a >= b);
+        
+        visitor.visit(tree.getParent().getChild(5));
+        
+        System.out.println("The value of C is now: "+c);
+       
+       
+        assertNotEquals(visitor.getVariable("..."), c);
+        
     }
 
-    /**
-     * Test of visitPrevious method, of class EsoLangBaseVisitorImp.
-     */
-    @org.junit.Test
-    public void testVisitPrevious() {
-        System.out.println("visitPrevious");
-        EsoLangParser.PreviousContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitPrevious(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+  
+
 
     /**
      * Test of visitComparison method, of class EsoLangBaseVisitorImp.
@@ -103,44 +127,16 @@ public class EsoLangBaseVisitorImpTest {
     @org.junit.Test
     public void testVisitComparison() {
         System.out.println("visitComparison");
-        EsoLangParser.ComparisonContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitComparison(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        visitor.visit(tree.getParent().getChild(5));
+        
+        boolean esolangValue = visitor.getComparison(". \\:: ..");
+        boolean actualValue = 2 < 3;
+        
+        assertEquals(esolangValue, actualValue);
+        
     }
 
-    /**
-     * Test of visitLoop method, of class EsoLangBaseVisitorImp.
-     */
-    @org.junit.Test
-    public void testVisitLoop() {
-        System.out.println("visitLoop");
-        EsoLangParser.LoopContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitLoop(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of visitPrint method, of class EsoLangBaseVisitorImp.
-     */
-    @org.junit.Test
-    public void testVisitPrint() {
-        System.out.println("visitPrint");
-        EsoLangParser.PrintContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitPrint(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of visitAssignment method, of class EsoLangBaseVisitorImp.
@@ -148,88 +144,30 @@ public class EsoLangBaseVisitorImpTest {
     @org.junit.Test
     public void testVisitAssignment() {
         System.out.println("visitAssignment");
-        EsoLangParser.AssignmentContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitAssignment(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of visitProgram method, of class EsoLangBaseVisitorImp.
-     */
-    @org.junit.Test
-    public void testVisitProgram() {
-        System.out.println("visitProgram");
-        EsoLangParser.ProgramContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitProgram(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of visitBody method, of class EsoLangBaseVisitorImp.
-     */
-    @org.junit.Test
-    public void testVisitBody() {
-        System.out.println("visitBody");
-        EsoLangParser.BodyContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitBody(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of visitDeclaration method, of class EsoLangBaseVisitorImp.
-     */
-    @org.junit.Test
-    public void testVisitDeclaration() {
-        System.out.println("visitDeclaration");
-        EsoLangParser.DeclarationContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitDeclaration(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of visitOperation method, of class EsoLangBaseVisitorImp.
-     */
-    @org.junit.Test
-    public void testVisitOperation() {
-        System.out.println("visitOperation");
-        EsoLangParser.OperationContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitOperation(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of visitOperand method, of class EsoLangBaseVisitorImp.
-     */
-    @org.junit.Test
-    public void testVisitOperand() {
-        System.out.println("visitOperand");
-        EsoLangParser.OperandContext ctx = null;
-        EsoLangBaseVisitorImp instance = new EsoLangBaseVisitorImp();
-        Integer expResult = null;
-        Integer result = instance.visitOperand(ctx);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        
+        expression = "[$ . ! . : ... > .. | . : 1 .. : 5 ... : 1]";
+        lexer = new EsoLangLexer(new ANTLRInputStream(expression));
+        parser = new EsoLangParser(new CommonTokenStream(lexer));
+        tree = parser.body().declarations();
+        
+        visitor = new EsoLangBaseVisitorImp();
+        
+        visitor.visit(tree);
+        
+        visitor.visit(tree.getParent().getChild(5));
+     
+        
+        int assignedVal = visitor.getVariable(".");
+        
+        int variableVal = 1;
+        
+        int newVal = visitor.getVariable(".");
+        
+        assertEquals(newVal, 1+5);
+        assertNotEquals(assignedVal, variableVal);
+        
     
+    }
+
+
 }

@@ -79,25 +79,30 @@
 			The visitor is tested by having it run through a list of statements. The visitor is implemented in such a way that it holds a list of values that need to be printed. The test then simply looks at this list in the visitor object and compares it with a list of expected results.
 		
 	\section{Testing Strategy}
-		\subsection{System Test}
-		\subsection{Performance Test}
-		\subsection{Security Test}
-		\subsection{Automated Test}
-		\subsection{Stress and Volume Test}
+		\subsection{Base Vistor Implentation Test}
+			\includegraphics[width=\linewidth]{test1.jpg}
+			\\[12pt]
+			The two above above methods annotated with the @Before and the @BeforeClass prepare the test environment for the next test methods by executing and restoring the states prerior to running another test. 
+			\subsection{}
+			\includegraphics[width=\linewidth]{test2.jpg}
+			\\[12pt]	
+			Here we test to see if the assignments under declarations and working properly and if conditional statements are functioning as expected.
+			To test if the methods are functioning as expected, we compare values from the methods and the values that	we expect to find via the assert() method.	
+			\subsection{}			
+			\includegraphics[width=\linewidth]{test3.jpg}
+			\\[12pt]		
+			An expressions which is ran in the esolang is also ran in java code and the end results of the two same but differently executed methods are compared for equality through the assert methods. 	
+			\subsection{}
+			\includegraphics[width=\linewidth]{test4.jpg}
+			\\[12pt]
+			We test assignment and comparison by comparing expected values with the values we get from the esoteric language.	
 	
 	\section{Execution Strategy}
 		\subsection{Entry and Exit Criteria}
-		\subsection{Test Cycles}
-		\subsection{Dependencies}
-			\subsubsection{Hardware}
-			\subsubsection{Software}
-			\subsubsection{Data}
-			
-	\section{Test Management Procedures}
-		\subsection{Result Reviews}
-		\subsection{Defect Reporting}
-		\subsection{Change Reporting}
+		The body of our tests re-use the same variables which can have a negative effect on our testing as values get altered before the test so to combat this we used jUnit @BeforeClass and @After annotations to prepare the environment for accurate testing and to make sure that each executions begins with the appropriate criteria.
+		\\[4pt]
+		Exit criteria are observed and compared immediately before all test functions exit. Here the effects of the of the statements are compared and asserted as the expected values.
 		
 	\section{Test Environment}
-		
+	The tests are independent of the operating system and occur under Maven. The environment setup of the tests is the inclusion and import of the used frameworks. The tests are jUnit tests and are running under jUnit 4.12. Maven sets up the environment by providing all the needed dependencies which are included in the POM file.
 \end{document}
