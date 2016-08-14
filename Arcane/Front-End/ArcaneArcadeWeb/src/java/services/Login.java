@@ -39,23 +39,13 @@ public class Login {
      */
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @Produces("text/html")
-    public Response LoginValidation(@Context UriInfo uriInfo,@FormParam("username") String username) {
+    @Produces(MediaType.APPLICATION_JSON)
+    public String LoginValidation(@Context UriInfo uriInfo,@FormParam("username") String username,@FormParam("password") String password) {
        
+        System.out.println("Yafika hala");
         
-        //Moking database data
-        if(username.equals("Gershom"))
-        {
-            URI uri=uriInfo.getBaseUriBuilder().path("../arcane.html").build();
-            return Response.seeOther(uri).build();
-            
-        }
-        else
-        {
-            URI uri=uriInfo.getBaseUriBuilder().path("../index.html").build();
-            return Response.seeOther(uri).build();
-            
-        }
+        String success="yess";
+        return success;
 
      }
 }
