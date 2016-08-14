@@ -3,6 +3,7 @@ package domainModel;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,15 +18,16 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 
 @Entity
-@XmlRootElement
 public class Challenge implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ChallengeId;
    
-    @OneToMany( targetEntity=Level.class )
+    @OneToMany( targetEntity=Level.class, cascade = CascadeType.PERSIST)
     private List<Level> challengeLevels;
+    
+    private String challengeName;
     
     private long timeTaken;
 
@@ -36,15 +38,22 @@ public class Challenge implements Serializable {
     public Challenge()
     {
         this.challengeLevels = new ArrayList<Level>();
-        timeTaken = 0;
+        this.timeTaken = 0;
+        this.challengeName=null;
     }
-    public Challenge(int mTimeTaken,List<Level> mChallengeLevels)
+    public Challenge(String challengeName)
     {
-        this.challengeLevels = mChallengeLevels;
-        timeTaken = mTimeTaken;
+        this.challengeName=challengeName;
+       challengeLevels = new ArrayList<Level>();
     }
-    
-    
+    public Challenge(int mTimeTaken,Level level,String challName)
+    {
+        this.challengeLevels.add (level);
+        this.timeTaken = mTimeTaken;
+        this.challengeName=challName;
+        
+    }
+   
     @XmlTransient
     public List<Level> getChallengeLevels() {
         return challengeLevels;
@@ -84,6 +93,34 @@ public class Challenge implements Serializable {
      */
     public void setTimeTaken(long timeTaken) {
         this.timeTaken = timeTaken;
+    }
+
+    /**
+     * @return the challengeName
+     */
+    public String getChallengeName() {
+        return challengeName;
+    }
+
+    /**
+     * @param challengeName the challengeName to set
+     */
+    public void setChallengeName(String challengeName) {
+        this.challengeName = challengeName;
+    }
+
+    /**
+     * @return the ChallengeId
+     */
+    public int getChallengeId() {
+        return ChallengeId;
+    }
+
+    /**
+     * @param ChallengeId the ChallengeId to set
+     */
+    public void setChallengeId(int ChallengeId) {
+        this.ChallengeId = ChallengeId;
     }
     
 }

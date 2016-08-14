@@ -1,20 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myapp">
 <head>
 	<title>Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="./bootstrap-3.3.4-dist/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="./bootstrap-3.3.4-dist/css/bootstrap.min.css">
 	<script src="./js/jquery-2.1.3.min.js"></script>
 	<script src="./bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/login_style.css">
-	<script src="js/validateLogin.js"></script>
+	<script src="js/validateLogin.js"></script>-->
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        
 </head>
 
-<body>
-<div id="moveDown">
+<body ng-controller="productController">
+    
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>email</th>
+            <th>name</th> 
+        </tr>
+        <tr ng-repeat="users in result">
+            <td>{{users.emailAddress}}</td>
+            <td>{{users.name}}</td> 
+        </tr>
+    </table>
+    <script type="text/javascript">
+        var myapp = angular.module('myapp', []);
+        myapp.controller('productController', function($scope, $http){
+            $http.get('http://localhost:41114/ArcaneArcadeWeb/webresources/getUsers')
+                    .success(function(response)
+                    {
+                        $scope.result = response;
+                    });
+            });
+    </script>
+
+<!--<div id="moveDown">
 	<div class="container">
-		<a href="index.html"><img src="images/logo.png" width="320px"  class="img-rounded img-responsive center-block" alt="logo" ></a>
+		<a href="index.html"><img src="images/logo.png" width="320"  class="img-rounded img-responsive center-block" alt="logo" ></a>
 	</div>
 </div>
 
@@ -23,8 +47,8 @@
 		<div class="Absolute-Center is-Responsive">
 			
 			<div class="col-sm-12 col-md-4 col-md-offset-4">
-				<h1 id="loginText"><center>Login</center></h1>
-				<form id="loginForm" method="post" action="http://localhost:8080/ArcaneArcadeWeb/webresources/login" >
+				<center><h1 id="loginText">Login</h1></center>
+				<form id="loginForm" method="post" action="http://localhost:8080/ArcaneArcadeWeb/webresources/getAll" >
 					<div class="form-group input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 						<input class="form-control" type="text" id="username" name="username" placeholder="Username" autofocus />          
@@ -35,8 +59,8 @@
 						<input class="form-control" type="password" id="password" name='password' placeholder="Password"/>     
 					</div>
 					
-					<div class="form-group">
-						<a href="arcane.html"><button type="button" class="btn btn-def btn-block">Login</button></a>
+					<div class="container">
+                                                                                        <input type="submit" class="btn btn-info"  value="Login" >
 					</div>
 					
 					<div class="form-group text-center">
@@ -49,7 +73,7 @@
  
 		</div>    
 	</div>
-</div>
+</div>-->
 
 </body>
 </html>

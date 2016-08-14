@@ -12,14 +12,14 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author teraBites
  */
 @Entity
-@XmlRootElement
 public class Hint implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int HintId;
     
     private String questionHint;
+    
     private int hintCost;
 
     public Hint()

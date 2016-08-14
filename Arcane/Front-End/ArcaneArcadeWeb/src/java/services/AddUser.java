@@ -1,7 +1,6 @@
  package services;
-import backend.EsoLangBaseVisitorImp;
-import backend.EsoLangLexer;
-import backend.EsoLangParser;
+import EntityManagers.ConcreteDAO;
+import domainModel.Users;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.PathParam;
@@ -13,20 +12,28 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.tree.ParseTree;
+import javax.ws.rs.core.Response;
+
  
  
 @Path("addUser")
 public class AddUser {
-
-    
-     @POST
-     @Produces("text/html")
-     public void retrieveQuestion()
-     {
-         
+   
+    @POST
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    public void addUser(@Context @FormParam("name") String name,
+                                 @FormParam("surname") String surname,
+                                 @FormParam("username") String username,
+                                 @FormParam("password") String password,
+                                 @FormParam("email") String email,
+                                 @FormParam("userType") String userType)
+            
+    {
+         Users user=new Users(name,surname,username,password,userType,email);
+         ConcreteDAO dao=new ConcreteDAO<>();
+         dao.add(user);
+       //return user;
         
     }
     

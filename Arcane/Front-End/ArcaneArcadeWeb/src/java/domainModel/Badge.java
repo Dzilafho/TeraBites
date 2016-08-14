@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Badge implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int BadgeId;
     
     private String badgeName;

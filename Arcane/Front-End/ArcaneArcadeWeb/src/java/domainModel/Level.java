@@ -1,7 +1,9 @@
 package domainModel;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,38 +24,55 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Level implements Serializable {
     
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
    private int levelID;
+  
+    String levelName;
    
-   @OneToMany( targetEntity=Question.class )
-   private List<Question> levels; 
-   @OneToOne( targetEntity=Badge.class )
+   @OneToMany( targetEntity=Question.class,cascade = CascadeType.PERSIST )
+   private List<Question> levelQuestions=new ArrayList<Question>(); 
+   
+   @OneToOne( targetEntity=Badge.class, cascade = CascadeType.PERSIST)
    private Badge badge;
    
    public Level(){
        
-     levels = null;
+     levelQuestions = null;
      badge = null;
+     levelName=null;
    }
-   public Level(List<Question> list, Badge mBadge)
+   
+   public Level(String name){
+       
+     levelName = name;
+     levelQuestions= null;
+     badge=null;
+   }
+   
+   public Level(Question question, Badge mBadge,String name)
    {
-       this.levels = list;
+       this.levelQuestions.add(question);
        this.badge = mBadge;
+       this.levelName=name;
+   }
+   public void addQuestion(Question question)
+   {
+       this.levelQuestions.add(question);
    }
    
      /**
-     * @return the levels
+     * @return the levelQuestions
      */
     @XmlTransient
     public List<Question> getLevels() {
-        return levels;
+        return levelQuestions;
     }
 
     /**
-     * @param levels the levels to set
+     * @param levels the levelQuestions to set
      */
     public void setLevels(List<Question> levels) {
-        this.levels = levels;
+        this.levelQuestions = levels;
     }
 
     /**
@@ -64,9 +83,11 @@ public class Level implements Serializable {
     }
 
     /**
-     * @param bedge the badge to set
+     * @param badge the badge to set
      */
-    public void setBedge(Badge badge) {
+    public void setBadge(Badge badge) {
         this.badge = badge;
     }
+
+    
 }

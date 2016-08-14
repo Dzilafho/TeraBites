@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class UsedHints implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int UsedHintsId;
     
     private String hint;

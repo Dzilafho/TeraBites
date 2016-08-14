@@ -1,32 +1,131 @@
 <!doctype html>
-<html>
+<html ng-app="myapp">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
 	<title>DB Management</title>
+        
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+        
 	<script src="js/mobile.js" type="text/javascript"></script>
+	<script type="text/javascript"  src="js/jquery-3.1.0.min.js"></script>
+                <script type="text/javascript" src="js/angular.min.js"></script>
+        
+                <style>
+                    .container25 
+                    {
+                            display: none;
+                    }
+                </style>
+      
+
+
 </head>
-<body>
+<body ng-controller="productController">
+    
+
+    
+<div class="container25">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+    
  <div class="container">
 <div class="row">
 <div class="Absolute-Center is-Responsive">
 	<div id="page">
 		<div id="header">
 			<div>
-				<center><a id="image"href="index.html"><img src="images/logo.png" width="320" class="img-rounded img-responsive center-block" alt="logo"></a></center>
+				<center><a id="image" href="index.html"><img src="images/logo.png" width="320" class="img-rounded img-responsive center-block" alt="logo"></a></center>
 			</div>
 		</div>
 		
+		<div id="Questions">
+		
 		<div class="form">
-			<h1><center>Question Management</center></h1>
-			<form method="post" action="http://localhost:41114/ArcaneArcadeWeb/webresources/addQuestion">
+			<center><h1>Challenge Management</h1></center>
+			<form  method="post" action="http://localhost:41114/ArcaneArcadeWeb/webresources/addChallenge">
+				<h2>Add challenge:</h2>
+				<label>Challenge name:</label><input type="text" name="challenge" id="challenge"><br>
+				<input class="button" type="submit" value="Add Challenge" > 
+			</form>
+			<br>
+			
+			<form action="">
+				<h2>Remove challenge:</h2>
+				<label>Challenge name:</label><input type="text" name="question"><br>
+				<input class="button" type="submit" value="Remove Challenge" > 
+			</form>
+			<br>
+			
+			<form action="http://localhost:41114/ArcaneArcadeWeb/webresources/getChallenges">
+				<h2>View challenges:</h2>
+				<input class="button" type="submit" value="View Challenges" > 
+			</form>
+			<br>
+			
+		</div>
+		
+		<div class="form">
+
+			<center><h1>Level Management</h1></center>
+                                                 <form action="http://localhost:41114/ArcaneArcadeWeb/webresources/addLevel" method="POST">
+				<h2>Add level:</h2>
+				<label>Level name:</label><input type="text" name="level"><br>
+				<label>Challenge under:</label> <input type="text" name="challenge"><br>
+				<input class="button" type="submit" value="Add Level" > 
+			</form>
+			<br>
+
+			<form action="">
+				<h2>Remove level:</h2>
+				<label>Level name:</label><input type="text" name="question"><br>
+				<input class="button" type="submit" value="Remove Level" > 
+			</form>
+			<br>
+			
+			<form action="">
+				<h2>View Levels:</h2>
+				<input class="button" type="submit" value="View Levels" > 
+			</form>
+			<br>
+			
+		</div>
+		
+		<div class="form">
+			
+			<center><h1>Question Management</h1></center>
+			<form  method="post" action="http://localhost:41114/ArcaneArcadeWeb/webresources/addQuestion">
 				<h2>Add questions:</h2>
-				<label>Question:</label><input type="text" name="question"><br>
-				<label>Correct Answer:</label> <input type="text" name="answer"><br>
-				<label>Level:</label> <input type="text" name="level"><br>
-				<label>Challenge</label> <input type="text" name="challenge"><br>
+				<label>Question:</label><input type="text" name="question" id="question"><br>
+				<label>Correct Answer:</label> <input type="text" name="answer" id ="answer"><br>
+				<label>Level:</label> <input type="text" name="level" id ="level"><br>
+				<label>Challenge</label> <input type="text" name="challenge" id="challenge"><br>
 				<input class="button" type="submit" value="Add Question" > 
 			</form>
 			<br>
@@ -37,19 +136,25 @@
 			</form>
 			<br><br>
 		</div>
+		<div>
+		
+		<div id="Users">
 		
 		<div class="form">
-			<h1><center>User Management</center></h1>
-			<form action="">
+			<center><h1>User Management</h1></center>
+			<form id="addU"  method="post" action="http://localhost:41114/ArcaneArcadeWeb/webresources/addUser">
+                                                                    
 				<h2>Add user:</h2>
 				<label>Name:</label> <input type="text" id="name" name="name"><br>
-				<label>Surname:</label> <input type="text"  id="surname"name="surname"><br>
+				<label>Surname:</label> <input type="text"  id="surname" name="surname"><br>
 				<label>Username:</label> <input type="text" id="username" name="username"><br>
 				<label>Password:</label> <input type="text" id="password" name="password"><br>
+                                                                <label>Email Address</label> <input type="text" id="email" name="email"><br>
 				<label>Type:</label> <input type="radio" class="radio" id="userType" name="userType" value="player">Player <input type="radio" class="radio" name="userType" value="admin">Admin<br>
-				<input class="button" type="submit" value="Add User" > 
+				<input class="button" type="submit" value="Add User" id="addUser"> 
 			</form>
 			<br>
+
 			
 			<form action="">
 				<h2>Remove user:</h2>
@@ -58,13 +163,53 @@
 			</form>
 			<br>
 			
-			<form action="">
+                                                <!--<form id="getUsers" action="http://localhost:41114/ArcaneArcadeWeb/webresources/getUsers" method="GET">
 				<h2>View all users:</h2>
-				<input class="button" type="submit" value="View Players" > 
-			</form>
-			
+				<input class="button" type="submit" value="View Users" > 
+                                
+			</form>-->
+                                                <input class="button" type="submit" value="View Users" id="getUsers" > 
 			<br>
 			<br>
+                        
+                        <table cellpadding="2" cellspacing="2" border="1" id="users">
+                                                <tr>
+                                                    <th>email</th>
+                                                    <th>name</th> 
+                                                </tr>
+                                                <tr ng-repeat="users in result">
+                                                    <td>{{users.emailAddress}}</td>
+                                                    <td>{{users.name}}</td> 
+                                                </tr>
+                                                </table>
+                                                <script type="text/javascript">
+                                                    var myapp = angular.module('myapp', []);
+                                                    myapp.controller('productController', function($scope, $http){
+                                                        $http.get('http://localhost:41114/ArcaneArcadeWeb/webresources/getUsers')
+                                                                .success(function(response)
+                                                                {
+                                                                    $scope.result = response;
+                                                                    
+                                                                });
+                                                        });
+                                                        
+                                                        
+                                                                
+                                                                $("#addUser").click(function(){
+                                                                    
+                                                                   // window.open('results.html','_blank');
+                                                                    window.open('admin.html','_self');
+                                                                });
+                                                                
+                                                       
+                                                        
+                                                        
+                                                    
+                                                   
+                                                    
+                                                </script>
+		</div>
+		
 		</div>
 		
 		<div id="footer">
@@ -73,6 +218,8 @@
 			</div>
 		</div>
 	</div>
+</div>
+</div>
 </div>
 </div>
 </div>

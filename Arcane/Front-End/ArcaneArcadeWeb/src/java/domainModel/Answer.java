@@ -13,20 +13,19 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 
 @Entity
-@XmlRootElement
 public class Answer implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int answerID;
+    
     private String answer;
     
-    public Answer()
-    {
+    public Answer() {
         this.answer = null;
     }
-    public Answer(String mAnswer)
-    {
+    
+    public Answer(String mAnswer) {
         this.answer = mAnswer;
     }
 

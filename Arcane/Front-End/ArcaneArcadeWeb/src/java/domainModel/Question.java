@@ -17,14 +17,15 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author teraBites
  */
 @Entity
-@XmlRootElement
 public class Question implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int questionID;
+    
     @OneToOne ( targetEntity=Answer.class, cascade = CascadeType.PERSIST)
     private Answer answer;
+    
     @OneToMany( targetEntity=Hint.class, cascade = CascadeType.PERSIST)
     private List<Hint> questionHints = new ArrayList<Hint>();
     

@@ -6,6 +6,7 @@ package main;
  */
 //import static org.junit.Assert.assertTrue;
 
+import EntityManagers.ConcreteDAO;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -25,14 +26,30 @@ import java.util.Map;
 //import static org.junit.Assert.assertTrue;
 
 public class MainClass {
-  private static final String PERSISTENCE_UNIT_NAME = "Mains";
-  private static EntityManagerFactory factory;
+ // private static final String PERSISTENCE_UNIT_NAME = "Mains";
+  //private static EntityManagerFactory factory;
 
   public static void main(String[] args) {
+    //Answer ansObj = new Answer("This is the answer12");
+    //Hint hintObj = new Hint("Come on its easy112", 2);
+    //Question qObj = new Question("What is the answer 2", ansObj, hintObj);
     
+    //Users theUser = new Users("Gershom", "Maluleke@venda.com");
+    ConcreteDAO manager = new ConcreteDAO();
+                
+                Challenge thatChallenge =  manager.getChallenge("Third");
+                 
+                System.out.println("Got the challenge "+thatChallenge.getChallengeName());
+                
+                thatChallenge.addChallengeLevel(new Level("Top Level"));
+                manager.add(thatChallenge);
+  // ConcreteDAO dao=new ConcreteDAO();
+   //System.out.println("Chall :"+dao.getChallenge("First Challenge").getChallengeName());
+   //System.out.println(dao.getAllUsers().get(0).toString());
+   // System.out.println("The challenge name is "+challObj.getChallengeName());
      
-     factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-    EntityManager em = factory.createEntityManager();
+    // factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+    //EntityManager em = factory.createEntityManager();
     
     
     /*DBI dbi = new DBI("jdbc:postgresql://localhost:5432/postgres", "postgres", "DzilMul6264");
@@ -59,14 +76,14 @@ public class MainClass {
     }
             
             */
-    
+    /*
 
     // create new todo
     em.getTransaction().begin();
     
-    Answer ansObj = new Answer("This is the answer");
-    Hint hintObj = new Hint("Come on its easy", 2);
-    Question qObj = new Question("What is the answer", ansObj, hintObj);
+    Answer ansObj = new Answer("This is the second answer");
+    Hint hintObj = new Hint("You stupid", 2);
+    Question qObj = new Question("Quesss the answer", ansObj, hintObj);
     
     //Users theUser = new Users("Gershom", "Maluleke@venda.com");
     
@@ -83,7 +100,7 @@ public class MainClass {
       
     //DBI dbi = new DBI("jdbc:postgresql://localhost:5432/postgres", "postgres", "DzilMul6264");
     
-   
+   */
 
 //EntitiesDOA dao = dbi.open(EntitiesDOA.class);
 //dao.createSomethingTable();
