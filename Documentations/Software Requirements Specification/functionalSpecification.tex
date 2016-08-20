@@ -83,14 +83,26 @@
 	   \end{itemize} 
 			
 		\subsection{System Modules}
+		The system will be built as a series of separate modules. This approach makes it possible to add more modules at a later stage and to modify one module without interfering with the others. It then allows system to be pluggable and integrable.
 		\subsubsection{Arcane Arcade High Level Diagram}
 		\textbf{Insert the Arcane Arcade System use case diagram here.} \newline
 		The core of the Arcane Arcade system. It provides various functionalities to different types of users but the sub-systems offer high level use cases are shown in the diagram.
 		\subsubsection{Authentication Module}
+		This module provides the functionality which validate the user credential to check if they match up with the access that they request. The most crucial part and main focus of the authentication module is to verify if a user has access to certain pages given the type of user they are. This then improves the system's security and keeps the data confidential as it controls who has access to which functionality.
+		
+\textbf{Insert the authenticate module use case diagram here.} \newline
+
 		\subsubsection{User Management Module}
+		This module focuses on the ability to grant and revoke user access to the system. Only the super user has access to the module and it can be used to add, remove and update user accounts.
+\textbf{Insert the Challenge Management module use case diagram here.} \newline
+
 		\subsubsection{Challenge Management Module}
+		Only super users(management accounts) have access to this module.It provides the ability to add, remove and modify the structure of challenges. It allows the manager to modify the challenge at any of its three levels which are challenge, level and question. The modifications that the manager can do are add, remove and update any of the three levels of a challenge.
+		
+\textbf{Insert the Challenge Management module use case diagram here.} \newline
 		\subsubsection{Compiler Module}
 		\subsubsection{Player Interaction Module}
+		This module houses the system's main functionality. The main reason of having the system is to allow the users to interact with the system and complete the offered challenges. This use case diagram indicates the functionality around interacting with the system as a player.
 		
 	\iffalse	
 		\subsubsection{User interaction}
