@@ -59,50 +59,40 @@
 	\newpage
 	
 	\section{Introduction}
-		 The project is called \textit{Arcane Arcade}, which references the esoteric language users will have to use, as well as the gamification approach to try and make it as fun as possible.
-
-	\section{Vision}
-		The vision is to provide a fun and easily accessible platform that can be used to gauge the programming aptitude and capabilities of existing or future software developers using a custom esoteric programming language.
-
-	\section{Background}
-		There are many models in which to ascertain whether a prospective employee has the required skills or aptitude to be a valuable software developer. Online assessments are easy to execute, but lack the insight provided by manual and proprietary testing of how the candidate reasons. Manual and proprietary testing on the other hand is time-consuming and expensive to execute. In addition, company proprietary tests become stale and are leakined into the industry reducing the value tests may have.
-		
-		BBD has thus opted to use an esoteric programming language in order to test the skills and aptitude of prospective employees, regardless of their programming experience or preferred programming language. A mobile and online platform is thus required to test prospective employees while keeping the tests fun by using gamification principles. The tests should also indicate in which area the user is likely to be better suited, by looking at how the user completed the challenges, such as whether the user used any hints.
+		 The project is called \textit{Arcane Arcade}, which references the esoteric language users will have to use, as well as the gamification approach to try and make it as fun as possible. It revolves around building a platform that can be used to gauge the programming aptitude and capabilities of existing or future software developers using a custom esoteric programming language. The platform which is to be available on both mobile and online is thus required to test prospective employees while keeping the tests fun by using gamification principles. The tests should also indicate in which area the user is likely to be better suited, by looking at how the user completed the challenges, such as whether the user used any hints and the badges that the user earned.
 
 	\newpage
-	\section{Functional requirements and application design}
-		\subsection{Use case prioritization}
-		
+	\section{Functional Requirements and Application Design}
+	This section outlines the required functionalities from the system.
+		\subsection{Use Case Prioritization}
+		Priorities of the system's use cases.
 		\subsubsection{Critical}
 		\begin{itemize}
-		
-	  	\item Add user
-		\item Remove user
-		\item User Authentication[Login/Logout]
-		\item Change keywords usecases
-		\item Manage challenges(Add/Remove/Change Challenge)
-		\item View challenges
-		\item Quit challenge
-		\item Start challenge
-		\item Web interface for both maintenance and game 
+	  		\item \textbf{User Authentication} - This is critical as it limits the system's access only to people who have been authorized. Only registered users are then able to 		complete the challenges and/or modify the challenges together with authorizing more users. No one can then access any part of the system unless they have been registered and authorized to request such services.
+	  		
+			\item \textbf{Player Interaction} -  Interaction is critical as the whole system's core functionality revolves around it. The players have to be able to view and take challenges that are open to them at that time.
+			
+			\item \textbf{Code Compilation} - Code compilation is a critical use case as other instances of Player Interaction revolve around it. Where a Player interacts by typing code the system needs to be able to compile that code.
 	   \end{itemize} 
 		
 		\subsubsection{Important}
 		\begin{itemize}
-		
-	  	\item View score
-	  	\item Tablet Interface 
-		
-	   \end{itemize} 
-	   
-	   \subsubsection{Nice to have}
-		\begin{itemize}
-		
-	  	\item Buy hints
-		\item Email score
+	  		\item \textbf{Challenge Management} - This is considered important because this is where users who have management privileges will configure the structure of the challenges such as the number of levels and questions. The managers will also be able to set hints and other items related to the challenges.
+	  		
+	  		\item \textbf{User Management} - This use case is important as it deals with adding and removing users to the system. 
 	   \end{itemize} 
 			
-		\subsection{Required functionality}
+		\subsection{System Modules}
+		\subsubsection{Arcane Arcade High Level Diagram}
+		\textbf{Insert the Arcane Arcade System use case diagram here.} \newline
+		The core of the Arcane Arcade system. It provides various functionalities to different types of users but the sub-systems offer high level use cases are shown in the diagram.
+		\subsubsection{Authentication Module}
+		\subsubsection{User Management Module}
+		\subsubsection{Challenge Management Module}
+		\subsubsection{Compiler Module}
+		\subsubsection{Player Interaction Module}
+		
+	\iffalse	
 		\subsubsection{User interaction}
 		\begin{description}
 			\item[$\bullet$] The user may log in to the system if registered.
@@ -449,7 +439,7 @@
 		 \subsection{Domain Model}
 		 \includegraphics[width=15cm,height=15cm,keepaspectratio]{domainModel.png}
 			
-	
+	\fi
 		
 
 	\newpage
