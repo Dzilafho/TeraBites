@@ -81,7 +81,7 @@
 			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
 				\item \textbf{Perfomance:} Performance is the most important quality requirement for this application. This requirement pertains to how fast the application responds to certain actions within a set time interval. The application will use a compiler instead of an interpreter which will translate the esoteric language into object code, which performs better than an interpreter.
 				
-				\item \textbf{Reliability:} Reliability is the second most important quality requirement. Care should be given to make the application as reliable as possible without sacrificing performance. The application should have maximum uptime and proper fault tolerance. The application should help the user in avoiding errors, such as submitting incompatible values.
+				\item \textbf{Reliability:} Reliability is the second most important requirement and will be achieved by implementing user validation on inputs so that they can't submit unexpected values. Fault tolerance is also needed, such as rolling back changes when errors occur.
 				
 				\item \textbf{Maintainability:} Maintainability can be achieved by properly documenting the source code. Loose coupling will make it easy to completely change the esoteric language (by simply changing the ANTLR grammar file and the parser) and the front end of the program as long as it conforms to the specified API calls.
 				
