@@ -5,6 +5,8 @@
 \usepackage{grffile}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
+\usepackage{float}
+\usepackage{ragged2e}
 
 
 
@@ -78,7 +80,8 @@
 		\subsubsection{Important}
 		\begin{itemize}
 	  		\item \textbf{Challenge Management} - This is considered important because this is where users who have management privileges will configure the structure of the challenges such as the number of levels and questions. The managers will also be able to set hints and other items related to the challenges.
-	  		
+	  		\item \textbf{Level Management} - This use case is important and it consists of the functionality of adding and removing 
+	  		levels on challenges and this can only be done by the administrator. 
 	  		\item \textbf{User Management} - This use case is important as it deals with adding and removing users to the system. 
 	   \end{itemize} 
 			
@@ -90,23 +93,201 @@
 		\subsubsection{Authentication Module}
 		This module provides the functionality which validate the user credential to check if they match up with the access that they request. The most crucial part and main focus of the authentication module is to verify if a user has access to certain pages given the type of user they are. This then improves the system's security and keeps the data confidential as it controls who has access to which functionality.
 		
-\textbf{Insert the authenticate module use case diagram here.} \newline
+		\textbf{Insert the authenticate module use case diagram here.} \newline
 
 		\subsubsection{User Management Module}
 		This module focuses on the ability to grant and revoke user access to the system. Only the super user has access to the module and it can be used to add, remove and update user accounts.
-\textbf{Insert the Challenge Management module use case diagram here.} \newline
+		\textbf{Insert the User Management module use case diagram here.} \newline
 		\begin{itemize}
 	  		\item \textbf{addUser} -  The addUser use case falls under User as depicted in the above diagram. The manager has the ability to add more user accounts via the user management page thereby allowing them to access the system. The service contract and activity diagram for addUser are shown below.
 	  		
-			\item \textbf{updateUser} - The updateUser use case falls under User as depicted in the above diagram. The manager has the ability to modify user accounts items via the user management page. The service contract and activity diagram for updateUser are shown below.
-			
+				\begin{center}
+	  			Service Contract
+	  		    \end{center}
+	  		    
+	  			\begin{figure}[H]
+	  				\begin{center}
+	  					\includegraphics[scale=0.25]{AddUserContract.jpg}
+	  				\end{center}
+	  				\caption{Add new user to the system}
+	  				
+	  			\end{figure}
+	  		
+	  			
+	  			\begin{center}
+	  				Activity diagram
+	  			\end{center}
+	  			
+	  			\begin{figure}[H]
+	  				\begin{center}
+	  					\includegraphics[scale=0.3]{addUser1.jpg}
+	  				\end{center}
+	  				\caption{The activity diagram for addUser}
+	  				
+	  			\end{figure}
+	  
+	  		\item \textbf{updateUser} - The updateUser use case falls under User as depicted in the above diagram. The manager has the ability to modify user accounts items via the user management page. The service contract and activity diagram for updateUser are shown below.
+	  		
+	  		\newpage
+	  			\begin{center}
+	  				Service Contract
+	  			\end{center}
+	  			
+	  			\begin{figure}[H]
+	  				\begin{center}
+	  					\includegraphics[scale=0.25]{UpdateUserContract.jpg}
+	  				\end{center}
+	  				\caption{Update User on the system}
+	  				
+	  			\end{figure}
+	  		
+	  			
 			\item \textbf{removeUser} - The removeUser use case falls under User as depicted in the above diagram. The manager has the ability to remove any user account via the user management page thereby restricting them from accessing the system. The service contract and activity diagram for removeUser are shown below.
+			\newpage
+			\begin{center}
+				Service Contract
+			\end{center}
+			
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[scale=0.25]{removeUserlContract.jpg}
+				\end{center}
+				\caption{Remove user from the system}
+				
+			\end{figure}
+			
+			
+			\begin{center}
+				Activity diagram
+			\end{center}
+			
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[scale=0.3]{RemoveUser1.jpg}
+				\end{center}
+				\caption{The activity diagram for removeUser}
+				
+			\end{figure}
 		\end{itemize}		
 		
 		\subsubsection{Challenge Management Module}
 		Only super users(management accounts) have access to this module.It provides the ability to add, remove and modify the structure of challenges. It allows the manager to modify the challenge at any of its three levels which are challenge, level and question. The modifications that the manager can do are add, remove and update any of the three levels of a challenge.
 		
-\textbf{Insert the Challenge Management module use case diagram here.} \newline
+		\textbf{Insert the Challenge Management module use case diagram here.} \newline
+		
+		\begin{itemize}
+			\item \textbf{addChallenge} -  The addChallenge use case falls under Challenge Management module as depicted in the above diagram.  The addChallenge submodule allows the administrator to add challenges to the system via the Challenge Management page. The service contract and activity diagram for addChallenge are shown below.
+			\begin{center}
+				Service Contract
+			\end{center}
+			
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[scale=0.25]{AddChallengeContract.jpg}
+				\end{center}
+				\caption{Add challenge to the system}
+				
+			\end{figure}
+			
+			
+		 \item \textbf{removeChallenge} -  The removeChallenge use case falls under Challenge Management module as depicted in the above diagram.  The removeChallenge submodule allows the administrator to remove challenges from the system via the Challenge Management page. The service contract and activity diagram for removeChallenge are shown below.
+			\newpage
+		 	\begin{center}
+		 		Service Contract
+		 	\end{center}
+		 	
+		 	\begin{figure}[H]
+		 		\begin{center}
+		 			\includegraphics[scale=0.25]{removeChallengeContract.jpg}
+		 		\end{center}
+		 		\caption{Remove challenge from the system}
+		 		
+		 	\end{figure}
+		 	
+		 	
+		 	 \item \textbf{viewChallenges} -  The viewChallenges use case falls under Challenge Management module as depicted in the above diagram. The viewChallenges submodule allows the administrator to view challenges that are on the system via the Challenge Management page. The service contract and activity diagram for viewChallenges are shown below.
+		 	
+		 	 \begin{center}
+		 	 	Service Contract
+		 	 \end{center}
+		 	 
+		 	 \begin{figure}[H]
+		 	 	\begin{center}
+		 	 		\includegraphics[scale=0.2]{viewChallengesContract.jpg}
+		 	 	\end{center}
+		 	 	\caption{View all the challenges on the system}
+		 	 	
+		 	 \end{figure}
+		 	 \newpage
+		 	 	\begin{center}
+		 	 		Activity diagram
+		 	 	\end{center}
+		 	 	
+		 	 	\begin{figure}[H]
+		 	 		\begin{center}
+		 	 			\includegraphics[scale=0.2]{ViewChallenges.jpg}
+		 	 		\end{center}
+		 	 		\caption{The activity diagram for ViewChallenges}
+		 	 		
+		 	 	\end{figure}
+		 	
+			
+		
+		\end{itemize}
+		\subsubsection{Level Management Module}
+		Only super users(management accounts) have access to this module.It provides the ability to add, remove and view levels of a particular challenge.
+		
+		\textbf{Insert the Level Management module use case diagram here.} \newline
+		
+	    \begin{itemize}
+	    	
+	    \item \textbf{addLevel} -  The addLevel use case falls under Level Management module as depicted in the above diagram.  The addLevel submodule allows the administrator to add levels to challenges on the system via the level Management page. The service contract and activity diagram for addLevel are shown below.	
+
+	    \begin{center}
+	    	Service Contract
+	    \end{center}
+	    
+	    \begin{figure}[H]
+	    	\begin{center}
+	    		\includegraphics[scale=0.2]{AddLevelContract.jpg}
+	    	\end{center}
+	    	\caption{Add level to a challenge}
+	    	
+	    \end{figure}
+	    
+	    \item \textbf{removeLevel} -  The removeLevel use case falls under Level Management module as depicted in the above diagram.  The removeLevel submodule allows the administrator to remove levels from challenges on the system via the level Management page. The service contract and activity diagram for addLevel are shown below.	
+	    
+	     \begin{center}
+	     	Service Contract
+	     \end{center}
+	     
+	     \begin{figure}[H]
+	     	\begin{center}
+	     		\includegraphics[scale=0.2]{removeLevelContract.jpg}
+	     	\end{center}
+	     	\caption{Remove level from a challenge}
+	     	
+	     \end{figure}
+	    
+	
+ 
+ 	    \item \textbf{viewLevels} -  The viewLevels use case falls under Level Management module as depicted in the above diagram.  The viewLevels submodule allows the administrator to view all the levels from challenge on the system via the level Management page. The service contract and activity diagram for viewLevels are shown below.	
+ 	    
+ 	     \begin{center}
+ 	     	Service Contract
+ 	     \end{center}
+ 	     
+ 	     \begin{figure}[H]
+ 	     	\begin{center}
+ 	     		\includegraphics[scale=0.2]{ViewLevelsContract.jpg}
+ 	     	\end{center}
+ 	     	\caption{View all levels on a challenge}
+ 	     	
+ 	     \end{figure}
+ 	     
+ 	    \end{itemize}
+	
+
 		\subsubsection{Compiler Module}
 		\subsubsection{Player Interaction Module}
 		This module houses the system's main functionality. The main reason of having the system is to allow the users to interact with the system and complete the offered challenges. This use case diagram indicates the functionality around interacting with the system as a player.
