@@ -111,7 +111,12 @@
          support community.
        \end{itemize}
        
-		\subsubsection{Architectural patterns/frameworks} % level 1
+		\subsubsection{Architectural patterns} % level 1
+		\begin{itemize}
+			\item \textbf{Model-View-Controller} is the main architectural pattern used. The \textit{model} refers to the component on the server which manages the data and logic of the application, such as the web server and compiler. The \textit{view} refers to the output on the front-end of the application, ie. on the web and mobile interface. The \textit{controller} is the part which accepts the user input and changes it into the appropriate commands, or API calls between the model and the view components.
+		\end{itemize}
+		
+		\iffalse
 		\textbf{Three-tier Architecture} % level 2
 		The main reason for using three-tier architecture is to allow any of the three tiers to be upgraded or replaced independently, when changes in requirements or technology require such upgrades or replacements. Thus addressing \textbf{maintainability} of the application. By having a dedicated application-tier which can run on a capable server, \textbf{performance} is also addressed since the client side is freed from the more demanding computations such as the compilation of the user code.
 		
@@ -125,8 +130,10 @@
 			\end{itemize}	
 			
 			\vspace{0.5cm}
-    \newpage
-	\textbf{Frameworks} % level 2
+			
+		\fi
+
+	\subsubsection{Architectural Frameworks} % level 2
 
 	\begin{itemize}
 		\item \textbf{AngularJS}
