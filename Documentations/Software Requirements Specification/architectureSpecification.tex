@@ -83,13 +83,13 @@
 				
 				\item \textbf{Reliability:} Reliability is the second most important quality requirement. Care should be given to make the application as reliable as possible without sacrificing performance. The application should have maximum uptime and proper fault tolerance. The application should help the user in avoiding errors, such as submitting incompatible values.
 				
-				\item \textbf{Maintainability:} Maintainability is the third most important quality requirement for the application. Since the future of the application may require total change of the esolang, developers should be able to easily and relatively quickly change aspects of the functionality the system provides or be able to add new functionality to the system. This means that care should be given to modularity and in making the system clear to understand for future developers. Technologies to be used should also be expected to be available for long.
+				\item \textbf{Maintainability:} Maintainability can be achieved by properly documenting the source code. Loose coupling will make it easy to completely change the esoteric language (by simply changing the ANTLR grammar file and the parser) and the front end of the program as long as it conforms to the specified API calls.
 				
-				\item \textbf{Scalability:} The system should be able to service at least one administrator and a few users (potential employees).
+				\item \textbf{Scalability:} The system should be able to service at least one administrator and a few users (potential employees), and thus it is required for processes to be able to execute concurrently, which the GlassFish server enables.
 				
-				\item \textbf{Security:} The system should be secure enough so that no unauthorized users will be able to access it and data integrity should be maintained.				
+				\item \textbf{Security:} Only authenticated API calls should be allowed and user details should be properly encrypted.			
 				
-				\item \textbf{Cost:} Since some users will be accessing the application via mobile internet, care should be given to keep the required bandwidth to a minimum.
+				\item \textbf{Cost:} Since some users will be accessing the application via mobile internet, low bandwidth communication is essential. Thus, communication will be done via JSON instead of XML.
 				
 			\end{list}
 			
