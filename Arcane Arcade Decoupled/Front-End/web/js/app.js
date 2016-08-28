@@ -36,9 +36,7 @@ myApp.controller('addUser', ["$scope", "$window", "$http", function($scope, $win
     $scope.UserAddition = function() 
     {
         
-            alert($scope.emaiuserTypel);
-            
-            var encodedString = 'name=' +
+	    var encodedString = 'name=' +
             encodeURIComponent($scope.userName) +
             '&surname=' +
             encodeURIComponent($scope.surname)+
@@ -104,10 +102,7 @@ myApp.controller('removeChallenges', ["$scope", "$window", "$http", function($sc
             
             var encodedString = 'challenge=' +
             encodeURIComponent($scope.remchallenge);
-    
-            
-            
-            $http({
+	    $http({
                 method: 'POST',
                 url: 'webresources/removeChallenge',
                 data: encodedString,
