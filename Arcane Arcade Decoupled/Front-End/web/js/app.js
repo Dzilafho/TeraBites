@@ -30,6 +30,10 @@ myApp.controller('loginController', ["$scope", "$window", "$http", function($sco
 }]);
 
 
+
+
+
+
 myApp.controller('addUser', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
     $scope.UserAddition = function() 
@@ -95,6 +99,9 @@ myApp.controller('AddChallenges', ["$scope", "$window", "$http", function($scope
         };
 }]);
 
+
+
+
 myApp.controller('removeChallenges', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
     $scope.removeChallenge = function() 
@@ -123,6 +130,10 @@ myApp.controller('removeChallenges', ["$scope", "$window", "$http", function($sc
 
         };
 }]);
+
+
+
+
 myApp.controller('viewChallenges', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
     $scope.viewChallenge = function() 
