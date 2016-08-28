@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 var myApp = angular.module('loginForm', []);
 
 myApp.controller('loginController', ["$scope", "$window", "$http", function($scope, $window, $http) {
@@ -28,11 +30,6 @@ myApp.controller('loginController', ["$scope", "$window", "$http", function($sco
 
         };
 }]);
-
-
-
-
-
 
 myApp.controller('addUser', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
@@ -100,8 +97,6 @@ myApp.controller('AddChallenges', ["$scope", "$window", "$http", function($scope
 }]);
 
 
-
-
 myApp.controller('removeChallenges', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
     $scope.removeChallenge = function() 
@@ -132,8 +127,6 @@ myApp.controller('removeChallenges', ["$scope", "$window", "$http", function($sc
 }]);
 
 
-
-
 myApp.controller('viewChallenges', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
     $scope.viewChallenge = function() 
@@ -156,6 +149,7 @@ myApp.controller('viewChallenges', ["$scope", "$window", "$http", function($scop
 
         };
 }]);
+
 
 myApp.controller('addLevels', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
