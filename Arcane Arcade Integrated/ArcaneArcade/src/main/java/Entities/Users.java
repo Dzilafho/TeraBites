@@ -171,4 +171,18 @@ public class Users implements Serializable
     public void setUserType(String userType) {
         this.userType = userType;
     }
+
+    /**
+     * @return the userID
+     */
+    public int getUserID() {
+        return userID;
+    }
+
+    /**
+     * @param userID the userID to set
+     */
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
 }

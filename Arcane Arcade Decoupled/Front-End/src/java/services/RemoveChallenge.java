@@ -24,8 +24,8 @@ public class RemoveChallenge {
     @Produces(MediaType.APPLICATION_JSON)
     public void removeChallenge(@Context @FormParam("challenge") String challengeName)
     {
-        System.out.println(challengeName);
-              
+          ConcreteDAO dao=new ConcreteDAO<Challenge>();
+          dao.RemoveChallenge(challengeName);   
     }
     
 } 

@@ -19,13 +19,19 @@ public interface GenericModelDAO<T> {
     public void add(T entityClass);
     public void update(T entityClass);
     public void delete(T entityClass);
-    public T get(long id);
-    public List<T> get();
-    
+        
     public Challenge getChallenge(String challengeName);
+    public Users getUser(String userName);
+    
     public List<Challenge> getAllChallenges();
-    public List<Level> getAllLevels();
     public List<Question> getAllQuestions();
+    public List<Level> getAllLevels();
     public List<Users> getAllUsers();
+   
+    public void removeChallenge(String challengeName);
+    public void removeQuestion(String challengeName, String levelName, int questionNo);
+    public void removeLevel(String challengeName, String levelName);
+    public void removeUser(String username);
+    
 
 }

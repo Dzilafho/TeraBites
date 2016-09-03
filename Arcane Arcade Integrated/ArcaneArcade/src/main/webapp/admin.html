@@ -94,7 +94,7 @@
                         <form  ng-submit="addLevel()" ng-controller="addLevels">
 				<h2>Add level:</h2>
 				<label>Level name:</label><input type="text" name="level" ng-model="levelname"><br>
-				<label>Challenge under:</label> <input type="text" name="challenge" ng-model="cahllengeUnder"><br>
+				<label>Challenge under:</label> <input type="text" name="challenge" ng-model="challengeUnder"><br>
 				<input class="button" type="submit" value="Add Level" > 
 			</form>
 			<br>
@@ -117,12 +117,12 @@
 		<div class="form">
 			
 			<center><h1>Question Management</h1></center>
-			<form  method="post" action="http://localhost:41114/ArcaneArcadeWeb/webresources/addQuestion">
+			<form  ng-submit="addQuestion()" ng-controller="addQuestions">
 				<h2>Add questions:</h2>
-				<label>Question:</label><input type="text" name="question" id="question"><br>
-				<label>Correct Answer:</label> <input type="text" name="answer" id ="answer"><br>
-				<label>Level:</label> <input type="text" name="level" id ="level"><br>
-				<label>Challenge</label> <input type="text" name="challenge" id="challenge"><br>
+				<label>Question:</label><input type="text" name="question" id="question"  ng-model="question"><br>
+				<label>Correct Answer:</label> <input type="text" name="answer" id ="answer"  ng-model="answer"><br>
+				<label>Level:</label> <input type="text" name="level" id ="level"  ng-model="levelname"><br>
+				<label>Challenge</label> <input type="text" name="challenge" id="challenge"  ng-model="challengename"><br>
 				<input class="button" type="submit" value="Add Question" > 
 			</form>
 			<br>

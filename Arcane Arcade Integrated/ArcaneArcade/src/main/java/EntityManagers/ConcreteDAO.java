@@ -5,12 +5,7 @@
  */
 package EntityManagers;
 
-import Entities.Answer;
-import Entities.Challenge;
-import Entities.Hint;
-import Entities.Level;
-import Entities.Question;
-import Entities.Users;
+import Entities.*;
 import java.rmi.activation.Activator;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,16 +60,6 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
     }
 
     @Override
-    public T get(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    @Override
-    public List<T> get() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public List<Challenge> getAllChallenges()
     {
        
@@ -119,15 +104,49 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
         
         em.getTransaction().begin(); 
 
-       // List<Users> list = em.createQuery("SELECT u.userID, u.userName, u.userType,  u.password, u.name, u.emailAddress  FROM Users u", Users.class).getResultList();
        List<Users> list = em.createQuery("SELECT u  FROM Users u", Users.class).getResultList();
         em.getTransaction().commit();
         em.close();
          
         return list;
     }
+    
+    @Override
+    public void removeChallenge(String challengeName)
+    {
+        em.getTransaction().begin(); 
+        
+        em.remove(this.getChallenge(challengeName));
+        em.getTransaction().commit();
+        em.close();
+        
+     }
 
     @Override
+    public Users getUser(String userName) {
+        em.getTransaction().begin(); 
+        
+        int userNum = 0;
+        
+        List<Users> list = em.createQuery("SELECT u FROM Users u", Users.class).getResultList();
+        
+        em.getTransaction().commit();
+        
+        for(int i = 0; i < list.size(); i++)
+        {   
+            if(userName.equals(list.get(i).getUserName()))
+                     userNum = list.get(i).getUserID();
+        }
+        
+        
+        Users item = em.find(Users.class, userNum);
+        //em.getTransaction().commit();
+        //em.close();
+         
+        return item;  
+    }
+    
+        @Override
     public Challenge getChallenge(String challengeName) {
         em.getTransaction().begin(); 
         
@@ -148,10 +167,43 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
       
               
         Challenge item = em.find(Challenge.class, challengeNum);
+      
         //em.getTransaction().commit();
         //em.close();
          
         return item;
+    }
+
+    @Override
+    public void removeQuestion(String challengeName, String levelName, int questionNo){
+        this.getChallenge(challengeName).getChallengeLevel(questionNo).removeQuestion(questionNo);    
+        
+         em.getTransaction().begin(); 
+         em.persist(  this.getChallenge(challengeName));
+         em.getTransaction().commit();
+         em.close();
+        
+    }
+
+    @Override
+    public void removeLevel(String challengeName, String levelName) {
+        this.getChallenge(challengeName).removeChallengeLevel(0);
+         
+         em.getTransaction().begin(); 
+         em.persist(  this.getChallenge(challengeName));
+         em.getTransaction().commit();
+         em.close();
+    }
+
+    @Override
+    public void removeUser(String username) {
+        em.getTransaction().begin(); 
+        
+        em.remove(this.getUser(username));
+                em.getTransaction().commit();
+                        em.close();
+
+
     }
 
 }

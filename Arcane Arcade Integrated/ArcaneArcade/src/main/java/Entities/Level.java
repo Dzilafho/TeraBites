@@ -27,7 +27,7 @@ public class Level implements Serializable {
   @GeneratedValue(strategy = GenerationType.AUTO)
    private int levelID;
   
-    String levelName;
+    private String levelName;
    
    @OneToMany( targetEntity=Question.class,cascade = CascadeType.PERSIST )
    private List<Question> levelQuestions=new ArrayList<Question>(); 
@@ -45,7 +45,7 @@ public class Level implements Serializable {
    public Level(String name){
        
      levelName = name;
-     levelQuestions= null;
+     levelQuestions =new ArrayList<Question>(); 
      badge=null;
    }
    
@@ -55,11 +55,16 @@ public class Level implements Serializable {
        this.badge = mBadge;
        this.levelName=name;
    }
+   
    public void addQuestion(Question question)
    {
        this.levelQuestions.add(question);
    }
    
+   public void removeQuestion(int question)
+   {
+       this.levelQuestions.remove(question);
+   }
      /**
      * @return the levelQuestions
      */
@@ -78,7 +83,7 @@ public class Level implements Serializable {
     /**
      * @return the badge
      */
-    public Badge getBedge() {
+    public Badge getBadge() {
         return badge;
     }
 
@@ -87,6 +92,34 @@ public class Level implements Serializable {
      */
     public void setBadge(Badge badge) {
         this.badge = badge;
+    }
+
+    /**
+     * @return the levelName
+     */
+    public String getLevelName() {
+        return levelName;
+    }
+
+    /**
+     * @param levelName the levelName to set
+     */
+    public void setLevelName(String levelName) {
+        this.levelName = levelName;
+    }
+
+    /**
+     * @return the levelID
+     */
+    public int getLevelID() {
+        return levelID;
+    }
+
+    /**
+     * @param levelID the levelID to set
+     */
+    public void setLevelID(int levelID) {
+        this.levelID = levelID;
     }
 
     

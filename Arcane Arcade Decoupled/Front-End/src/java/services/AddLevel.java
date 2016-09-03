@@ -24,17 +24,22 @@ public class AddLevel {
 
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+
     @Produces(MediaType.APPLICATION_JSON)
-    public void addLevel(@Context @FormParam("levelname") String challengeName, @FormParam("challengename") String levelName)   
+
+    public void addLevel(@Context @FormParam("challengename") String challengeName, @FormParam("levelname") String levelName)   
+
     {
                 System.out.println(challengeName);
                 ConcreteDAO manager = new ConcreteDAO();
                 
                 Challenge thatChallenge =  manager.getChallenge(challengeName);
-                                 
-                thatChallenge.addChallengeLevel(new Level(levelName));
                 
-                manager.add(thatChallenge);
+                if(thatChallenge != null)
+                {
+                    thatChallenge.addChallengeLevel(new Level(levelName));
+                    manager.add(thatChallenge);
+                }
     }
     
 } 

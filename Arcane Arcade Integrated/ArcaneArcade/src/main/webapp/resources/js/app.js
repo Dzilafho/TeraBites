@@ -48,9 +48,11 @@ myApp.controller('addUser', ["$scope", "$window", "$http", function($scope, $win
             '&email=' +
             encodeURIComponent($scope.email)+
             '&userType=' +
-            encodeURIComponent($scope.emaiuserTypel);
+            encodeURIComponent($scope.userType);
     
-            //fix userType
+                        alert(encodedString);
+
+
             $http({
                 method: 'POST',
                 url: 'webresources/addUser',
@@ -63,6 +65,74 @@ myApp.controller('addUser', ["$scope", "$window", "$http", function($scope, $win
               error(function(response)
               {
                    $window.alert("Server error.......rquest not sent");
+              });
+
+        };
+}]);
+
+myApp.controller('addLevels', ["$scope", "$window", "$http", function($scope, $window, $http) {
+
+    $scope.addLevel = function() 
+    {
+            var encodedString = 'levelname=' +
+            encodeURIComponent($scope.levelname) +
+            '&challengename=' +
+            encodeURIComponent($scope.challengeUnder);
+    
+            alert(encodedString);
+
+    
+            $http({
+                method: 'POST',
+                url: 'webresources/addLevel',
+                data: encodedString,
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            }).success(function(response)
+            {
+                alert(response);
+                  
+             }).
+              error(function(response)
+              {
+                  //When server is down
+                   $window.alert("Server error........request not sent");
+              });
+
+        };
+}]);
+
+
+myApp.controller('addQuestions', ["$scope", "$window", "$http", function($scope, $window, $http) {
+
+    $scope.addQuestion = function() 
+    {
+            var encodedString = 
+            'question=' +
+            encodeURIComponent($scope.question)+
+            '&answer=' +
+            encodeURIComponent($scope.answer)+
+            '&level=' +
+            encodeURIComponent($scope.levelname)+
+            '&challenge=' +
+            encodeURIComponent($scope.challengename);
+    
+            alert(encodedString);
+
+    
+            $http({
+                method: 'POST',
+                url: 'webresources/addQuestion',
+                data: encodedString,
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            }).success(function(response)
+            {
+                alert(response);
+                  
+             }).
+              error(function(response)
+              {
+                  //When server is down
+                   $window.alert("Server error........request not sent");
               });
 
         };
@@ -146,30 +216,5 @@ myApp.controller('viewChallenges', ["$scope", "$window", "$http", function($scop
         };
 }]);
 
-myApp.controller('addLevels', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
-    $scope.addLevel = function() 
-    {
-            var encodedString = 'levelname=' +
-            encodeURIComponent($scope.levelname) +
-            '&challengename=' +
-            encodeURIComponent($scope.cahllengeUnder);
-    
-            $http({
-                method: 'POST',
-                url: 'webresources/addLevel',
-                data: encodedString,
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-            }).success(function(response)
-            {
-                alert(response);
-                  
-             }).
-              error(function(response)
-              {
-                  //When server is down
-                   $window.alert("Server error........request not sent");
-              });
 
-        };
-}]);

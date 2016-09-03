@@ -70,6 +70,24 @@ public class Challenge implements Serializable {
         this.challengeLevels.add(challengeLevel);
     }
     
+    
+    public void addQuestion(String challengeLevel, Question queObject) {
+        
+        for(int i = 0; i< this.challengeLevels.size(); i++)
+        {
+            System.out.println("Chal is "+ this.challengeLevels.get(i).getLevelName());
+            
+            if(this.challengeLevels.get(i).getLevelName().equals(challengeLevel))
+            {
+                this.challengeLevels.get(i).addQuestion(queObject);
+                            System.out.println("Chal found "+ this.challengeLevels.get(i).getLevelName());
+
+            }
+            else
+                 System.out.println("Not this one");
+        }
+    }
+    
     public void removeChallengeLevel(Level challengeLevel) {
         this.challengeLevels.remove(challengeLevel);
     }

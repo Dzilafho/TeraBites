@@ -1,0 +1,174 @@
+<!doctype html>
+<html ng-app="loginForm">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+	<title>Admin</title>
+        
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+        <script type="text/javascript" src="js/angular.min.js"></script>   
+	<script src="./js/jquery-3.1.0.min.js"></script>
+	<script src="./bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+        <script src="js/validateLogin.js"></script>
+        <script type="text/javascript" src ="js/app.js"></script>
+        
+          <style>
+            .container25 
+            {
+                    display: none;
+            }
+          </style>
+      
+</head>
+<body>
+    <div class="container25">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+    
+ <div class="container">
+<div class="row">
+<div class="Absolute-Center is-Responsive">
+	<div id="page">
+		<div id="header">
+			<div>
+				<center><a id="image" href="index.html"><img src="images/logo.png" width="320" class="img-rounded img-responsive center-block" alt="logo"></a></center>
+			</div>
+		</div>
+		<div id="Questions">
+		<div class="form">
+			<center><h1>Challenge Management</h1></center>
+			<form  ng-submit="AddChallenge()" ng-controller="AddChallenges">
+                            <h2>Add challenge:</h2>
+                            <label>Challenge name:</label><input type="text" name="challenge" id="challenge" ng-model="challenge"><br>
+                            <input class="button" type="submit" value="Add Challenge" > 
+			</form>
+			<br>
+			<form ng-submit="removeChallenge()" ng-controller="removeChallenges">
+                            <h2>Remove challenge:</h2>
+                            <label>Challenge name:</label><input type="text" name="question"><br>
+                            <input class="button" type="submit" value="Remove Challenge" ng-model="remchallenge" > 
+			</form>
+			<br>
+			<form ng-submit="viewChallenge()" ng-controller="viewChallenges">
+                            <h2>View challenges:</h2>
+                            <input class="button" type="submit" value="View Challenges" > 
+			</form>
+			<br>
+		</div>
+		<div class="form">
+		<center><h1>Level Management</h1></center>
+                        <form  ng-submit="addLevel()" ng-controller="addLevels">
+				<h2>Add level:</h2>
+				<label>Level name:</label><input type="text" name="level" ng-model="levelname"><br>
+				<label>Challenge under:</label> <input type="text" name="challenge" ng-model="cahllengeUnder"><br>
+				<input class="button" type="submit" value="Add Level" > 
+			</form>
+			<br>
+
+			<form ng-submit="removeLevel()" ng-controller="removeLevels">
+				<h2>Remove level:</h2>
+				<label>Level name:</label><input type="text" name="question" ng-controller=" levelname"><br>
+				<input class="button" type="submit" value="Remove Level" > 
+			</form>
+			<br>
+			
+			<form ng-submit="ViewLevel()" ng-controller="ViewLevels">
+				<h2>View Levels:</h2>
+				<input class="button" type="submit" value="View Levels" > 
+			</form>
+			<br>
+		 </div>
+		<div class="form">
+			
+			<center><h1>Question Management</h1></center>
+			<form  method="post" action="http://localhost:41114/ArcaneArcadeWeb/webresources/addQuestion">
+				<h2>Add questions:</h2>
+				<label>Question:</label><input type="text" name="question" id="question"><br>
+				<label>Correct Answer:</label> <input type="text" name="answer" id ="answer"><br>
+				<label>Level:</label> <input type="text" name="level" id ="level"><br>
+				<label>Challenge</label> <input type="text" name="challenge" id="challenge"><br>
+				<input class="button" type="submit" value="Add Question" > 
+			</form>
+			<br>
+			
+			<form action="">
+				<h2>View all questions:</h2>
+				<input class="button" type="submit" value="View Questions" > 
+			</form>
+			<br><br>
+		</div>
+		<div>
+		
+		<div id="Users">
+		
+		<div class="form" >
+			<center><h1>User Management</h1></center>
+			<form id="addU" ng-submit="UserAddition()" ng-controller="addUser">
+                                                                    
+				<h2>Add user:</h2>
+				<label>Name:</label> <input type="text" id="name" name="name" ng-model="userName"><br>
+				<label>Surname:</label> <input type="text"  id="surname" name="surname" ng-model="surname"><br>
+				<label>Username:</label> <input type="text" id="username" name="username" ng-model="username" ><br>
+				<label>Password:</label> <input type="text" id="password" name="password" ng-model="password"><br>
+                                <label>Email Address</label> <input type="text" id="email" name="email" ng-model="email"><br>
+				<label>Type:</label> <input type="radio" class="radio" ng-model="userType"  id="userType" name="userType" value="player">Player <input type="radio" ng-model="userType" class="radio" name="userType" value="admin">Admin<br>
+				<input class="button" type="submit" value="Add User" id="addUser"> 
+			</form>
+			<br>
+			<form action="">
+				<h2>Remove user:</h2>
+				<label>Username:</label> <input type="text" name="name"><br>
+				<input class="button" type="submit" value="Remove User" > 
+		    </form>
+			<br>
+			<!--<form id="getUsers" action="http://localhost:41114/ArcaneArcadeWeb/webresources/getUsers" method="GET">
+				<h2>View all users:</h2>
+				<input class="button" type="submit" value="View Users" > 
+                                
+			   </form>-->
+                              <input class="button" type="submit" value="View Users" id="getUsers" > 
+			  <br>
+			<br>
+                        </div>
+		
+		</div>
+		
+		<div id="footer">
+			<div>
+				<p>&copy; 2016 COS301 Project. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

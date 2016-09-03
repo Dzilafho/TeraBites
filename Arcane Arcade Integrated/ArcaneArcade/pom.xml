@@ -49,6 +49,12 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4.1209</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -121,11 +127,11 @@
     <artifactId>maven-glassfish-plugin</artifactId>
     <version>2.1</version>
     <configuration>
-        <glassfishDirectory>${local.glassfish.home}</glassfishDirectory>
+        <glassfishDirectory>C:\Program Files\glassfish-4.1</glassfishDirectory>
         <user>admin</user>
-        <passwordFile>${local.glassfish.passfile}</passwordFile>
+        <adminPassword>""</adminPassword>
         <domain>
-            <name>domain1</name>
+            <name>domain4</name>
             <httpPort>8080</httpPort>
             <adminPort>4848</adminPort>
         </domain>
