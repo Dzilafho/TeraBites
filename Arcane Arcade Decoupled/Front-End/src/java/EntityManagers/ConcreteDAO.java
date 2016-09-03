@@ -120,8 +120,7 @@ public class ConcreteDAO<T> implements GenericModelDao<T> {
         
         em.getTransaction().begin(); 
 
-       // List<Users> list = em.createQuery("SELECT u.userID, u.userName, u.userType,  u.password, u.name, u.emailAddress  FROM Users u", Users.class).getResultList();
-       List<Users> list = em.createQuery("SELECT u  FROM Users u", Users.class).getResultList();
+        List<Users> list = em.createQuery("SELECT u  FROM Users u", Users.class).getResultList();
         em.getTransaction().commit();
         em.close();
          
@@ -146,29 +145,20 @@ public class ConcreteDAO<T> implements GenericModelDao<T> {
         
         
         Challenge item = em.find(Challenge.class, challengeNum);
-        //em.getTransaction().commit();
-        //em.close();
+        em.getTransaction().commit();
+        em.close();
          
         return item;
     }
-    public void RemoveChallenge(String challengeName)
+    
+    public void removeChallenge(String challengeName)
     {
-        em.getTransaction().begin();
-        int challengeNum = 0;
+       
         
-        List<Challenge> list = em.createQuery("SELECT c FROM Challenge c", Challenge.class).getResultList();
+        System.out.println("hfhfhfhfhfhfhfhf  ");
         
-        em.getTransaction().commit();
-        
-        for(int i = 0; i < list.size(); i++)
-        {   
-            if(challengeName.equals(list.get(i).getChallengeName()))
-                     challengeNum = list.get(i).getChallengeId();
-        }
-        
-        Challenge item = em.find(Challenge.class, challengeNum);
-        
-        System.out.println("hfhfhfhfhfhfhfhf  "+item.getChallengeName());
+   
+         
         
      }
 

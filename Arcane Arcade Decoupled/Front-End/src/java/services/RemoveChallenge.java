@@ -25,7 +25,7 @@ public class RemoveChallenge {
     public void removeChallenge(@Context @FormParam("challenge") String challengeName)
     {
           ConcreteDAO dao=new ConcreteDAO<Challenge>();
-          dao.RemoveChallenge(challengeName);   
+          dao.removeChallenge(challengeName);   
     }
     
 } 
