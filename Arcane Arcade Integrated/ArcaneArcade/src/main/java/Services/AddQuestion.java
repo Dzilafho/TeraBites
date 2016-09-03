@@ -1,5 +1,6 @@
  package Services;
 import Entities.Answer;
+import Entities.Challenge;
 import Entities.Hint;
 import Entities.Question;
 import EntityManagers.ConcreteDAO;
@@ -36,16 +37,22 @@ public class AddQuestion {
                                     @FormParam("challenge") String challengeName)
      {      
 
-         
-    
-    
-    Answer theAnswer = new Answer(answer);
-    Hint theHint = new Hint("gggggggggggggg",2);
-    Question theQuestion = new Question(question, theAnswer, theHint);
-    ConcreteDAO dao=new ConcreteDAO<Question>();
-    
-    dao.add(theQuestion);
-
+     System.out.println(challengeName);
+                ConcreteDAO manager = new ConcreteDAO();
+                
+                Challenge thatChallenge =  manager.getChallenge(challengeName);
+                
+                if(thatChallenge != null)
+                {
+                    Question theQuestion = new Question(question, answer);
+                    thatChallenge.addQuestion(levelName, theQuestion);
+                    
+                    manager.add(thatChallenge);
+                }
+                else
+                {
+                    System.out.println("Shits null bro");
+                }
      
     }
     

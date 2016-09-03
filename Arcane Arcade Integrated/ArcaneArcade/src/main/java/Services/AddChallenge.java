@@ -26,7 +26,7 @@ public class AddChallenge {
             
     {
         Challenge newChallenge = new Challenge(challengeName);
-        ConcreteDAO dao=new ConcreteDAO<Challenge>();
+        ConcreteDAO dao=new ConcreteDAO<>();
         dao.add(newChallenge);        
     }
     

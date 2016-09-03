@@ -40,9 +40,10 @@
                                         <script type="text/javascript">
                                             var myapp = angular.module('myapp', []);
                                             myapp.controller('productController', function($scope, $http){
-                                                $http.get('http://localhost:41114/ArcaneArcadeWeb/webresources/getUsers')
+                                                $http.get('webresources/getUsers')
                                                         .success(function(response)
                                                         {
+                                                            alert("sdaasdasdasdasawrqa Yessss")
                                                             $scope.result = response;
                                                         });
                                                 });

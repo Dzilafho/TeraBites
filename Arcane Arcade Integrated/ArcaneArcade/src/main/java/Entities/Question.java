@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Question implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int questionID;
     
     @OneToOne ( targetEntity=Answer.class, cascade = CascadeType.PERSIST)
@@ -42,11 +42,12 @@ public class Question implements Serializable {
         this.questionString = "";
     }
     
-    public Question(String q, Answer answer, Hint hints)
+    public Question(String question, String answer)
     {
-        this.answer = answer;
-       this.questionHints.add(hints);
-        this.questionString = q;
+        
+         this.answer = new Answer(answer);
+         //this.questionHints.add(hints);
+         this.questionString = question;
     }
     
     /*public Answer getAnswer() {
@@ -100,6 +101,20 @@ public class Question implements Serializable {
      */
     public void setQuestionID(int questionID) {
         this.questionID = questionID;
+    }
+
+    /**
+     * @return the answer
+     */
+    public Answer getAnswer() {
+        return answer;
+    }
+
+    /**
+     * @param answer the answer to set
+     */
+    public void setAnswer(Answer answer) {
+        this.answer = answer;
     }
 
 }
