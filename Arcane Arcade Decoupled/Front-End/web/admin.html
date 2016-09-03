@@ -91,14 +91,14 @@
 			</form>
 			<br>
 
-			<form action="">
+			<form ng-submit="removeLevel()" ng-controller="removeLevels">
 				<h2>Remove level:</h2>
-				<label>Level name:</label><input type="text" name="question"><br>
+				<label>Level name:</label><input type="text" name="question" ng-controller=" levelname"><br>
 				<input class="button" type="submit" value="Remove Level" > 
 			</form>
 			<br>
 			
-			<form action="">
+			<form ng-submit="ViewLevel()" ng-controller="ViewLevels">
 				<h2>View Levels:</h2>
 				<input class="button" type="submit" value="View Levels" > 
 			</form>

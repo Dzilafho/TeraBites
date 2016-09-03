@@ -1,7 +1,6 @@
 'use strict';
 
 
-
 var myApp = angular.module('loginForm', []);
 
 myApp.controller('loginController', ["$scope", "$window", "$http", function($scope, $window, $http) {
