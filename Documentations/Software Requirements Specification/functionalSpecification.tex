@@ -107,6 +107,13 @@
 		This module provides the functionality which validate the user credential to check if they match up with the access that they request. The most crucial part and main focus of the authentication module is to verify if a user has access to certain pages given the type of user they are. This then improves the system's security and keeps the data confidential as it controls who has access to which functionality. \newline \newline
 		
 		\includegraphics[width=14cm,height=14cm,keepaspectratio]{Authenticate.jpg}
+		
+		\begin{itemize}
+
+		\item \textbf{validateDetails} - Any user who uses the system has to login first. The user provides a username and a password which is compared with the credentials that are stored in the system database. If the credentials match then the user is given access to the system.
+		
+		\item \textbf{loadProfile} - After a user's credentials have been verified, their profile has to be loaded. This involves gathering data about the game which includes their progress, badges, hints, and credits to buy hints.
+		\end{itemize}
 
 		\newpage
 		\subsubsection{User Management Module}
