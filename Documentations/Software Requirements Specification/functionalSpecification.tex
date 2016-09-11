@@ -61,13 +61,16 @@
 	\newpage
 	
 	\section{Introduction}
-		 The project is called \textit{Arcane Arcade}, which references the esoteric language users will have to use, as well as the gamification approach to try and make it as fun as possible. It revolves around building a platform that can be used to gauge the programming aptitude and capabilities of existing or future software developers using a custom esoteric programming language. The platform which is to be available on both mobile and online is thus required to test prospective employees while keeping the tests fun by using gamification principles. The tests should also indicate in which area the user is likely to be better suited, by looking at how the user completed the challenges, such as whether the user used any hints and the badges that the user earned.
+		 The name \textit{Arcane Arcade} references the esoteric language that users will have to use to interact with the system. It also highlights the gamification approach that makes it a fun activity. The platform will be used to test prospective employees in a fun gamified way. It will indicate in which programming area the user is likely to be better suited, by looking at how the user completed the challenges, such as whether the user used any hints and the badges that the user earned.
 
+	\section{Vision}
+	The vision is to provide a fun and easily accessible platform that can be used to gauge the programming aptitude and capabilities of existing or future software developers using a custom esoteric programming language.
+	
 	\newpage
 	\section{Functional Requirements and Application Design}
-	This section outlines the required functionalities from the system.
+	
 		\subsection{Use Case Prioritization}
-		Priorities of the system's use cases.
+		This section outlines the three-level prioritization of the system's required functionality.
 		\subsubsection{Critical}
 		\begin{itemize}
 	  		\item \textbf{User Authentication} - This is critical as it limits the system's access only to people who have been authorized. Only registered users are then able to 		complete the challenges and/or modify the challenges together with authorizing more users. No one can then access any part of the system unless they have been registered and authorized to request such services.
@@ -80,21 +83,27 @@
 		\subsubsection{Important}
 		\begin{itemize}
 	  		\item \textbf{Challenge Management} - This is considered important because this is where users who have management privileges will configure the structure of the challenges such as the number of levels and questions. The managers will also be able to set hints and other items related to the challenges.
-	  		\item \textbf{Level Management} - This use case is important and it consists of the functionality of adding and removing 
-	  		levels on challenges and this can only be done by the administrator. 
+	  		\item \textbf{Level Management} - This use case is important and it consists of the functionality of adding and removing levels on challenges and this can only be done by the administrator. 
+	  		\item \textbf{Question Management} - This use case is important and it consists of the functionality of adding and removing questions.
 	  		\item \textbf{User Management} - This use case is important as it deals with adding and removing users to the system. 
 	   \end{itemize} 
 			
+		\subsubsection{Nice-To-Have}
+		\begin{itemize}
+	  		\item \textbf{Achievements} - This is considered nice to have as it for promoting the game and to get more people to play.
+	  		\item \textbf{Social Media} - This is considered nice to have. It is to showcase in-game achievements on social media. It strengthens competition and markets the game.
+	   \end{itemize}
+	   
 		\newpage
 		\subsection{System Modules}
-		The system will be built as a series of separate modules. This approach makes it possible to add more modules at a later stage and to modify one module without interfering with the others. It then allows system to be pluggable and integrable.
-		\subsubsection{Arcane Arcade High Level Diagram}
-		\textbf{Insert the Arcane Arcade System use case diagram here.} \newline
-		The core of the Arcane Arcade system. It provides various functionalities to the users.
-		\subsubsection{Authentication Module}
+		The system has built as a series of separate modules. This approach makes it possible to add more modules at a later stage and to modify one module without interfering with the others. It then allows the system to be pluggable and integrable.
+		
+		\includegraphics[width=14cm,height=14cm,keepaspectratio]{ArcaneArcade.jpg}
+		
+		\subsubsection{User Authentication Module}
 		This module provides the functionality which validate the user credential to check if they match up with the access that they request. The most crucial part and main focus of the authentication module is to verify if a user has access to certain pages given the type of user they are. This then improves the system's security and keeps the data confidential as it controls who has access to which functionality.
 		
-		\textbf{Insert the authenticate module use case diagram here.} \newline
+		\includegraphics[width=14cm,height=14cm,keepaspectratio]{Authenticate.jpg}
 
 		\subsubsection{User Management Module}
 		This module focuses on the ability to grant and revoke user access to the system. Only the super user has access to the module and it can be used to add, remove and update user accounts.
