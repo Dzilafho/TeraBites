@@ -101,7 +101,7 @@
 		
 		\includegraphics[width=14cm,height=14cm,keepaspectratio]{userManagement.jpg}
 		\begin{itemize}
-	  		\item \textbf{addUser} -  The addUser use case falls under User as depicted in the above diagram. The manager has the ability to add more user accounts via the user management page thereby allowing them to access the system. The service contract and activity diagram for addUser are shown below.
+	  		\item \textbf{addUser} - The manager has the ability to add more user accounts via the user management page thereby allowing them to access the system. Users are sent an email containing their login credentials after they are added to the system. The service contract and activity diagram for addUser are shown below.
 	  		
 				\begin{center}
 	  			Service Contract
@@ -281,7 +281,7 @@
  	     
  	     \begin{figure}[H]
  	     	\begin{center}
- 	     		\includegraphics[scale=0.2]{ViewLevelsContract.jpg}
+ 	     		\includegraphics[scale=0.4]{ViewLevelsContract.jpg}
  	     	\end{center}
  	     	\caption{View all levels on a challenge}
  	     	
@@ -292,16 +292,58 @@
 		\subsubsection{Question Management Module}
 		The Question Management Module can only be used by Managers.It provides the ability to add, remove and modify the structure of Questions. The manager can modify any question, add a new one or delete an existing one. It has the following Services.
 		
-				\includegraphics[width=14cm,height=14cm,keepaspectratio]{questionManagement.jpg}
+		\includegraphics[width=14cm,height=14cm,keepaspectratio]{questionManagement.jpg}
 		
 		
-		\begin{itemize}
-	  		\item \textbf{addQuestion} -  The manager has the ability to add more Questions and to any Level via the management page. The service contract and activity diagram for addQuestion are shown below.
+			\begin{itemize}
+		  		\item \textbf{addQuestion} -  The manager has the ability to add questions to an existing Level via the management page. The service contract and activity diagram for addQuestion are shown below.
+		  		
+		  		\begin{center}
+		  			Service Contract
+		  		\end{center}
+		  		
+		  		\begin{figure}[H]
+		  			\begin{center}
+		  				
+		  				\includegraphics[width=14cm,height=14cm,keepaspectratio]{addQuestionContract.jpg}
+		  			\end{center}
+		  			\caption{View all levels on a challenge}
+		  			
+		  		\end{figure}
+		  		
+		  
 	  		
-			\item \textbf{viewQuestions} - The viewQuestions use case falls provides the manager the ability to get a list of all Questions from all Levels from all Challenges. The service contract and activity diagram for viewQuestions are as follows.
+	  		\item \textbf{removeQuestions} -  The manager has the ability to remove Questions though the management portal. This questions belong to levels which in turn belong to challenges. The service contract and activity diagram for removeQuestion are shown below.
+	  		
+	  			\begin{center}
+	  				Service Contract
+	  			\end{center}
+	  			
+	  			\begin{figure}[H]
+	  				\begin{center}
+	  				
+	  					\includegraphics[width=14cm,height=14cm,keepaspectratio]{removeQuestion.jpg}
+	  				\end{center}
+	  				\caption{View all levels on a challenge}
+	  				
+	  			\end{figure}
+	  		
+			\item \textbf{viewQuestions} - The viewQuestions use case provides the manager the ability to get a list of all Questions from all Levels on the system. The service contract and activity diagram for viewQuestions are as follows.
+			
+				\begin{center}
+					Service Contract
+				\end{center}
+				
+				\begin{figure}[H]
+					\begin{center}
+						\includegraphics[width=14cm,height=14cm,keepaspectratio]{viewQuestionsContract.jpg}
+					\end{center}
+					\caption{View all levels on a challenge}
+					
+				\end{figure}
 			
 	
-		\end{itemize}
+			\end{itemize}
 		
 \textbf{Insert the Challenge Management module use case diagram here.} \newline
 		\subsubsection{Compiler Module}
