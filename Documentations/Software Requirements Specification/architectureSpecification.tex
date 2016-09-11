@@ -133,14 +133,20 @@
 			
 		\fi
 
+	\newpage
 	\subsubsection{Architectural Frameworks} % level 2
 
 	\begin{itemize}
-		\item \textbf{AngularJS}
+		
 		
 		\item \textbf{ANTLR 4} is used to generate a lexer and parser for the esoteric language using a grammar file as input. A visitor implementation is also created to deal with the tokens created from an input string (the esolang code) and calculate the result of the user's code.
-	\end{itemize}	
 	
+	\item \textbf{AngularJS} is used for dependency injection. It allows us to speficify fields into which data from the database can simply be placed without the need to explicitly know the data or.
+	
+	\item \textbf{Gson} for the serialization and deserialization of Java objects JSON. It aids in creating JSON objects that encapsulate all the fields and relations that the Java object we are serializing has.
+	\item \textbf{Jersey} for mapping a resource classes (POJOs) as a web resources. It allows us to use annotations  when creating web services according to the Representational State Transfer (REST) architectural pattern.
+		\end{itemize}	
+
 	\iffalse
 	\textbf{AngularJS}
 	\begin{itemize}
