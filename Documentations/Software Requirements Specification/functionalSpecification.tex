@@ -96,22 +96,26 @@
 	   
 		\newpage
 		\subsection{System Modules}
-		The system has built as a series of separate modules. This approach makes it possible to add more modules at a later stage and to modify one module without interfering with the others. It then allows the system to be pluggable and integrable.
+		The system has built as a series of separate modules. This approach makes it possible to add more modules at a later stage and to modify one module without interfering with the others. It then allows the system to be pluggable and integrable.\newline \newline
+		
+		
 		
 		\includegraphics[width=14cm,height=14cm,keepaspectratio]{ArcaneArcade.jpg}
 		
+		\newpage
 		\subsubsection{User Authentication Module}
-		This module provides the functionality which validate the user credential to check if they match up with the access that they request. The most crucial part and main focus of the authentication module is to verify if a user has access to certain pages given the type of user they are. This then improves the system's security and keeps the data confidential as it controls who has access to which functionality.
+		This module provides the functionality which validate the user credential to check if they match up with the access that they request. The most crucial part and main focus of the authentication module is to verify if a user has access to certain pages given the type of user they are. This then improves the system's security and keeps the data confidential as it controls who has access to which functionality. \newline \newline
 		
 		\includegraphics[width=14cm,height=14cm,keepaspectratio]{Authenticate.jpg}
 
+		\newpage
 		\subsubsection{User Management Module}
-		This module focuses on the ability to grant and revoke user access to the system. Only the super user has access to the module and it can be used to add, remove and update user accounts.
+		This module focuses on the ability to grant and revoke user access to the system. Only the super user has access to the module and it can be used to add, remove and update user accounts. \newline
 		
 		\includegraphics[width=14cm,height=14cm,keepaspectratio]{userManagement.jpg}
 		\begin{itemize}
 	  		\item \textbf{addUser} -  The addUser use case falls under User as depicted in the above diagram. The manager has the ability to add more user accounts via the user management page thereby allowing them to access the system. The service contract and activity diagram for addUser are shown below.
-	  		
+	  			\newpage
 				\begin{center}
 	  			Service Contract
 	  		    \end{center}
@@ -137,9 +141,10 @@
 	  				
 	  			\end{figure}
 	  
+	  		\newpage
 	  		\item \textbf{updateUser} - The updateUser use case falls under User as depicted in the above diagram. The manager has the ability to modify user accounts items via the user management page. The service contract and activity diagram for updateUser are shown below.
 	  		
-	  		\newpage
+	  		
 	  			\begin{center}
 	  				Service Contract
 	  			\end{center}
@@ -152,9 +157,10 @@
 	  				
 	  			\end{figure}
 	  		
-	  			
+	  		
+	  		\newpage	
 			\item \textbf{removeUser} - The removeUser use case falls under User as depicted in the above diagram. The manager has the ability to remove any user account via the user management page thereby restricting them from accessing the system. The service contract and activity diagram for removeUser are shown below.
-			\newpage
+			
 			\begin{center}
 				Service Contract
 			\end{center}
@@ -182,12 +188,12 @@
 		\end{itemize}		
 		
 		\subsubsection{Challenge Management Module}
-		Only super users(management accounts) have access to this module.It provides the ability to add, remove and modify the structure of challenges. It allows the manager to modify the challenge at any of its three levels which are challenge, level and question. The modifications that the manager can do are add, remove and update any of the three levels of a challenge.
+		Only super users(management accounts) have access to this module.It provides the ability to add, remove and modify the structure of challenges. It allows the manager to modify the challenge at any of its three levels which are challenge, level and question. The modifications that the manager can do are add, remove and update any of the three levels of a challenge. \newline
 		
 		\includegraphics[width=15cm,height=15cm,keepaspectratio]{challengeManagement.jpg}
 		
 		\begin{itemize}
-			\item \textbf{addChallenge} -  The addChallenge use case falls under Challenge Management module as depicted in the above diagram.  The addChallenge submodule allows the administrator to add challenges to the system via the Challenge Management page. The service contract and activity diagram for addChallenge are shown below.
+			\item \textbf{addChallenge} -  The addChallenge use case falls under Challenge Management module as depicted in the above diagram.  The addChallenge submodule allows the administrator to add challenges to the system via the Challenge Management page. The service contract and activity diagram for addChallenge are shown below. \newpage
 			\begin{center}
 				Service Contract
 			\end{center}
