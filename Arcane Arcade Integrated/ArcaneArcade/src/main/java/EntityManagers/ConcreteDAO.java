@@ -28,7 +28,7 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
     public ConcreteDAO()
     {
     
-        factory = Persistence.createEntityManagerFactory("Mains");
+        factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         em = factory.createEntityManager();
     }
 
@@ -39,6 +39,18 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
          em.persist(entityClass);
          em.getTransaction().commit();
          em.close();
+    }
+    @Override
+    public boolean checkUserExist(String username) //function not complete it only checks using the username when adding the user
+    {
+        if(getUser(username) != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     @Override
@@ -110,17 +122,6 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
          
         return list;
     }
-    
-    @Override
-    public void removeChallenge(String challengeName)
-    {
-        em.getTransaction().begin(); 
-        
-        em.remove(this.getChallenge(challengeName));
-        em.getTransaction().commit();
-        em.close();
-        
-     }
 
     @Override
     public Users getUser(String userName) {
@@ -155,11 +156,16 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
         List<Challenge> list = em.createQuery("SELECT c FROM Challenge c", Challenge.class).getResultList();
         
         em.getTransaction().commit();
-        
+
         for(int i = 0; i < list.size(); i++)
         {   
+
             if(challengeName.equals(list.get(i).getChallengeName()))
-                     challengeNum = list.get(i).getChallengeId();
+            {
+                challengeNum = list.get(i).getChallengeId();
+                            System.out.println("Found chal looping "+list.get(i).getChallengeName());
+
+            }
         }
         
         
@@ -167,42 +173,101 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
       
               
         Challenge item = em.find(Challenge.class, challengeNum);
-      
-        //em.getTransaction().commit();
-        //em.close();
+      System.out.println("Found chal "+item.getChallengeName());
+//       em.getTransaction().commit();
+      //  em.close();
          
         return item;
     }
 
+    
+        
+    @Override
+    public void removeChallenge(String challengeName)
+    {
+        
+        Challenge theChal = this.getChallenge(challengeName);
+        
+
+        
+        if(theChal != null)
+        {  
+
+            em.getTransaction().begin(); 
+            em.remove(theChal);
+            em.getTransaction().commit();
+            em.close();
+        }
+        
+     }
+    
     @Override
     public void removeQuestion(String challengeName, String levelName, int questionNo){
-        this.getChallenge(challengeName).getChallengeLevel(questionNo).removeQuestion(questionNo);    
         
-         em.getTransaction().begin(); 
-         em.persist(  this.getChallenge(challengeName));
-         em.getTransaction().commit();
-         em.close();
+        List<Question> theQuestions = this.getChallenge(challengeName).getChallengeLevel(levelName).getQuestions();
+
+        int questionID = theQuestions.get(questionNo-1).getQuestionID();
+        
+        this.getChallenge(challengeName).getChallengeLevel(levelName).removeQuestion(questionNo);
+
+        
+        em.getTransaction().begin(); 
+               
+        Question item = em.find(Question.class, questionID);
+      
+       
+       // em.getTransaction().begin(); 
+        em.remove(item);
+        em.getTransaction().commit();
+        
         
     }
 
     @Override
     public void removeLevel(String challengeName, String levelName) {
-        this.getChallenge(challengeName).removeChallengeLevel(0);
+        
+        em.getTransaction().begin(); 
+        
+        int levelID = 0;
+        
+        List<Level> list = em.createQuery("SELECT u FROM Level u", Level.class).getResultList();
+        
+        em.getTransaction().commit();
+        
+        for(int i = 0; i < list.size(); i++)
+        {   
+            if(levelName.equals(list.get(i).getLevelName()))
+                     levelID = list.get(i).getLevelID();
+        }
+        
+        em.getTransaction().begin(); 
+
+        Level item = em.find(Level.class, levelID);
+      
+
+            em.remove(item);
+            em.getTransaction().commit();
+          //  em.close();
+        
          
-         em.getTransaction().begin(); 
-         em.persist(  this.getChallenge(challengeName));
-         em.getTransaction().commit();
-         em.close();
     }
 
     @Override
-    public void removeUser(String username) {
-        em.getTransaction().begin(); 
+    public void removeUser(String username) 
+    {
         
-        em.remove(this.getUser(username));
-                em.getTransaction().commit();
-                        em.close();
+        Users theUser = this.getUser(username);
+        
 
+        
+        if(theUser != null)
+        {  
+
+            em.getTransaction().begin(); 
+            em.remove(theUser);
+            em.getTransaction().commit();
+            em.close();
+        }
 
     }
 

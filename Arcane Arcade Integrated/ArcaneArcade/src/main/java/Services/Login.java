@@ -5,7 +5,13 @@
  */
 package Services;
 
+import Entities.Users;
+import EntityManagers.ConcreteDAO;
 import java.net.URI;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.SecureRandom;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
@@ -32,6 +38,42 @@ public class Login {
      */
     public Login() {
     }
+     private static byte[] getSalt() throws NoSuchAlgorithmException, NoSuchProviderException
+    {
+        //Always use a SecureRandom generator
+        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG", "SUN");
+        //Create array for salt
+        byte[] salt = new byte[16];
+        //Get a random salt
+        sr.nextBytes(salt);
+        //return salt
+        return salt;
+    }
+     private static String getSecurePassword(String passwordToHash, byte[] salt)
+    {
+        String generatedPassword = null;
+        try {
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            //Add password bytes to digest
+            md.update(salt);
+            //Get the hash's bytes 
+            byte[] bytes = md.digest(passwordToHash.getBytes());
+            //This bytes[] has bytes in decimal format;
+            //Convert it to hexadecimal format
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length ;i++)
+            {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            //Get complete hashed password in hex format
+            generatedPassword = sb.toString();
+        } 
+        catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return generatedPassword;
+    }
 
     /**
      * Retrieves representation of an instance of services.Login
@@ -39,24 +81,39 @@ public class Login {
      */
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @Produces("text/html")
-    public Response LoginValidation(@Context UriInfo uriInfo,@FormParam("username") String username) {
-       
-        System.out.println("User is "+username);
-        //Moking database data
-        if(username.equals("Gershom"))
+    @Produces(MediaType.APPLICATION_JSON)
+    public String LoginValidation(@Context UriInfo uriInfo,@FormParam("username") String username,@FormParam("password") String password) {
+        
+        ConcreteDAO dao=new ConcreteDAO<>();
+        String passwordToHash = password;
+        String securePassword;
+        
+        Users user=dao.getUser(username);
+        
+        if(user ==null)
         {
-            URI uri=uriInfo.getBaseUriBuilder().path("../arcane.html").build();
-            
-            return Response.seeOther(uri).build();
-            
+            return "Wrong password/username/passcode";
+        }
+        if(user != null)
+        {
+           securePassword = getSecurePassword(passwordToHash, user.getSalt());
         }
         else
         {
-            URI uri=uriInfo.getBaseUriBuilder().path("../index.html").build();
-            return Response.seeOther(uri).build();
-            
+            return "Wrong password/username";
         }
-
-     }
+        if(securePassword.equals(user.getPassword()) && username.equals(user.getUserName()))
+        {
+             return "success"+user.getUserType();
+        }
+        if(securePassword != user.getPassword())
+        {
+           return "Wrong password/username/passcode";
+        }
+        if(securePassword==user.getPassword())
+        {
+            return "sucess"+user.getUserType();
+        }
+        return "sucess"+user.getUserType();
+    }
 }

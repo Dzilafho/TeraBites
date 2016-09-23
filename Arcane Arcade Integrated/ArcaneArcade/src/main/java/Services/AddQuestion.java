@@ -37,7 +37,6 @@ public class AddQuestion {
                                     @FormParam("challenge") String challengeName)
      {      
 
-     System.out.println(challengeName);
                 ConcreteDAO manager = new ConcreteDAO();
                 
                 Challenge thatChallenge =  manager.getChallenge(challengeName);
@@ -51,7 +50,7 @@ public class AddQuestion {
                 }
                 else
                 {
-                    System.out.println("Shits null bro");
+                    System.out.println("Its null bro");
                 }
      
     }

@@ -15,7 +15,7 @@ public class RemoveUser {
     
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public void removeUser(@Context @FormParam("challenge") String userName)
+    public void removeUser(@Context @FormParam("user") String userName)
     {
           ConcreteDAO dao=new ConcreteDAO<>();
           dao.removeUser(userName);   

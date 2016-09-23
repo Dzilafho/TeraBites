@@ -24,7 +24,7 @@ public class Challenge implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int ChallengeId;
    
-    @OneToMany( targetEntity=Level.class, cascade = CascadeType.PERSIST)
+    @OneToMany( targetEntity=Level.class, cascade = CascadeType.ALL)
     private List<Level> challengeLevels;
     
     private String challengeName;
@@ -75,13 +75,10 @@ public class Challenge implements Serializable {
         
         for(int i = 0; i< this.challengeLevels.size(); i++)
         {
-            System.out.println("Chal is "+ this.challengeLevels.get(i).getLevelName());
             
             if(this.challengeLevels.get(i).getLevelName().equals(challengeLevel))
             {
                 this.challengeLevels.get(i).addQuestion(queObject);
-                            System.out.println("Chal found "+ this.challengeLevels.get(i).getLevelName());
-
             }
             else
                  System.out.println("Not this one");
@@ -92,12 +89,36 @@ public class Challenge implements Serializable {
         this.challengeLevels.remove(challengeLevel);
     }
     
-    public void removeChallengeLevel(int i) {
-        this.challengeLevels.remove(i);
+    public void removeChallengeLevel(String levelName) {
+        
+        for(int i = 0; i< this.challengeLevels.size(); i++)
+        {
+            
+            if(this.challengeLevels.get(i).getLevelName().equals(levelName))
+            {
+                this.challengeLevels.remove(i);
+            }
+        }
     }
     
     public Level getChallengeLevel(int i) {
         return this.challengeLevels.get(i);
+    }
+    
+    public Level getChallengeLevel(String levelName) {
+        
+        for(int i = 0; i< this.challengeLevels.size(); i++)
+        {
+            
+            if(this.challengeLevels.get(i).getLevelName().equals(levelName))
+            {
+                return this.challengeLevels.get(i);
+            }
+      
+        }
+        
+       return null;
+
     }
     /**
      * @return the timeTaken

@@ -16,7 +16,7 @@ public class RemoveChallenge {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     public void removeChallenge(@Context @FormParam("challenge") String challengeName)
     {
-          ConcreteDAO dao=new ConcreteDAO<Challenge>();
+          ConcreteDAO dao=new ConcreteDAO<>();
           dao.removeChallenge(challengeName);   
     }
     

@@ -40,6 +40,8 @@ public class ApplicationConfig extends Application {
         resources.add(Services.Login.class);
         resources.add(Services.Logout.class);
         resources.add(Services.RemoveChallenge.class);
+        resources.add(Services.RemoveLevel.class);
+        resources.add(Services.RemoveQuestion.class);
         resources.add(Services.RemoveUser.class);
         resources.add(Services.Run.class);
     }

@@ -28,6 +28,7 @@ public class Users implements Serializable
     private String userType;
     private String userName;
     private String emailAddress;
+    private byte [] salt;
     
     @OneToMany( targetEntity=EarnedBadge.class )
     private List<EarnedBadge> earnedBadges;
@@ -41,6 +42,7 @@ public class Users implements Serializable
         this.emailAddress = null;
         this.earnedBadges = null;
         this.usedHints = null;
+        this.salt=null;
     }
     public Users(String name, String mEmailAddress){
         this.userName = name;
@@ -48,7 +50,7 @@ public class Users implements Serializable
         this.earnedBadges = null;
         this.usedHints = null;
     }
-    public Users(String name, String surname,String username,String password,String userType,String email)
+    public Users(String name, String surname,String username,String password,String userType,String email,byte [] salt)
     {
         this.name=name;
         this.surname=surname;
@@ -56,6 +58,7 @@ public class Users implements Serializable
         this.password=password;
         this.userType=userType;
         this.emailAddress=email;
+        this.salt=salt;
         
     }
             
@@ -184,5 +187,19 @@ public class Users implements Serializable
      */
     public void setUserID(int userID) {
         this.userID = userID;
+    }
+
+    /**
+     * @return the salt
+     */
+    public byte[] getSalt() {
+        return salt;
+    }
+
+    /**
+     * @param salt the salt to set
+     */
+    public void setSalt(byte[] salt) {
+        this.salt = salt;
     }
 }

@@ -8,6 +8,7 @@ package Main;
 
 import Entities.Level;
 import Entities.Challenge;
+import Entities.Users;
 import EntityManagers.ConcreteDAO;
 import java.util.List;
 
@@ -35,12 +36,8 @@ public class MainClass {
     //Users theUser = new Users("Gershom", "Maluleke@venda.com");
     ConcreteDAO manager = new ConcreteDAO();
                 
-                Challenge thatChallenge =  manager.getChallenge("Third");
-                 
-                System.out.println("Got the challenge "+thatChallenge.getChallengeName());
-                
-                thatChallenge.addChallengeLevel(new Level("Top Level"));
-                manager.add(thatChallenge);
+                 Users user=new Users("hhh","hhh","jj","jjj","hh","jjjj",null);
+                 manager.add(user);
   // ConcreteDAO dao=new ConcreteDAO();
    //System.out.println("Chall :"+dao.getChallenge("First Challenge").getChallengeName());
    //System.out.println(dao.getAllUsers().get(0).toString());

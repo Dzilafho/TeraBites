@@ -1,0 +1,79 @@
+<!doctype html>
+<html ng-app="loginForm">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+	<title>DB Management</title>
+        
+	<link rel="stylesheet" href="resources/css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="resources/css/mobile.css">
+                <script type="text/javascript" src="resources/js/angular.min.js"></script>   
+	<script src="resources//js/jquery-3.1.0.min.js"></script>
+	<script src="resources//bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+                <script src="resources/js/validateLogin.js"></script>
+                <script type="text/javascript" src ="resources/js/app.js"></script>
+</head>
+<body>
+ <div class="container">
+<div class="row">
+<div class="Absolute-Center is-Responsive">
+	<div id="page">
+		<div id="header">
+			<div>
+				<center><a id="image" href="index1.html"><img src="resources/images/logo.png" width="320" class="img-rounded img-responsive center-block" alt="logo"></a></center>
+			</div>
+		</div>
+			<br>
+			<br>
+                        
+                        <form  ng-submit="viewUser()" ng-controller="viewUsers">
+                                                    <h2>Get Users</h2>
+                                                    <input class="button" type="submit" value="Get User" >
+                                                    
+                                                    <table cellpadding="2" cellspacing="2" border="1" id="users" >
+                                                <tr>
+                                                    <th>email</th>
+                                                    <th>name</th> 
+                                                </tr>
+                                                <tr ng-repeat="users in result"> 
+                                                    <td>{{users.emailAddress}}</td>
+                                                    <td>{{users.name}}</td> 
+                                                </tr>
+                                        </table>
+			</form>
+                        
+                        
+                                        
+			
+                        
+                                           <form  ng-submit="viewChallenge()" ng-controller="viewChallenges">
+                                                    <h2>Get Challenges</h2>
+                                                    <input class="button" type="submit" value="Get Challenges" >
+                                                    
+                                                    <table cellpadding="2" cellspacing="2" border="1" id="challenge" >
+                                                            <tr>
+                                                                <th>Challenge Name</th>
+                                                                <th>Challenge First Level</th> 
+                                                            </tr>
+                                                            <tr ng-repeat="challenge in challenges"> 
+                                                                <td>{{challenge.challengeName}}</td>
+                                                                <td>{{challenge.challengeLevels[0].levelName}}</td> 
+                                                            </tr>
+                                                    </table>
+			</form>      
+                        
+                                  
+		</div>
+		
+		</div>
+		
+		<div id="footer">
+			<div>
+				<p>&copy; 2016 COS301 Project. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

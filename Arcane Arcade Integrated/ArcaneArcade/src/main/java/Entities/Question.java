@@ -23,10 +23,10 @@ public class Question implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int questionID;
     
-    @OneToOne ( targetEntity=Answer.class, cascade = CascadeType.PERSIST)
+    @OneToOne ( targetEntity=Answer.class, cascade = CascadeType.ALL)
     private Answer answer;
     
-    @OneToMany( targetEntity=Hint.class, cascade = CascadeType.PERSIST)
+    @OneToMany( targetEntity=Hint.class, cascade = CascadeType.ALL)
     private List<Hint> questionHints = new ArrayList<Hint>();
     
     private String questionString; 

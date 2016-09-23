@@ -29,10 +29,10 @@ public class Level implements Serializable {
   
     private String levelName;
    
-   @OneToMany( targetEntity=Question.class,cascade = CascadeType.PERSIST )
+   @OneToMany( targetEntity=Question.class,cascade = CascadeType.ALL)
    private List<Question> levelQuestions=new ArrayList<Question>(); 
    
-   @OneToOne( targetEntity=Badge.class, cascade = CascadeType.PERSIST)
+   @OneToOne( targetEntity=Badge.class, cascade = CascadeType.ALL)
    private Badge badge;
    
    public Level(){
@@ -63,13 +63,13 @@ public class Level implements Serializable {
    
    public void removeQuestion(int question)
    {
-       this.levelQuestions.remove(question);
+       this.levelQuestions.remove(question-1);
    }
      /**
      * @return the levelQuestions
      */
     @XmlTransient
-    public List<Question> getLevels() {
+    public List<Question> getQuestions() {
         return levelQuestions;
     }
 

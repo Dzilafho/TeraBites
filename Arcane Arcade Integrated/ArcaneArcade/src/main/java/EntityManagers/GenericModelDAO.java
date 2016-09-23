@@ -27,6 +27,8 @@ public interface GenericModelDAO<T> {
     public List<Question> getAllQuestions();
     public List<Level> getAllLevels();
     public List<Users> getAllUsers();
+    
+    public boolean checkUserExist(String username);
    
     public void removeChallenge(String challengeName);
     public void removeQuestion(String challengeName, String levelName, int questionNo);
