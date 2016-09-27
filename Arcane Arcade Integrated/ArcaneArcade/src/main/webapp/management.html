@@ -445,7 +445,9 @@
                                 <!-- Project Details Go Here -->
 			<form  class="form-horizontal" ng-submit="AddChallenge()" ng-controller="AddChallenges">
                                 <h2>Add Challenge</h2>
+				<p></p>
 				<label>Challenge Name:</label> <input type="text" name="ChallnegeName" ng-model="challenge"><br>
+				<p></p>
 				<input class="btn btn-primary" type="submit" value="Add Challenge" > 
 			 </form>
                             </div>
@@ -634,10 +636,12 @@
                                 <!-- Project Details Go Here -->
 			    <form ng-submit="addQuestion()" ng-controller="addQuestions">
                                 <h2>Add Question</h2>
+				<p></p>
 				<label>Question:</label> <input type="text" name="question" ng-model="question"><br>
 				<label>Correct Answer:</label> <input type="text" name="answer" ng-model="answer"><br>
 				<label>Level Under:</label> <input type="text" name="level" ng-model="levelname"><br>
 				<label>Challenge Under:</label> <input type="text" name="ChallengeName" ng-model="challengename"><br>
+				<p></p>
 				<input class="btn btn-primary" type="submit" value="Add Question" > 
 			      </form>
                             </div>
@@ -731,12 +735,14 @@
                                 <!-- Project Details Go Here -->
 			    <form ng-submit="UserAddition()" ng-controller="addUser">
                                 <h2>Add User</h2>
+				<p></p>
 				<label>Name:</label> <input type="text" name="name" ng-model="userName"><br>
 				<label>Surname:</label> <input type="text" name="surname" ng-model="surname"><br>
 				<label>Username:</label> <input type="text" name="username" ng-model="username" ><br>
 				<label>Password:</label> <input type="password" name="pass" ng-model="password"><br>
 				<label>Email Address:</label> <input type="text" name="myEmail" ng-model="email"><br>
 				<label>Type of User:</label> <input type="radio" class="radio" ng-model="userType"  id="userType" name="userType" value="player">Player <input type="radio" ng-model="userType" class="radio" name="userType" value="admin">Admin<input type="radio" ng-model="userType" class="radio" name="userType" value="SuperUser">SuperUser<br>
+				<p></p>
 				<input class="btn btn-primary" type="submit" value="Add User" > 
 			</form>
                             </div>
@@ -763,7 +769,9 @@
                             <div class="modal-body">
                                 <h2>Remove User</h2>
                                 <form ng-submit="removeUser()" ng-controller="removeUsers">
+				<p></p>
 				<label>Username:</label> <input type="text" name="username" ng-model="user"><br>
+				<p></p>
 				<input class="btn btn-primary" type="submit" value="Remove User" > 
 			   </form>
                             </div>
