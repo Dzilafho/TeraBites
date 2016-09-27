@@ -65,6 +65,7 @@
 		
 		\subsection{Purpose}
 			Unit testing is a crucial part of a continual software development approach and is necessary to ensure that all components properly work before integrating them into the system.
+		\subsection{Scope}
 		\subsection{Test Environment}
 	The tests are independent of the operating system and occur under Maven. The environment setup of the tests is the inclusion and import of the used frameworks. The tests are jUnit tests and are running under jUnit 4.12. Maven sets up the environment by providing all the needed dependencies which are included in the POM file.
 
@@ -104,6 +105,15 @@
 	
 	\section{Execution Strategy}
 	\section{Item Pass/Fail Criteria}
+	
+	\newpage
+	\title{Unit Test Report}
+\section{Detailed Test Results}
+\subsection{Overview of Test Results}
+\subsection{Functional Requirements Test Results}
+	\subsubsection{Authentication Module}
+	\subsubsection{User Management Module}
+	\subsubsection{Challenge Management Module}
 		\section{Conclusions and Recommendations}
 		The body of our tests re-use the same variables which can have a negative effect on our testing as values get altered before the test so to combat this we used jUnit @BeforeClass and @After annotations to prepare the environment for accurate testing and to make sure that each executions begins with the appropriate criteria.
 		\\[4pt]
