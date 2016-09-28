@@ -6,7 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 
-
+\setcounter{secnumdepth}{4}
 
 \title{\scshape\Large Team members}
 \author{
@@ -107,42 +107,104 @@ the home page by the administrator in order to populate the navigation bar and p
 		\\[12pt]
 	Candidates only have access to the challenges page and all-sub pages that can be found/clicked from that particular page.
 	
+		\newpage
 		\subsection{Administrative Use}
-		Arcane Arcade initially starts with a couple of administrator user accounts. These accounts have access to the management web page which can be used to cater for the following.
+		Arcane Arcade initially starts with a couple of administrator user accounts. These accounts have access to the management web page which can be used to cater for the following.\newline
 			\subsubsection{User Management}
-				\includegraphics[width=\linewidth]{UserManagement.jpg}
+				\includegraphics[width=\linewidth]{User.png}				\newline
+
 				The very first section in the administration page is user management. This is used to manage the user accounts related to the system.
-				\\[12pt]
-				To add a new user into the system, the user's information is registered into a database. The user is registered by completely filling in the form under the Add User heading with the new user's details. 
-				\\[12pt]
-				Once the form is completely and correctly filled in and the type of user has been selected clicking on the Add User button creates the user account and the system will display an appropriate response.
-				\\[12pt]	
-				To remove an existing user, the administrator simply enters the person's special unique user-name in the field under a Remove User heading.If the specified user-name is associated with an account then the account is removed from the system and access is revoked.
-					\\[12pt]
-				To view a table of all the accounts which have access to the system, one has to click on the View Users button which is under the View all Users heading.	
+				\\[10pt]\newline
 				
-			\subsubsection{Challenge Management}
-				\includegraphics[width=\linewidth]{challengeManagement.jpg}
-				Challenges are the hosts of the smaller more interactive elements of the system. Challenges house the Levels which in turn house the Questions.
-				\\[12pt]
-				To add a new Challenge you simply specify the Challenge name and click on the Add Challenge button. This creates an  empty challenge into which you can add levels.
-				\\[12pt]
-				Removing a Challenge is similar to adding but removing a non-empty Challenge removes also all it's levels and those levels' questions. You enter the name of the challenge to remove and click on the remove challenge button.
-				\\[12pt]
-				To view a list of all available challenges you would click on the View Challenges button.
-			\subsubsection{Level Management}
-				\includegraphics[width=\linewidth]{levelManagement.jpg}
-				To add a new Level you fill in the form under Level Management by entering the name of the new Level and the Challenge that it falls under. Clicking the Add Level button adds the Level under the specified Challenge.
-				\\[12pt]
-				To remove a Level you simply specify the name of the level in the form then click the Remove Level button. The level will then be removed from the Challenge which it was under.
-				\\[12pt]
-				To view all the different Levels in table format you simply click the View all Levels button.
-			\subsubsection{Question Management}
-				\includegraphics[width=\linewidth]{QuestionManagement.jpg}
-				Adding a new question requires completion of the form under the Add Questions heading. The form has to be filled in completely and correctly, this is achieving by providing the Question, the Answer to the Question, the Level under which the question falls and the Challenge. Clicking on the Add Question button then puts it in the system accordingly.
-				\\[12pt]
-				To view the list of all Questions in the system you click on the View Questions button.
+				\newpage
+				\paragraph{Add User}. \\ \newline
+				\includegraphics[width=\linewidth]{AddUser.png}				\newline
+
+Once the form is completely and correctly filled in and the type of user has been selected clicking on the Add User button creates the user account and the system will display an appropriate response.
+				\\[10pt]
+				
+				\paragraph{View Users}. \\ \newline
+				\includegraphics[width=\linewidth]{ViewUsers.png}				\newline
+					To view all the accounts which have access to the system, one has to click on the View Users.\newline
+				
+				\paragraph{Remove User}. \\ \newline
+				\includegraphics[width=\linewidth]{RemoveUser.png}				\newline
+
+					To remove an existing user, the administrator simply enters the person's special unique user-name in the field under a Remove User heading.If the specified user-name is associated with an account then the account is removed from the system and access is revoked.
+					\\[12pt]\newline
+				
+				
+				
+				
+					
 			
+			
+			
+			\newpage	
+			\subsubsection{Challenge Management}
+				\includegraphics[width=\linewidth]{Challenge.png}				\newline
+					Challenges are the hosts of the smaller more interactive elements of the system. Challenges house the Levels which in turn house the Questions.				\\[12pt]\newline
+
+				\paragraph{Add Challenge}. \\ \newline
+				\includegraphics[width=\linewidth]{AddChallenge.png}				\newline
+To add a new Challenge you simply specify the Challenge name and click on the Add Challenge button. This creates an  empty challenge into which you can add levels.
+				\\[12pt]\newline
+
+				\paragraph{View Challenges}. \\ \newline
+				\includegraphics[width=\linewidth]{ViewChallenges.png}				\newline
+				To view a list of all available challenges you would click on the View Challenges button.\newline
+
+
+				\paragraph{Remove Challenge}. \\ \newline
+				\includegraphics[width=\linewidth]{RemoveChallenge.png}				\newline
+				Removing a non-empty Challenge removes also all it's levels and those levels' questions. You enter the name of the challenge and click on remove challenge.
+				\\[12pt]
+			
+				
+				
+			\newpage		
+			\subsubsection{Level Management}
+				\includegraphics[width=\linewidth]{Level.png}				\newline
+				The very first section in the administration page is user management. This is used to manage the user accounts related to the system.
+				\\[12pt]\newline
+				
+				\paragraph{Add Level}. \\ \newline
+				\includegraphics[width=\linewidth]{AddLevel.png}				\newline
+To add a new Level you fill in the form under Level Management by entering the name of the new Level and the Challenge that it falls under. Clicking the Add Level button adds the Level under the specified Challenge.
+				\\[12pt]\newline
+
+				\paragraph{View Levels}. \\ \newline
+				\includegraphics[width=\linewidth]{ViewLevels.png}				\newline
+				To view all the different Levels in table format you simply click the View all Levels button.\newline
+
+				\paragraph{Remove Level}. \\ \newline
+				\includegraphics[width=\linewidth]{RemoveLevel.png}				\newline
+To remove a Level you simply specify the name of the level then click on Remove Level. The level will then be removed from the Challenge which it was under.
+				\\[12pt]
+				
+				
+			
+			
+			\subsubsection{Question Management}
+				\includegraphics[width=\linewidth]{Question.png}				\newline
+
+					\paragraph{Add Question}. \\ \newline			
+				\includegraphics[width=\linewidth]{AddQuestion.png}				\newline
+Adding a new question requires completion of the form under the Add Questions heading. The form has to be filled in completely and correctly, this is achieving by providing the Question, the Answer to the Question, the Level under which the question falls and the Challenge. Clicking on the Add Question button then puts it in the system accordingly.
+				\\[12pt]\newline
+
+\paragraph{View Questions}. \\ \newline
+				\includegraphics[width=\linewidth]{ViewQuestions.png}				\newline
+
+
+\paragraph{Remove Question}. \\ \newline
+				\includegraphics[width=\linewidth]{RemoveQuestion.png}				\newline
+				To view the list of all Questions in the system you click on the View Questions button.\newline
+
+
+				
+			
+			\newpage
 		\subsection{Candidate Use}
 			\subsubsection{Login}
 				\includegraphics[width=\linewidth]{Login.jpg}
