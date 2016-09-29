@@ -17,3 +17,13 @@ label
 	padding-right: 20px;
 	font-size: 20px;
 }
+
+.wrapper
+{
+    text-align: center;
+}
+
+.wrapper input
+{
+	width: 280px;
+}
