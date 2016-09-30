@@ -441,13 +441,20 @@ myApp.controller('loadQuestions', ["$scope", "$window", "$http", function($scope
                   //When server is down
                    $window.alert("Server error........request not sent");
               });
+              
 
         };
         
-    $scope.showAlert2 = function(){
-    alert("dziiiii");
-};
+    $scope.showAlert2 = function()
+    {
+        //alert("Down here");
+        document.getElementById("cha11").class = "list-group-item";
+        document.getElementById("cha11").innerHTML = "<a href='cs.up.ac.za'>"+document.getElementById("cha11").innerHTML+"</a>";
+                    alert(document.getElementById("cha11").class);
+    };
 }]);
+
+
 
 myApp.controller('getChallenges', ["$scope", "$window", "$http", function($scope, $window, $http) {
 

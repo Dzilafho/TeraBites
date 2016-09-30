@@ -96,9 +96,9 @@
                                 <a data-toggle="collapse" href="#chal{{$index}}">{{challenge.challengeName}}</a>
                               </h4>
                             </div>
-                        <div id="chal{{$index}}" class="panel-collapse collapse" ng-click="showAlert2()" ng-controller="loadQuestions">
-                                <ul class="list-group" ng-repeat="level in challenge.challengeLevels">
-                                    <a href="question.html"><li class="list-group-item">{{level.levelName}}</li></a>
+                        <div id="chal{{$index}}" class="panel-collapse collapse" ng-mouseover="showAlert2()" ng-controller="loadQuestions">
+                                <ul class="list-group" >
+                                    <li ng-repeat="level in challenge.challengeLevels" id="cha{{$index}}{{$index}}" class="list-group-item disabled">{{level.levelName}}</li>
                                 </ul>
                         </div>
                     </div>
