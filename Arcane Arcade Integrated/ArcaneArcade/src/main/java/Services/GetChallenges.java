@@ -31,7 +31,7 @@ public class GetChallenges {
         
            System.out.println("JSON");
         return gson.toJson(allChallenges);
-       /* return Response.ok().entity(new GenericEntity<List<Challenge>>(allChallenges){})
+        /*return Response.ok().entity(new GenericEntity<List<Challenge>>(allChallenges){})
         .header("Access-Control-Allow-Origin", "*")
         .header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, HEAD")
         .build();*/

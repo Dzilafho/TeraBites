@@ -1,6 +1,10 @@
 'use strict';
 
 var myApp = angular.module('loginForm', []);
+var counter=0;
+var ChallengeCounter=0;
+var levelCounter=0;
+var questionCounter=0;
 
 myApp.controller('loginController', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
@@ -342,9 +346,7 @@ myApp.controller('viewChallenges', ["$scope", "$window", "$http", function($scop
               });
 
         };
-        $scope.fn_load = function () {
-            alert("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
-        };
+       
 }]);
 
 
@@ -384,7 +386,7 @@ myApp.controller('ViewLevels', ["$scope", "$window", "$http", function($scope, $
                 headers: {'Content-Type': 'application/json'}
             }).success(function(response)
             {
-		$scope.levels=response;
+		$scope.levels = response;
                   
              }).
               error(function(response)
@@ -432,7 +434,7 @@ myApp.controller('loadQuestions', ["$scope", "$window", "$http", function($scope
             }).success(function(response)
             {
                 $scope.challenges = response;
-                 alert(JSON.stringify(response));
+                 
              }).
               error(function(response)
               {
@@ -447,16 +449,11 @@ myApp.controller('loadQuestions', ["$scope", "$window", "$http", function($scope
 };
 }]);
 
-
-
-
 myApp.controller('getChallenges', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
     $scope.getChallenge = function() 
     {
-                        alert("Get Chals");
-
-            
+             
             $http({
                 method: 'GET',
                 url: 'webresources/getChallenges',
@@ -464,7 +461,7 @@ myApp.controller('getChallenges', ["$scope", "$window", "$http", function($scope
             }).success(function(response)
             {
                 $scope.challenges = response;
-                 alert(JSON.stringify(response));
+                 //alert(JSON.stringify(response));
              }).
               error(function(response)
               {
@@ -480,10 +477,6 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
 
     $scope.CheckAnswer = function() 
     {
-       
-             var myAnswer;
-             var correctAnswer;
-            
             $http({
                 method: 'GET',
                 url: 'webresources/getChallenges',
@@ -491,29 +484,37 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
             }).success(function(response)
             {
                 $scope.challenges = response;
-                myAnswer = $scope.userAnswer;
-                correctAnswer=response[1].challengeLevels[0].levelQuestions[0].answer.answer;
+                //alert(JSON.stringify(response));
+                var str=JSON.stringify(response);
+                var jsonObj = JSON.parse(str);
+             
+                counter++;
+                //alert(jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString);
+                document.getElementById("questionString").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString;
+                document.getElementById("levelName").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
+                questionCounter++;
                 
-                //document.getElementById("trygain").style.visibility = "hidden";
-                //document.getElementById("continue").style.visibility = "hidden";
-                
-                if(myAnswer===correctAnswer)
-                {
-                  //  alert("The answer is right");
-                    document.getElementById("modalp").innerHTML="Right answer";
+                if(questionCounter===jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions.length)
+                {  
+                    //alert("Level"+ jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName+"  of challenge "+ jsonObj[ChallengeCounter].challengeName+" Completed");
+                    levelCounter++;
+                    questionCounter=0;
                     
-                //show continue button
-                //document.getElementById("continue").style.visibility = 'visible';
+                    
+                    if(levelCounter===jsonObj[ChallengeCounter].challengeLevels.length)
+                    {
+                        //alert("Challenge "+ jsonObj[ChallengeCounter].challengeName+" complete");
+                        ChallengeCounter++;
+                        levelCounter=0;
+                        questionCounter=0;
+                    
+                    }
                 }
                 else
                 {
-                     //   alert("The answer is wrong");
-                     document.getElementById("modalp").innerHTML="Wrong answer";
-                     //show try again button
-                    // document.getElementById("trygain").style.visibility = 'visible';
+                    return;
                 }
-                
-             }).
+              }).
               error(function(response)
               {
                   //When server is down
@@ -521,4 +522,6 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
               });
 
         };
+         
+     
 }]);

@@ -37,21 +37,27 @@
     </style>
 </head>
 <body>
-    <div ng-controller="getChallenges" ng-init="getChallenge()">
+   
+    <div ng-controller="CheckAnswers" ng-init="CheckAnswer()">
     <div class="container" id="header">
+      <br/>
+        <br/>
+     <br/>
         <div class="row">
             <div class="col-sm-2">
                 <h3><a href="#">Hints <span class="badge">42</span></a></h3>
             </div>
+            <div id="Game"></div>
             <div class="col-sm-8">
-                <h3>{{challenges[1].challengeLevels[0].levelName}} - Question 1</h3>
+                <h3 id="levelName"></h3>
             </div>
             <div class="col-sm-2">
                 <h3>Badge</h3>
             </div>
         </div>
     </div>
-
+        <br/>
+        <br/>
     <div class="container" id="game">
         <div class="row">
             <div class="col-sm-12">
@@ -67,7 +73,7 @@
                 <h3 class="panel-title">What will the following piece of code output?</h3>
             </div>
             <div class="panel-body" >
-               <p id="demo">{{challenges[1].challengeLevels[0].levelQuestions[0].questionString}}</p>
+               <p id="questionString"></p>
             </div>
             </div>
         </div>
@@ -77,9 +83,9 @@
                 <div class="form-group">
                     <label for="answer">Answer</label>
                     <input type="text" class="form-control" id="answer" ng-model="userAnswer">
-                      <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Submit</button>
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Go</button>  
                 </div>
-                  
+                 
             </form>
         </div>
         
