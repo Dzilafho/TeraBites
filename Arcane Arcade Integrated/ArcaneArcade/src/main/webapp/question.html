@@ -2,7 +2,7 @@
 <html ng-app="loginForm">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Arcane Arcade</title>
      <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -38,7 +38,7 @@
 </head>
 <body>
    
-    <div ng-controller="CheckAnswers" ng-init="CheckAnswer()">
+    <div ng-controller="CheckAnswers" >
     <div class="container" id="header">
       <br/>
         <br/>
@@ -84,6 +84,8 @@
                     <label for="answer">Answer</label>
                     <input type="text" class="form-control" id="answer" ng-model="userAnswer">
                     <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Go</button>  
+                    <a href="challenge.html"><button  class="btn btn-primary" >Quit Level</button></a>  
+
                 </div>
                  
             </form>

@@ -3,8 +3,74 @@
 var myApp = angular.module('loginForm', []);
 var counter=0;
 var ChallengeCounter=0;
-var levelCounter=0;
+var levelCounter=-1;
 var questionCounter=0;
+var currentUser;
+
+
+
+/*myApp.controller('QuitLevel', ["$scope", "$window", "$http", function($scope, $window, $http) {
+
+
+          
+                  
+
+        
+        $scope.setUserProgress = function() 
+        {
+            
+            var encodedString =
+            'progress=Challenge One-Level 2' ;
+    
+            alert(encodedString);
+
+    
+            $http({
+                method: 'POST',
+                url: 'webresources/setUserProgress',
+                data: encodedString,
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            }).success(function(response)
+            {
+                            window.location = "challenge.html";
+                  
+             }).
+              error(function(response)
+              {
+                  //When server is down
+                   $window.alert("Server error........request not sent");
+              });
+
+        };
+}]);*/
+
+
+myApp.controller('viewUsers', ["$scope", "$window", "$http", function($scope, $window, $http)
+{
+    
+    $scope.viewUser=function()
+    {
+        
+        /*
+        alert("innnn");
+         $http({
+                method: 'GET',
+                url: 'webresources/getUsers',
+                headers: {'Content-Type': 'application/json'}
+            }).success(function(response)
+            {
+                //console.log(response);
+                $scope.result = response;
+             }).
+              error(function(response)
+              {
+                  //When server is down
+                   $window.alert("Server error........request not sent");
+              });
+        */
+     };
+     
+}]);
 
 myApp.controller('loginController', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
@@ -14,7 +80,9 @@ myApp.controller('loginController', ["$scope", "$window", "$http", function($sco
             encodeURIComponent($scope.userName) +
             '&password=' +
             encodeURIComponent($scope.password);
-       
+            
+            
+            
             
             $http({
                 method: 'POST',
@@ -424,12 +492,59 @@ myApp.controller('viewQuestions', ["$scope", "$window", "$http", function($scope
 
 myApp.controller('loadQuestions', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
-    $scope.loadQuestion = function() 
-    {
+         $scope.loadQuestion = function() 
+        {
+                       
+                $http({
+                    method: 'GET',
+                    url: 'webresources/getChallenges',
+                    headers: {'Content-Type': 'application/json'}
+                }).success(function(response)
+                {
+                    $scope.challenges = response;
+
+                }).
+                error(function(response)
+                {
+                      //When server is down
+                       $window.alert("Server error........request not sent");
+                });
+              
+
+        };
+        
+        $scope.loadProgress = function() 
+        {
+                       
+                $http({
+                    method: 'GET',
+                    url: 'webresources/getUserProgress',
+                    headers: {'Content-Type': 'application/json'}
+                }).success(function(response)
+                {
+                        alert("Here Man");
+                        var currProgress;
+                        currProgress = response.toString();
+
+                        alert(currProgress);
+                        document.getElementById(currProgress).class = "list-group-item";
+                        document.getElementById(currProgress).innerHTML = "<a href='question.html'>"+document.getElementById(currProgress).innerHTML+"</a>";
+
+                 }).
+                 error(function(response)
+                 {
+                      //When server is down
+                       $window.alert("Server error........request not sent");
+                 });
+              
+        };
+        
+       /* $scope.setUserProgress = function() 
+        {
                        
             $http({
-                method: 'GET',
-                url: 'webresources/getChallenges',
+                method: 'POST',
+                url: 'webresources/setUserProgress',
                 headers: {'Content-Type': 'application/json'}
             }).success(function(response)
             {
@@ -451,7 +566,7 @@ myApp.controller('loadQuestions', ["$scope", "$window", "$http", function($scope
         document.getElementById("cha11").class = "list-group-item";
         document.getElementById("cha11").innerHTML = "<a href='cs.up.ac.za'>"+document.getElementById("cha11").innerHTML+"</a>";
                     alert(document.getElementById("cha11").class);
-    };
+    };*/
 }]);
 
 
@@ -495,27 +610,43 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                 var str=JSON.stringify(response);
                 var jsonObj = JSON.parse(str);
              
+                levelCounter =  $scope.level-1;
+                            
+                for(var i=0; i< jsonObj.length; i++)
+                {
+                              alert(jsonObj[i].challengeName);               
+
+                        if(jsonObj[i].challengeName ===  $scope.chall)
+                        {
+                            alert("In the if "+jsonObj[i].challengeName);
+                            ChallengeCounter = i;
+                        }
+                }
+                
                 counter++;
-                //alert(jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString);
+                alert(jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString);
                 document.getElementById("questionString").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString;
                 document.getElementById("levelName").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
                 questionCounter++;
                 
                 if(questionCounter===jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions.length)
                 {  
-                    //alert("Level"+ jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName+"  of challenge "+ jsonObj[ChallengeCounter].challengeName+" Completed");
+                    alert("Level"+ jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName+"  of challenge "+ jsonObj[ChallengeCounter].challengeName+" Completed");
                     levelCounter++;
                     questionCounter=0;
                     
                     
                     if(levelCounter===jsonObj[ChallengeCounter].challengeLevels.length)
                     {
-                        //alert("Challenge "+ jsonObj[ChallengeCounter].challengeName+" complete");
+                        alert("Challenge "+ jsonObj[ChallengeCounter].challengeName+" complete");
                         ChallengeCounter++;
                         levelCounter=0;
                         questionCounter=0;
-                    
+                        $scope.setUserProgress(jsonObj[ChallengeCounter].challengeName, levelCounter+1);
                     }
+                    
+                    $scope.setUserProgress(jsonObj[ChallengeCounter].challengeName, levelCounter+1);
+
                 }
                 else
                 {
@@ -529,6 +660,57 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
               });
 
         };
+        
+        $scope.setUserProgress = function(challengeName, levelNo) 
+        {
+            
+            var encodedString = 'progress='+challengeName+'-Level '+levelNo;
+    
+            alert("Setting progress to " +encodedString);
+
+    
+            $http({
+                method: 'POST',
+                url: 'webresources/setUserProgress',
+                data: encodedString,
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            }).success(function(response)
+            {
+                            //window.location = "challenge.html";
+                  
+             }).
+              error(function(response)
+              {
+                  //When server is down
+                   $window.alert("Server error........request not sent");
+              });
+
+        };
          
-     
+          $scope.loadUserProgress = function() 
+        {
+                       
+                $http({
+                    method: 'GET',
+                    url: 'webresources/getUserProgress',
+                    headers: {'Content-Type': 'application/json'}
+                }).success(function(response)
+                {
+                         $scope.level = response.match(/\d/g);
+                         $scope.chall = response.substr(0, response.indexOf('-'));
+                         
+                         alert("User level is "+$scope.level);
+                         alert("User challenge is "+$scope.chall);
+                         
+                         $scope.CheckAnswer();
+                         
+                         
+                 }).
+                 error(function(response)
+                 {
+                      //When server is down
+                       $window.alert("Server error........request not sent");
+                 });
+              
+        };
 }]);

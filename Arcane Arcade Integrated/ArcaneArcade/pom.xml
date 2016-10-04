@@ -6,12 +6,7 @@
     <artifactId>ArcaneArcade</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-	<distributionManagement>
-		<site>
-		<id>a</id>
-      <url>a</url>
-    </site>
-  </distributionManagement>
+
     <name>ArcaneArcade</name>
 
     <properties>
@@ -127,30 +122,7 @@
             </executions>
         </plugin>
       
-	<plugin>
-                <groupId>org.glassfish.maven.plugin</groupId>
-                <artifactId>maven-glassfish-plugin</artifactId>
-                <version>2.1</version>
-                <configuration>
-                    <glassfishDirectory>/home/dzilafho/Applications/glassfish-4.1</glassfishDirectory>
-                    <user>admin</user>
-                    <adminPassword>""</adminPassword>
-                    <domain>
-                        <name>domain1</name>
-                        <httpPort>8080</httpPort>
-                        <adminPort>4848</adminPort>
-                    </domain>
-                    <components>
-                        <component>
-                            <name>${project.artifactId}</name>
-                            <artifact>target/${project.build.finalName}.war</artifact>
-                        </component>
-                    </components>
-                    <debug>true</debug>
-                    <terse>false</terse>
-                    <echo>true</echo>
-                </configuration>
-	</plugin>
+
 
         </plugins>
     </build>

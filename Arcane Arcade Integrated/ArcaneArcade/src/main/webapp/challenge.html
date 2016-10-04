@@ -63,7 +63,7 @@
                         <a class="page-scroll" href="#Challenges">Challenges</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#Profile">Profile</a>
+                        <a class="portfolio-link"  data-toggle="modal" href="#Profile">Profile</a>
                     </li>
 		    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -96,9 +96,9 @@
                                 <a data-toggle="collapse" href="#chal{{$index}}">{{challenge.challengeName}}</a>
                               </h4>
                             </div>
-                        <div id="chal{{$index}}" class="panel-collapse collapse" ng-mouseover="showAlert2()" ng-controller="loadQuestions">
+                        <div id="chal{{$index}}" class="panel-collapse collapse" ng-mouseover="loadProgress()" ng-controller="loadQuestions">
                                 <ul class="list-group" >
-                                    <li ng-repeat="level in challenge.challengeLevels" id="cha{{$index}}{{$index}}" class="list-group-item disabled">{{level.levelName}}</li>
+                                    <li ng-repeat="level in challenge.challengeLevels" id="{{challenge.challengeName}}-Level {{$index+1}}" class="list-group-item disabled">{{level.levelName}}</li>
                                 </ul>
                         </div>
                     </div>
@@ -109,33 +109,7 @@
 
 
 
-    <!-- Clients Aside -->
-    <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
+   
 
     <!-- Contact Section -->
     <section id="contact">
@@ -558,7 +532,7 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
                                 <h2>View All Users</h2>
-                                <form ng-submit="viewUser()" ng-controller="viewUsers">
+                                <form ng-submit="viewUser()" ng-controller="viewUsers" >
                                   <table class = "table table-bordered">
                                         <tr>
                                             <th>First Name</th> 
@@ -577,8 +551,8 @@
                                             
                                         </tr>
                                  </table>
-				<input class="btn btn-primary" type="submit" value="View Users" > 
-			   </form>
+			<input class="btn btn-primary" type="submit" value="View Users" > 
+                                        </form>
                             </div>
                         </div>
                     </div>
@@ -587,7 +561,49 @@
          </div>
     </div>
     
-
+<!-- Portfolio Modal 3 -->
+<div class="portfolio-modal modal fade" id="Profile" tabindex="-1"  role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>User Name</h2>
+                                <table class = "table table-bordered">
+                                        <tr>
+                                            <th>First Name</th> 
+                                            <td>{{users.name}}</td> 
+                                        </tr>
+                                            <th>Surname</th>
+                                            <td>{{users.surname}}</td> 
+                                        </tr>
+                                            <th>Username</th>
+                                            <td>{{users.userName}}</td> 
+                                        </tr>
+                                            <th>User Email</th>
+                                            <td>{{users.emailAddress}}</td> 
+                                        </tr>
+                                            <th>User Type</th>
+                                            <td>{{users.userType}}</td>
+                                        </tr>
+                                            
+                                        
+                                 </table><button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
    
    
     

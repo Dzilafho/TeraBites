@@ -150,15 +150,16 @@ public class AddUser {
         sendEmail(username,password);
         // String regeneratedPassowrdToVerify = getSecurePassword(passwordToHash, salt);
         //System.out.println(regeneratedPassowrdToVerify); //Prints 83ee5baeea20b6c21635e4ea67847f66
-        Users users=new Users(name,surname,username,securePassword,email,userType,salt);
-        if(dao.checkUserExist(username))
+        Users users=new Users(name,surname,username,securePassword,userType,email,salt);
+            dao.add(users);
+/*       if(dao.checkUserExist(username))
         {
             return "fail";
         }
         else
         {
            dao.add(users);
-        }
+        }*/
     
          return "success";
         
