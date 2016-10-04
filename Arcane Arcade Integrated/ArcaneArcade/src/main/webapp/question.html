@@ -38,7 +38,7 @@
 </head>
 <body>
    
-    <div ng-controller="CheckAnswers" >
+    <div ng-controller="CheckAnswers" ng-init="loadUserProgress()">
     <div class="container" id="header">
       <br/>
         <br/>
@@ -83,7 +83,7 @@
                 <div class="form-group">
                     <label for="answer">Answer</label>
                     <input type="text" class="form-control" id="answer" ng-model="userAnswer">
-                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Go</button>  
+                    <button type="submit" class="btn btn-primary" id="goo">Go</button>  
                     <a href="challenge.html"><button  class="btn btn-primary" >Quit Level</button></a>  
 
                 </div>
@@ -99,7 +99,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title"><center>Outcome</center></h4>
         </div>
         <div class="modal-body">
           <p id="modalp">Some text in the modal.</p>

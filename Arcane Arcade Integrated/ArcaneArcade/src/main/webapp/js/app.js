@@ -147,7 +147,7 @@ myApp.controller('addUser', ["$scope", "$window", "$http", function($scope, $win
     $scope.UserAddition = function() 
     {
         
-            alert($scope.userType);
+           // alert($scope.userType);
             
             var encodedString = 'name=' +
             encodeURIComponent($scope.userName) +
@@ -162,7 +162,7 @@ myApp.controller('addUser', ["$scope", "$window", "$http", function($scope, $win
             '&userType=' +
             encodeURIComponent($scope.userType);
     
-                        alert(encodedString);
+                        //alert(encodedString);
 
 
             $http({
@@ -229,7 +229,7 @@ myApp.controller('addQuestions', ["$scope", "$window", "$http", function($scope,
             '&challenge=' +
             encodeURIComponent($scope.challengename);
     
-            alert(encodedString);
+            //alert(encodedString);
 
     
             $http({
@@ -255,7 +255,7 @@ myApp.controller('AddChallenges', ["$scope", "$window", "$http", function($scope
 
     $scope.AddChallenge = function() 
     {
-            alert("hellllo");
+            //alert("hellllo");
             var encodedString = 'challenge=' +
             encodeURIComponent($scope.challenge);
             
@@ -522,11 +522,11 @@ myApp.controller('loadQuestions', ["$scope", "$window", "$http", function($scope
                     headers: {'Content-Type': 'application/json'}
                 }).success(function(response)
                 {
-                        alert("Here Man");
+                       // alert("Here Man");
                         var currProgress;
                         currProgress = response.toString();
 
-                        alert(currProgress);
+                        //alert(currProgress);
                         document.getElementById(currProgress).class = "list-group-item";
                         document.getElementById(currProgress).innerHTML = "<a href='question.html'>"+document.getElementById(currProgress).innerHTML+"</a>";
 
@@ -595,50 +595,93 @@ myApp.controller('getChallenges', ["$scope", "$window", "$http", function($scope
 }]);
 
 
+
+
 myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
     $scope.CheckAnswer = function() 
     {
+            
             $http({
                 method: 'GET',
                 url: 'webresources/getChallenges',
                 headers: {'Content-Type': 'application/json'}
             }).success(function(response)
             {
+                
                 $scope.challenges = response;
+                var userAnswer=$scope.userAnswer;
+               
+                
+                
                 //alert(JSON.stringify(response));
                 var str=JSON.stringify(response);
                 var jsonObj = JSON.parse(str);
              
                 levelCounter =  $scope.level-1;
-                            
+                         
                 for(var i=0; i< jsonObj.length; i++)
                 {
-                              alert(jsonObj[i].challengeName);               
-
+                       
                         if(jsonObj[i].challengeName ===  $scope.chall)
                         {
-                            alert("In the if "+jsonObj[i].challengeName);
+                            
                             ChallengeCounter = i;
                         }
                 }
+               
+               
+                 if(typeof userAnswer !== 'undefined' )
+                 {
+                    var originalAnswer=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].answer.answer;
+                    
+                    if(originalAnswer===userAnswer)
+                    {
+                        //pass the data in the modal body adding html elements
+                        $('#myModal .modal-body').html('<p><center>Correct Answer</center></p>') ;
+                        //open the modal
+                        $('#myModal').modal('show') ;
+
+                    }
+                    else
+                    {
+                        //pass the data in the modal body adding html elements
+                        $('#myModal .modal-body').html('<p><center>Wrong Answer</center></p>') ;
+                        //open the modal
+                        $('#myModal').modal('show') ;
+
+                    }
+                     
+                 }
+                 else
+                 {
+                    
+                 }
                 
+               
                 counter++;
-                alert(jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString);
+                //alert(jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString);
                 document.getElementById("questionString").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString;
                 document.getElementById("levelName").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
+                
+   
+                
                 questionCounter++;
+                
+                
+                 
+              
                 
                 if(questionCounter===jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions.length)
                 {  
-                    alert("Level"+ jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName+"  of challenge "+ jsonObj[ChallengeCounter].challengeName+" Completed");
+                    //alert("Level"+ jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName+"  of challenge "+ jsonObj[ChallengeCounter].challengeName+" Completed");
                     levelCounter++;
                     questionCounter=0;
                     
                     
                     if(levelCounter===jsonObj[ChallengeCounter].challengeLevels.length)
                     {
-                        alert("Challenge "+ jsonObj[ChallengeCounter].challengeName+" complete");
+                      //  alert("Challenge "+ jsonObj[ChallengeCounter].challengeName+" complete");
                         ChallengeCounter++;
                         levelCounter=0;
                         questionCounter=0;
@@ -666,7 +709,7 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
             
             var encodedString = 'progress='+challengeName+'-Level '+levelNo;
     
-            alert("Setting progress to " +encodedString);
+           // alert("Setting progress to " +encodedString);
 
     
             $http({
@@ -699,8 +742,8 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                          $scope.level = response.match(/\d/g);
                          $scope.chall = response.substr(0, response.indexOf('-'));
                          
-                         alert("User level is "+$scope.level);
-                         alert("User challenge is "+$scope.chall);
+                       //    alert("User level is "+$scope.level);
+                       //  alert("User challenge is "+$scope.chall);
                          
                          $scope.CheckAnswer();
                          
