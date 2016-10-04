@@ -29,7 +29,6 @@ public class GetChallenges {
         
         Gson gson = new Gson();
         
-           System.out.println("JSON");
         return gson.toJson(allChallenges);
         /*return Response.ok().entity(new GenericEntity<List<Challenge>>(allChallenges){})
         .header("Access-Control-Allow-Origin", "*")

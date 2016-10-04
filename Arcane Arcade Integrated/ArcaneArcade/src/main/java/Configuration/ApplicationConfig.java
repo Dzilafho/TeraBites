@@ -33,9 +33,12 @@ public class ApplicationConfig extends Application {
         resources.add(Services.AddLevel.class);
         resources.add(Services.AddQuestion.class);
         resources.add(Services.AddUser.class);
+        resources.add(Services.AddUserProgress.class);
         resources.add(Services.GetChallenges.class);
         resources.add(Services.GetLevels.class);
         resources.add(Services.GetQuestions.class);
+        resources.add(Services.GetUser.class);
+        resources.add(Services.GetUserProgress.class);
         resources.add(Services.GetUsers.class);
         resources.add(Services.Login.class);
         resources.add(Services.Logout.class);

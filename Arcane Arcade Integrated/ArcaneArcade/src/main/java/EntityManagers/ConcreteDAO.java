@@ -118,20 +118,21 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
 
        List<Users> list = em.createQuery("SELECT u  FROM Users u", Users.class).getResultList();
         em.getTransaction().commit();
-        em.close();
+       // em.close();
          
         return list;
     }
 
     @Override
-    public Users getUser(String userName) {
+    public Users getUser(String userName) 
+    {
         em.getTransaction().begin(); 
         
         int userNum = 0;
         
         List<Users> list = em.createQuery("SELECT u FROM Users u", Users.class).getResultList();
         
-        em.getTransaction().commit();
+        //em.getTransaction().commit();
         
         for(int i = 0; i < list.size(); i++)
         {   
@@ -141,7 +142,7 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
         
         
         Users item = em.find(Users.class, userNum);
-        //em.getTransaction().commit();
+        em.getTransaction().commit();
         //em.close();
          
         return item;  

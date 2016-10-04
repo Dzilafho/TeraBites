@@ -28,6 +28,8 @@ public class Users implements Serializable
     private String userType;
     private String userName;
     private String emailAddress;
+    private String currentLevel;
+
     private byte [] salt;
     
     @OneToMany( targetEntity=EarnedBadge.class )
@@ -43,6 +45,7 @@ public class Users implements Serializable
         this.earnedBadges = null;
         this.usedHints = null;
         this.salt=null;
+        
     }
     public Users(String name, String mEmailAddress){
         this.userName = name;
@@ -59,7 +62,7 @@ public class Users implements Serializable
         this.userType=userType;
         this.emailAddress=email;
         this.salt=salt;
-        
+        this.currentLevel="Challenge One-Level 1";
     }
             
     
@@ -201,5 +204,19 @@ public class Users implements Serializable
      */
     public void setSalt(byte[] salt) {
         this.salt = salt;
+    }
+
+    /**
+     * @return the currentLevel
+     */
+    public String getCurrentLevel() {
+        return currentLevel;
+    }
+
+    /**
+     * @param currentLevel the currentLevel to set
+     */
+    public void setCurrentLevel(String currentLevel) {
+        this.currentLevel = currentLevel;
     }
 }
