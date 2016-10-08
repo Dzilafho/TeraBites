@@ -1,116 +1,90 @@
 <!DOCTYPE html>
-<html ng-app="loginForm">
+<html lang="en" ng-app="loginForm">
+
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Arcane Arcade</title>
-     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="ref/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="ref/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-     <script type="text/javascript" src="js/angular.min.js"></script>   
-     <script src="./js/jquery-3.1.0.min.js"></script>
-     <script src="js/validateLogin.js"></script>
-     <script type="text/javascript" src ="js/app.js"></script>
-     
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <style>
-        #game {
-            background-color: red;
-            height: 400px;
-            margin-bottom: 20px;
-        }
+    <!-- Theme CSS -->
+    <link href="ref/css/agency2.min.css" rel="stylesheet">
+         <script type="text/javascript" src="js/angular.min.js"></script>   
 
-        #question label {
-            margin-right: 25px;
-        }
+         <script type="text/javascript" src ="js/app.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 
-        #question button {
-            margin-left: 25px;
-        }
-    </style>
 </head>
-<body>
-   
-    <div ng-controller="CheckAnswers" ng-init="loadUserProgress()">
-    <div class="container" id="header">
-      <br/>
-        <br/>
-     <br/>
-        <div class="row">
-            <div class="col-sm-2">
-                <h3><a href="#">Hints <span class="badge">42</span></a></h3>
-            </div>
-            <div id="Game"></div>
-            <div class="col-sm-8">
-                <h3 id="levelName"></h3>
-            </div>
-            <div class="col-sm-2">
-                <h3>Badge</h3>
-            </div>
-        </div>
-    </div>
-        <br/>
-        <br/>
-    <div class="container" id="game">
-        <div class="row">
-            <div class="col-sm-12">
 
-            </div>
-        </div>
+<body id="page-top" class="index">
+<div ng-controller="CheckAnswers" ng-init="loadUserProgress()">
+    <!-- Header -->
+    <header>
+    <div class="container">
+	<div class="obj-wrapper">
+		<div id="gamifcation"> <!-- make this fixed size -->
+			<div class="col-sm-2">
+				<h3><a href="#">Hints <span class="badge">42</span></a></h3>
+			</div>
+			<div class="col-sm-8">
+				<h3 id="levelName">Level #</h3>
+			</div>
+			<div class="col-sm-2">
+				<h3>Badge</h3>
+			</div>
+		</div>
+	</div>
+	
+	<div class="obj-wrapper2">
+		<div id="game" class="responsive-iframe-container"> <!-- make this fixed size -->
+                                       <iframe src="html5-maze/index.html"  align="center"></iframe>
+		</div>
+	</div>
+	
+	<div class="obj-wrapper3"> <!-- Question and answer panel -->
+		<form ng-submit="CheckAnswer()" ng-controller="CheckAnswers" class="form-inline">
+			<div id="submitButton">
+				<h4 class="">What will the following piece of code output?</h4> <br/>
+				<p id="questionString">Question</p> <br/>
+				<input type="text" size="20" id="answer" ng-model="userAnswer" placeholder="Enter answer here"> 
+				<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Go</button>  
+				<a href="challenge.html"><button  class="btn btn-primary" >Quit Level</button></a>  
+			</div>
+		</form> 
+	</div>
     </div>
+    </header>
+</div>
+    <!-- jQuery -->
+    <script src="ref/vendor/jquery/jquery.min.js"></script>
 
-    <div class="container" id="question" >
-        <div class="row">
-            <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">What will the following piece of code output?</h3>
-            </div>
-            <div class="panel-body" >
-               <p id="questionString"></p>
-            </div>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <form ng-submit="CheckAnswer()" ng-controller="CheckAnswers" class="form-inline">
-                <div class="form-group">
-                    <label for="answer">Answer</label>
-                    <input type="text" class="form-control" id="answer" ng-model="userAnswer">
-                    <button type="submit" class="btn btn-primary" id="goo">Go</button>  
-                    <a href="challenge.html"><button  class="btn btn-primary" >Quit Level</button></a>  
+    <!-- Bootstrap Core JavaScript -->
+    <script src="ref/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-                </div>
-                 
-            </form>
-        </div>
-        
-          <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><center>Outcome</center></h4>
-        </div>
-        <div class="modal-body">
-          <p id="modalp">Some text in the modal.</p>
-          <div class="row">
-            
-        </div>
-      </div>
-      
-    </div>
-  </div>
-    </div>
-   </div>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="ref/js/jqBootstrapValidation.js"></script>
+    <script src="ref/js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="ref/js/agency.min.js"></script>
+
 </body>
+
 </html>
