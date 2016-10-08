@@ -562,7 +562,7 @@
     </div>
     
 <!-- Portfolio Modal 3 -->
-<div class="portfolio-modal modal fade" id="Profile" tabindex="-1"  role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="Profile" tabindex="-1"  role="dialog" aria-hidden="true" >
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
@@ -574,29 +574,52 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>User Name</h2>
+                            <div class="modal-body" ng-controller="viewProfiles" ng-click="viewProfile()">
+                                <!-- User Details Go Here -->
+                                <h2>Hi, {{users.name}}</h2>
+                                <img class="img-responsive img-centered" height="250" width="250" src="img/portfolio/User.png" alt="Profile Photo">
                                 <table class = "table table-bordered">
                                         <tr>
                                             <th>First Name</th> 
                                             <td>{{users.name}}</td> 
                                         </tr>
+                                         <tr>
                                             <th>Surname</th>
                                             <td>{{users.surname}}</td> 
                                         </tr>
-                                            <th>Username</th>
+                                             <tr>
+                                       <th>Username</th>
                                             <td>{{users.userName}}</td> 
                                         </tr>
-                                            <th>User Email</th>
+                                             <tr>
+                                       <th>User Email</th>
                                             <td>{{users.emailAddress}}</td> 
                                         </tr>
-                                            <th>User Type</th>
+                                             <tr>
+                                       <th>User Type</th>
                                             <td>{{users.userType}}</td>
+                                        </tr>
+                                        <tr>
+                                       <th>Current Progress</th>
+                                            <td>{{users.currentLevel}}</td>
                                         </tr>
                                             
                                         
-                                 </table><button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Profile</button>
+                                 </table>
+                                <br/>
+                                                                      <br/>
+                                 <h2>Earned Badges</h2>
+                                 <br/>
+                                                                      <br/>
+                                 <ul style="list-style-type:none">
+                                    <li>Badge 1 {{badge.badgeName}}</li>
+                                  </ul>
+                                 <br/>
+                                                                      <br/>
+
+                                                                  <br/>
+
+                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Profile</button>
                             </div>
                         </div>
                     </div>

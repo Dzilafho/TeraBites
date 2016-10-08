@@ -72,8 +72,9 @@ html, body
 input
 {
 	color: black;
-}
-  
+	opacity: 1;
+ }
+
   
   .responsive-iframe-container {
     padding-bottom: 60%;

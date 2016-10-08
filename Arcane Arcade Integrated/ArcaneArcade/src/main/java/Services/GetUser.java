@@ -8,20 +8,20 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
 
- 
- 
-@Path("getuser")
+
+@Path("getUser")
 public class GetUser {
     
-    @POST
+    @GET
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
-    public  Response getUser(@Context UriInfo uriInfo,@FormParam("username") String username)
-    {
+   // public  Response getUser(@Context UriInfo uriInfo,@FormParam("username") String username)
+       public  Response getUser()
+ {
         
         ConcreteDAO manager = new ConcreteDAO();
         
-        Users result = manager.getUser(username);
+        Users result = manager.getUser("dzilafho3@gmail.com");
       
          
         return Response.ok().entity(new GenericEntity<Users>(result){})

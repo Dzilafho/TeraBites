@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package Backend;
 
 /*
@@ -318,7 +319,8 @@ public class EsoLangBaseVisitorImp extends EsoLangBaseVisitor<Integer>{
         * {@link #visitChildren} on {@code ctx}.</p>
         */
 	
-        @Override public Integer visitOperand(@NotNull EsoLangParser.OperandContext ctx)
+        @Override 
+        public Integer visitOperand(@NotNull EsoLangParser.OperandContext ctx)
         {
                 return visitChildren(ctx);
          }

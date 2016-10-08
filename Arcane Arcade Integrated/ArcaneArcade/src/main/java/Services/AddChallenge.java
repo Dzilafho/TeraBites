@@ -30,4 +30,5 @@ public class AddChallenge {
         dao.add(newChallenge);        
     }
     
+
 } 
