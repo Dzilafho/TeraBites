@@ -19,7 +19,7 @@ public class GetUserProgress {
     {
         ConcreteDAO dao=new ConcreteDAO<>();
 
-        Users currUser = dao.getUser("dzilafho3@gmail.com");
+        Users currUser = dao.getUser("gershom12");
         return currUser.getCurrentLevel();
     }
                 

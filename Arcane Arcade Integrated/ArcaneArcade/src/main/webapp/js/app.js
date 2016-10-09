@@ -100,11 +100,11 @@ myApp.controller('loginController', ["$scope", "$window", "$http", function($sco
                 {
                     if(str.indexOf("player") !== -1)
                     {
-                            window.location = "management.html";
+                            window.location = "challenge.html";
                     }
                     else
                     {
-                        window.location = "challenge.html";
+                        window.location = "management.html";
                     }
                 }
                 else
@@ -603,13 +603,17 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
 
     $scope.CheckAnswer = function() 
     {
-            $http({
+           $http({
                 method: 'GET',
                 url: 'webresources/getChallenges',
                 headers: {'Content-Type': 'application/json'}
             }).success(function(response)
             {
                 $scope.challenges = response;
+               
+              
+                var userAnswer=$scope.userAnswer;
+                
                 //alert(JSON.stringify(response));
                 var str=JSON.stringify(response);
                 var jsonObj = JSON.parse(str);
@@ -618,31 +622,67 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                             
                 for(var i=0; i< jsonObj.length; i++)
                 {
-                              alert(jsonObj[i].challengeName);               
+                                           
 
                         if(jsonObj[i].challengeName ===  $scope.chall)
                         {
-                            alert("In the if "+jsonObj[i].challengeName);
+                           
                             ChallengeCounter = i;
                         }
                 }
                 
+                 if(typeof userAnswer !== 'undefined' )
+                 {
+                    var originalAnswer=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].answer.answer;
+                   
+                    if(originalAnswer===userAnswer)
+                    {
+                        //pass the data in the modal body adding html elements
+                        $('#myModal .modal-body').html('<p><center>Correct Answer</center></p>') ;
+                        //open the modal
+                        $('#myModal').modal('show') ;
+
+                    }
+                    else
+                    {
+                         
+                        //pass the data in the modal body adding html elements
+                        $('#myModal .modal-body').html('<p><center>Wrong Answer</center></p>') ;
+                        //open the modal
+                        $('#myModal').modal('show') ;
+
+                    }
+                     
+                 }
+                 else
+                 {
+                    
+                 }
+                $scope.userAnswer=" ";
                 counter++;
-                alert(jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString);
+                
                 document.getElementById("questionString").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString;
                 document.getElementById("levelName").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
                 questionCounter++;
                 
                 if(questionCounter===jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions.length)
                 {  
-                    alert("Level"+ jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName+"  of challenge "+ jsonObj[ChallengeCounter].challengeName+" Completed");
+                    
+                    if(questionCounter===jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions.length && $scope.userAnswer===" " )
+                    {
+                            
+                            
+                            $("#goo").attr("disabled", true);
+                    }
+                       
                     levelCounter++;
                     questionCounter=0;
-                    
-                    
+                       
                     if(levelCounter===jsonObj[ChallengeCounter].challengeLevels.length)
                     {
-                        alert("Challenge "+ jsonObj[ChallengeCounter].challengeName+" complete");
+                        
+                        
+                        
                         ChallengeCounter++;
                         levelCounter=0;
                         questionCounter=0;
@@ -670,7 +710,7 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
             
             var encodedString = 'progress='+challengeName+'-Level '+levelNo;
     
-            alert("Setting progress to " +encodedString);
+           
 
     
             $http({
@@ -700,11 +740,11 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                     headers: {'Content-Type': 'application/json'}
                 }).success(function(response)
                 {
+                    alert(responce);
                          $scope.level = response.match(/\d/g);
                          $scope.chall = response.substr(0, response.indexOf('-'));
                          
-                         alert("User level is "+$scope.level);
-                         alert("User challenge is "+$scope.chall);
+                        
                          
                          $scope.CheckAnswer();
                          

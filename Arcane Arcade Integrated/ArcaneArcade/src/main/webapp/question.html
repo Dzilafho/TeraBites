@@ -10,6 +10,9 @@
     <meta name="author" content="">
 
     <title>Arcane Arcade</title>
+    
+     <script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+     <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap Core CSS -->
     <link href="ref/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,10 +26,11 @@
 
     <!-- Theme CSS -->
     <link href="ref/css/agency2.min.css" rel="stylesheet">
-         <script type="text/javascript" src="js/angular.min.js"></script>   
+    <script type="text/javascript" src="js/angular.min.js"></script>  
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 
-         <script type="text/javascript" src ="js/app.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src ="js/app.js"></script>
+   
 
 </head>
 
@@ -61,22 +65,53 @@
 				<h4 class="">What will the following piece of code output?</h4> <br/>
 				<p id="questionString">Question</p> <br/>
 				<input type="text" size="20" id="answer" ng-model="userAnswer" placeholder="Enter answer here"> 
-				<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Go</button>  
-				<a href="challenge.html"><button  class="btn btn-primary" >Quit Level</button></a>  
+				<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="goo">Go</button>  
+				<a href="challenge.html"><button  class="btn btn-primary" >Next Level</button></a>  
 			</div>
 		</form> 
 	</div>
     </div>
     </header>
-</div>
-    <!-- jQuery -->
-    <script src="ref/vendor/jquery/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="ref/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><center>Outcome</center></h4>
+        </div>
+        <div class="modal-body">
+          <p id="modalp">Some text in the modal.</p>
+          <div class="row">
+          </div>
+        </div>
+      
+      </div>
+  </div>
+ </div>
+ 
+          
+                    <!-- Hint Modal -->
+  <div class="modal fade" id="hintModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Here is your hint</h4>
+        </div>
+        <div class="modal-body">
+          <p id="theHint">Question Hint.</p>
+          <div class="row">
+            
+            </div>
+      </div>
+      
+    </div>
 
     <!-- Contact Form JavaScript -->
     <script src="ref/js/jqBootstrapValidation.js"></script>

@@ -38,7 +38,7 @@ public class ConcreteDAO<T> implements GenericModelDAO<T> {
          em.getTransaction().begin(); 
          em.persist(entityClass);
          em.getTransaction().commit();
-         em.close();
+        // em.close();
     }
     @Override
     public boolean checkUserExist(String username) //function not complete it only checks using the username when adding the user
