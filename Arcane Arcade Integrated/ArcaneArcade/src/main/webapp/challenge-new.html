@@ -572,11 +572,11 @@
 			</div>
                 </div>
                 <div class="container">
-			<div class="profileDiv group">
+			<div class="profileDiv group" ng-controller="viewProfiles" ng-click="viewProfile()">
 
 				<div class="heading">
 					<img id="pro" class="img-responsive img-centered" height="170" width="170" src="images/User.png" alt="Profile Photo"><br>
-					<h1>J. Doe</h1>
+					<h1>{{users.name}}</h1>
 				</div>
 			    
 				<div class="profileBlock personal fl">
@@ -586,11 +586,11 @@
 					</div>
 					
 					<ul class="features">
-						<li>Name: John</li>
-						<li>Surname: Doe</li>
-						<li>Username: jd123</li>
-						<li>Email: jd@gmail.com</li>
-						<li>Usertype: admin</li>		    
+						<li>Name: {{users.name}}</li>
+						<li>Surname: {{users.surname}}</li>
+						<li>Username: {{users.userName}}</li>
+						<li>Email: {{users.emailAddress}}</li>
+						<li>Usertype: {{users.userType}}</li>		    
 					</ul>
 
 					<div class="pt-footer">
@@ -606,11 +606,11 @@
 					</div>
 
 					<ul class="features">
-						<li>Test completed: No </li>
-						<li>Current Progress: 70% </li>
-						<li>Level 1: 70% </li>
-						<li>Level 2: 45% </li>
-						<li>Level 3: NA </li>
+						<li>Test completed: Yes/No </li>
+						<li>Current Progress: {{users.currentLevel}} </li>
+						<li>Level 1: % </li>
+						<li>Level 2: % </li>
+						<li>Level 3: % </li>
 					</ul>
 
 					<div class="pt-footer">
