@@ -532,8 +532,18 @@ myApp.controller('loadQuestions', ["$scope", "$window", "$http", function($scope
 
                         alert(currProgress);
                         document.getElementById(currProgress).class = "list-group-item";
-                        document.getElementById(currProgress).innerHTML = "<a href='question.html'>"+document.getElementById(currProgress).innerHTML+"</a>";
+                        
+                                           //     alert( document.getElementById(currProgress).innerHTML.substring(0, document.getElementById(currProgress).innerHTML.indexOf('<')));
 
+
+                        if( document.getElementById(currProgress).innerHTML.charAt(0) === '<')
+                        {
+                        }
+                        else
+                        {
+                            document.getElementById(currProgress).innerHTML = "<a href='question.html'>"+document.getElementById(currProgress).innerHTML.substring(0, document.getElementById(currProgress).innerHTML.indexOf('<'))+"</a><i class='fa fa-unlock'></i>";
+                        }
+                        
                  }).
                  error(function(response)
                  {

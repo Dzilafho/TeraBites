@@ -28,7 +28,7 @@ public class AddUserProgress {
     {
         ConcreteDAO dao=new ConcreteDAO<>();
 
-        Users currUser = dao.getUser("gershom12");
+        Users currUser = dao.getUser("dzilafho3@gmail.com");
         currUser.setCurrentLevel(progress);
         dao.add(currUser);
     }

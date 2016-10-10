@@ -89,7 +89,7 @@
     <section id="Challenges" class="bg-light-gray" ng-init="getChallenge()" ng-controller="getChallenges">
 	<div class="container">
             <h2>Challenges</h2>
-		<div class="panel-group" ng-repeat="challenge in challenges">
+                <div class="panel-group" ng-repeat="challenge in challenges">
                     <div class="panel panel-default">
                             <div class="panel-heading">
                               <h4 class="panel-title">
@@ -98,7 +98,7 @@
                             </div>
                         <div id="chal{{$index}}" class="panel-collapse collapse" ng-mouseover="loadProgress()" ng-controller="loadQuestions">
                                 <ul class="list-group" >
-                                    <li ng-repeat="level in challenge.challengeLevels" id="{{challenge.challengeName}}-Level {{$index+1}}" class="list-group-item disabled">{{level.levelName}}</li>
+                                    <li ng-repeat="level in challenge.challengeLevels" id="{{challenge.challengeName}}-Level {{$index+1}}" class="list-group-item disabled" >{{level.levelName}}  <i class='fa fa-lock'></i></li>
                                 </ul>
                         </div>
                     </div>
