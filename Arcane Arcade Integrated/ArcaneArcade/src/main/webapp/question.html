@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <script type="text/javascript" src ="js/app.js"></script>
+
    
 
 </head>
@@ -42,28 +43,30 @@
 	<div class="obj-wrapper">
 		<div id="gamifcation"> <!-- make this fixed size -->
 			<div class="col-sm-2">
-				<h3><a href="#">Hints <span class="badge">42</span></a></h3>
+                            <h3><a href="#"><font color="#4B0082">Hints</font> <span class="badge">42</span></a></h3>
 			</div>
 			<div class="col-sm-8">
-				<h3 id="levelName">Level #</h3>
+                            <h3 id="levelName"><font color="#4B0082"></font></h3>
 			</div>
 			<div class="col-sm-2">
-				<h3>Badge</h3>
+                            <h3><font color ="#4B0082">Badge</font></h3>
 			</div>
 		</div>
 	</div>
 	
 	<div class="obj-wrapper2">
 		<div id="game" class="responsive-iframe-container"> <!-- make this fixed size -->
-                                       <iframe src="html5-maze/index.html"  align="center"></iframe>
+                    <iframe src="html5-maze/index.html"  align="center"></iframe>
 		</div>
 	</div>
 	
 	<div class="obj-wrapper3"> <!-- Question and answer panel -->
 		<form ng-submit="CheckAnswer()" ng-controller="CheckAnswers" class="form-inline">
 			<div id="submitButton">
-				<h4 class="">What will the following piece of code output?</h4> <br/>
-				<p id="questionString">Question</p> <br/>
+                            <h4 class=""><font color="#4B0082" >What will the following piece of code output?</font></h4> <br/>
+                            
+                            <h3 id="questionString"><font color="#4B0082" >Question</font></h3> <br/> 
+                               
 				<input type="text" size="20" id="answer" ng-model="userAnswer" placeholder="Enter answer here"> 
 				<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="goo">Go</button>  
 				<a href="challenge.html"><button  class="btn btn-primary" >Next Level</button></a>  
@@ -81,10 +84,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><center>Outcome</center></h4>
+          <h1 class="modal-title"><center><font color="#4B0082">Outcome</font></center></h1>
         </div>
         <div class="modal-body">
-          <p id="modalp">Some text in the modal.</p>
+            <p id="modalp"><font color="#4B0082">Some text in the modal.</font></p>
           <div class="row">
           </div>
         </div>

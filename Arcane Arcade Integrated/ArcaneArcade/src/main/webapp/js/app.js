@@ -54,14 +54,14 @@ myApp.controller('viewProfiles', ["$scope", "$window", "$http", function($scope,
     {
         
         
-        alert("innnn");
+        
          $http({
                 method: 'GET',
                 url: 'webresources/getUser',
                 headers: {'Content-Type': 'application/json'}
             }).success(function(response)
             {
-                        alert("innnn here");
+                        
 
                 //console.log(response);
                 $scope.users = response;
@@ -151,7 +151,7 @@ myApp.controller('addUser', ["$scope", "$window", "$http", function($scope, $win
     $scope.UserAddition = function() 
     {
         
-            alert($scope.userType);
+           
             
             var encodedString = 'name=' +
             encodeURIComponent($scope.userName) +
@@ -166,7 +166,7 @@ myApp.controller('addUser', ["$scope", "$window", "$http", function($scope, $win
             '&userType=' +
             encodeURIComponent($scope.userType);
     
-                        alert(encodedString);
+                       
 
 
             $http({
@@ -196,7 +196,7 @@ myApp.controller('addLevels', ["$scope", "$window", "$http", function($scope, $w
             '&challengename=' +
             encodeURIComponent($scope.challengeUnder);
     
-            alert(encodedString);
+            
 
     
             $http({
@@ -233,7 +233,7 @@ myApp.controller('addQuestions', ["$scope", "$window", "$http", function($scope,
             '&challenge=' +
             encodeURIComponent($scope.challengename);
     
-            alert(encodedString);
+           
 
     
             $http({
@@ -259,7 +259,7 @@ myApp.controller('AddChallenges', ["$scope", "$window", "$http", function($scope
 
     $scope.AddChallenge = function() 
     {
-            alert("hellllo");
+          
             var encodedString = 'challenge=' +
             encodeURIComponent($scope.challenge);
             
@@ -526,11 +526,11 @@ myApp.controller('loadQuestions', ["$scope", "$window", "$http", function($scope
                     headers: {'Content-Type': 'application/json'}
                 }).success(function(response)
                 {
-                        alert("Here Man");
+                      
                         var currProgress;
                         currProgress = response.toString();
 
-                        alert(currProgress);
+                      
                         document.getElementById(currProgress).class = "list-group-item";
                         
                                            //     alert( document.getElementById(currProgress).innerHTML.substring(0, document.getElementById(currProgress).innerHTML.indexOf('<')));
@@ -541,7 +541,7 @@ myApp.controller('loadQuestions', ["$scope", "$window", "$http", function($scope
                         }
                         else
                         {
-                            document.getElementById(currProgress).innerHTML = "<a href='question.html'>"+document.getElementById(currProgress).innerHTML.substring(0, document.getElementById(currProgress).innerHTML.indexOf('<'))+"</a><i class='fa fa-unlock'></i>";
+                            document.getElementById(currProgress).innerHTML = "<a href='question.html'>"+document.getElementById(currProgress).innerHTML.substring(0, document.getElementById(currProgress).innerHTML.indexOf('<'))+"</a><div align='right'><i class='fa fa-unlock'></i></div>";
                         }
                         
                  }).
@@ -648,7 +648,7 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                     if(originalAnswer===userAnswer)
                     {
                         //pass the data in the modal body adding html elements
-                        $('#myModal .modal-body').html('<p><center>Correct Answer</center></p>') ;
+                        $('#myModal .modal-body').html('<h3><center><font color="#4B0082" >Correct Answer</font></center></h3>') ;
                         //open the modal
                         $('#myModal').modal('show') ;
 
@@ -657,7 +657,7 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                     {
                          
                         //pass the data in the modal body adding html elements
-                        $('#myModal .modal-body').html('<p><center>Wrong Answer</center></p>') ;
+                        $('#myModal .modal-body').html('<h3><center><font color="#4B0082" >Wrong Answer</font></center></h3>') ;
                         //open the modal
                         $('#myModal').modal('show') ;
 
@@ -672,7 +672,7 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                 counter++;
                 
                 document.getElementById("questionString").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString;
-                document.getElementById("levelName").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
+                document.getElementById("levelName").innerHTML="Level Name : "+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
                 questionCounter++;
                 
                 if(questionCounter===jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions.length)
@@ -682,7 +682,7 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                     {
                             
                             
-                            $("#goo").attr("disabled", true);
+                           // $("#goo").attr("disabled", true);
                     }
                        
                     levelCounter++;
@@ -750,7 +750,7 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                     headers: {'Content-Type': 'application/json'}
                 }).success(function(response)
                 {
-                    alert(responce);
+                   
                          $scope.level = response.match(/\d/g);
                          $scope.chall = response.substr(0, response.indexOf('-'));
                          
