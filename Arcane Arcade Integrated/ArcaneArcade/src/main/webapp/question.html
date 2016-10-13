@@ -115,6 +115,45 @@
       </div>
       
     </div>
+    
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="result" tabindex="-1"  role="dialog" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body" ng-controller="viewResults" ng-click="viewResult()">
+                              
+                                <div id="result">
+                                    
+                                </div>
+                                               
+                                 <h2>Earned Badges</h2>
+                                 <br/>
+                                   <br/>
+                                 <ul style="list-style-type:none">
+                                    <li>Badge 1 {{badge.badgeName}}</li>
+                                 </ul>
+                                        <br/>
+                                       <br/>
+                                    <br/>
+
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><a href="challenge.html">Next Challenge</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
 
     <!-- Contact Form JavaScript -->
     <script src="ref/js/jqBootstrapValidation.js"></script>

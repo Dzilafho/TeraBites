@@ -494,6 +494,17 @@ myApp.controller('viewQuestions', ["$scope", "$window", "$http", function($scope
         };
 }]);
 
+myApp.controller('viewResults', ["$scope", "$window", "$http", function($scope, $window, $http) {
+
+    $scope.viewResult = function() 
+    {
+        
+    };
+            
+}]);
+
+
+
 myApp.controller('loadQuestions', ["$scope", "$window", "$http", function($scope, $window, $http) {
 
          $scope.loadQuestion = function() 
@@ -607,6 +618,20 @@ myApp.controller('getChallenges', ["$scope", "$window", "$http", function($scope
 
         };
 }]);
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
 
 myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope, $window, $http) {
@@ -644,13 +669,27 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                  if(typeof userAnswer !== 'undefined' )
                  {
                     var originalAnswer=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].answer.answer;
-                   
+                   alert(originalAnswer);
+                   alert(userAnswer);
                     if(originalAnswer===userAnswer)
                     {
                         //pass the data in the modal body adding html elements
                         $('#myModal .modal-body').html('<h3><center><font color="#4B0082" >Correct Answer</font></center></h3>') ;
                         //open the modal
                         $('#myModal').modal('show') ;
+                        if(getCookie("count")!=="")
+                        {
+                            var counter=getCookie("count");
+                            parseInt(counter);
+                            counter++;
+                            
+                            document.cookie="count=1;levelName="+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
+                            alert(counter);
+                        }
+                        else
+                        {
+                           document.cookie="count=1;levelName="+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName; 
+                        }
 
                     }
                     else
@@ -660,6 +699,8 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                         $('#myModal .modal-body').html('<h3><center><font color="#4B0082" >Wrong Answer</font></center></h3>') ;
                         //open the modal
                         $('#myModal').modal('show') ;
+                        
+                    
 
                     }
                      
@@ -678,12 +719,7 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                 if(questionCounter===jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions.length)
                 {  
                     
-                    if(questionCounter===jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions.length && $scope.userAnswer===" " )
-                    {
-                            
-                            
-                           // $("#goo").attr("disabled", true);
-                    }
+                   
                        
                     levelCounter++;
                     questionCounter=0;

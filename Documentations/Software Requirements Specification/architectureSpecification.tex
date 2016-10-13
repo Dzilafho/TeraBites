@@ -59,19 +59,18 @@
 	\newpage
 	
 	\section{Introduction}
-		Our project \textit{Arcane Arcade} has a vision to provide a profoundly manner of testing the abilities of developers, who are potential employees, and using the results of the captured
-		data from these tests to be able to assign them accordingly to a specific postion within the company which is best suited for their skills.\\\\
-		Since the core focus is on software developers, \textit{Arcane Arcade} does testing on the programming abilities of the candidates using an esoteric language (esolang). Candidates are 
-		provided with a series of programming challenges and questions which they have to complete using the esoteric language.
-
+	The name of our project is Arcane Arcade which references the esoteric language that users will have to use to interact with the system. It also highlights the gamification approach that makes it a fun activity. The platform will be used to test prospective employees in a fun gamified way. It will indicate in which programming area the user is likely to be better suited, by looking at how the user completed the challenges, such as whether the user used any hints and the badges that the user earned. Users will be presented with several challenges which they will have to complete and based on their performance,placed on appropriate positions within the company.
+	
+	\section{Vision}
+	The vision is to provide a fun and easily accessible platform that can be used to gauge the programming aptitude and capabilities of existing or future software developers using a custom esoteric programming language
 
 	\section{Architecture Requirements}
 		\subsection{Access channel requirements}
 			\paragraph\indent
 			The system requires two interfaces:
 			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-				\item Web interface (for the game and maintenance)
-				\item Tablet application for the game portion
+				\item The user will have access to the system through Web interface (for both the game and maintenance portal) on any preferred browser.
+				\item The system will also be made available to the user on a Tablet application.
 			\end{list}
 
 
@@ -104,11 +103,16 @@
 		\subsection{Architecture constraints}
 			\subsubsection{Technologies}
 			\begin{itemize}
-		  \item HTML and JavaScript for the front end functionality for both the browser and game application
-		  \item Java Standard Edition (J2SE) will be used for backend functionality.
+		  \item HTML
+		  \item JavaScript
+		  \item CSS
+		  \item JQUERY
+		  \item Java Standard Edition (J2SE)
 		  \item PostgreSQL for persistence because it is a mature, efficient and reliable relational database
           implementation which is available across platforms and for which there is a large and very competent
-         support community.
+          support community.\\ 
+         \newline
+          PostgreSQL satistiﬁes the Scalability requirement rather nicely. It can handle a variety of diﬀerent workloads, from single machine applications to much larger web applications with many concurrent users. This means that the program can be easily used to ensure that our sysstem can scale to the workload that is required of it. 
        \end{itemize}
        
 		\subsubsection{Architectural patterns} % level 1
@@ -132,19 +136,20 @@
 			\vspace{0.5cm}
 			
 		\fi
-
-	\newpage
 	\subsubsection{Architectural Frameworks} % level 2
 
 	\begin{itemize}
 		
 		
-		\item \textbf{ANTLR 4} is used to generate a lexer and parser for the esoteric language using a grammar file as input. A visitor implementation is also created to deal with the tokens created from an input string (the esolang code) and calculate the result of the user's code.
+	\item \textbf{ANTLR 4} \\
+	ANTLR 4 is used to generate a lexer and parser for the esoteric language using a grammar file as input. A visitor implementation is also created to deal with the tokens created from an input string (the esolang code) and calculate the result of the user's code.
 	
-	\item \textbf{AngularJS} is used for dependency injection. It allows us to speficify fields into which data from the database can simply be placed without the need to explicitly know the data or.
+	\item \textbf{AngularJS} \\ 
+	Angular js is used for dependency injection. It allows us to speficify fields into which data from the database can simply be placed without the need to explicitly know the data or.
 	
-	\item \textbf{Gson} for the serialization and deserialization of Java objects JSON. It aids in creating JSON objects that encapsulate all the fields and relations that the Java object we are serializing has.
-	\item \textbf{Jersey} for mapping a resource classes (POJOs) as a web resources. It allows us to use annotations  when creating web services according to the Representational State Transfer (REST) architectural pattern.
+	\item \textbf{Gson}\\ Gson will be used for the serialization and deserialization of Java objects JSON. It aids in creating JSON objects that encapsulate all the fields and relations that the Java object we are serializing has.
+	\item \textbf{Java Jersey} \\
+	Java Jersey will be used for mapping a resource classes (POJOs) as a web resources. It allows us to use annotations  when creating web services according to the Representational State Transfer (REST) architectural pattern.This framework is considerably useful in our situation as we are using both Java and a RESTful API approach to making the system.
 		\end{itemize}	
 
 	\iffalse
