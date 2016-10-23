@@ -13,25 +13,19 @@
     
      <script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
      <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
-
-    <!-- Bootstrap Core CSS -->
+     <!-- Bootstrap Core CSS -->
     <link href="ref/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="ref/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
     <!-- Theme CSS -->
     <link href="ref/css/agency2.min.css" rel="stylesheet">
     <script type="text/javascript" src="js/angular.min.js"></script>  
     <link rel="stylesheet" href="css/style.css" type="text/css">
-
     <script type="text/javascript" src ="js/app.js"></script>
-
-   
 
 </head>
 
@@ -43,40 +37,39 @@
 	<div class="obj-wrapper">
 		<div id="gamifcation"> <!-- make this fixed size -->
 			<div class="col-sm-2">
-                            <h3><a href="#"><font color="#4B0082">Hints</font> <span class="badge">42</span></a></h3>
+			      <h3><a href="#"><font color="#4B0082">Hints</font> <span class="badge">42</span></a></h3>
 			</div>
 			<div class="col-sm-8">
-                            <h3 id="levelName"><font color="#4B0082"></font></h3>
+			       <h3 id="levelName"><font color="#4B0082"></font></h3>
 			</div>
 			<div class="col-sm-2">
-                            <h3><font color ="#4B0082">Badge</font></h3>
+			        <h3><font color ="#4B0082">Badge</font></h3>
 			</div>
 		</div>
 	</div>
 	
 	<div class="obj-wrapper2">
 		<div id="game" class="responsive-iframe-container"> <!-- make this fixed size -->
-                    <iframe src="html5-maze/index.html"  align="center"></iframe>
+		      <iframe src="html5-maze/index.html"  align="center"></iframe>
 		</div>
 	</div>
 	
 	<div class="obj-wrapper3"> <!-- Question and answer panel -->
 		<form ng-submit="CheckAnswer()" ng-controller="CheckAnswers" class="form-inline">
-			<div id="submitButton">
+		      <div id="submitButton">
                             <h4 class=""><font color="#4B0082" >What will the following piece of code output?</font></h4> <br/>
-                            
                             <h3 id="questionString"><font color="#4B0082" >Question</font></h3> <br/> 
-                               
 				<input type="text" size="20" id="answer" ng-model="userAnswer" placeholder="Enter answer here"> 
-				<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="goo">Go</button>  
-				<a href="challenge.html"><button  class="btn btn-primary" >Next Level</button></a>  
+				        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="goo">Go</button>  
+				<p><a class="btn btn-lg btn-primary" href="challenge.html" role="button">Next Level</a></p>
+				
 			</div>
 		</form> 
 	</div>
     </div>
     </header>
 
-    <!-- Modal -->
+<!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -84,20 +77,19 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h1 class="modal-title"><center><font color="#4B0082">Outcome</font></center></h1>
+		<h1 class="modal-title"><center><font color="#4B0082">Outcome</font></center></h1>
         </div>
         <div class="modal-body">
             <p id="modalp"><font color="#4B0082">Some text in the modal.</font></p>
           <div class="row">
           </div>
         </div>
-      
-      </div>
+	</div>
   </div>
  </div>
  
           
-                    <!-- Hint Modal -->
+<!-- Hint Modal -->
   <div class="modal fade" id="hintModal" role="dialog">
     <div class="modal-dialog">
     
@@ -105,7 +97,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Here is your hint</h4>
+		<h4 class="modal-title">Here is your hint</h4>
         </div>
         <div class="modal-body">
           <p id="theHint">Question Hint.</p>

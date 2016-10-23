@@ -618,6 +618,28 @@ myApp.controller('getChallenges', ["$scope", "$window", "$http", function($scope
 
         };
 }]);
+myApp.controller('showResults', ["$scope", "$window", "$http", function($scope, $window, $http) {
+
+    $scope.showResult = function() 
+    {
+             
+            $http({
+                method: 'GET',
+                url: 'webresources/getChallenges',
+                headers: {'Content-Type': 'application/json'}
+            }).success(function(response)
+            {
+                $scope.challenges = response;
+                 //alert(JSON.stringify(response));
+             }).
+              error(function(response)
+              {
+                  //When server is down
+                   $window.alert("Server error........request not sent");
+              });
+
+        };
+}]);
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -665,30 +687,31 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                             ChallengeCounter = i;
                         }
                 }
+                var stringm=getCookie("count"+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName);
+                    
                 
                  if(typeof userAnswer !== 'undefined' )
                  {
                     var originalAnswer=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].answer.answer;
-                   alert(originalAnswer);
-                   alert(userAnswer);
+                    
                     if(originalAnswer===userAnswer)
                     {
                         //pass the data in the modal body adding html elements
                         $('#myModal .modal-body').html('<h3><center><font color="#4B0082" >Correct Answer</font></center></h3>') ;
                         //open the modal
                         $('#myModal').modal('show') ;
-                        if(getCookie("count")!=="")
+                        if(getCookie("count"+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName)!=="")
                         {
-                            var counter=getCookie("count");
+                            var counter=getCookie("count"+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName);
                             parseInt(counter);
                             counter++;
                             
-                            document.cookie="count=1;levelName="+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
-                            alert(counter);
+                            document.cookie="count"+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName+"="+counter;
+                            
                         }
                         else
                         {
-                           document.cookie="count=1;levelName="+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName; 
+                            document.cookie="count"+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName+"=0";
                         }
 
                     }
@@ -699,9 +722,6 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                         $('#myModal .modal-body').html('<h3><center><font color="#4B0082" >Wrong Answer</font></center></h3>') ;
                         //open the modal
                         $('#myModal').modal('show') ;
-                        
-                    
-
                     }
                      
                  }
@@ -712,6 +732,8 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                 $scope.userAnswer=" ";
                 counter++;
                 
+                //document.getElementById("next").innerHTML="<a href='challenge.html'><button  class='btn btn-primary' id='next' >Next Level</button></a>";
+                
                 document.getElementById("questionString").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString;
                 document.getElementById("levelName").innerHTML="Level Name : "+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
                 questionCounter++;
@@ -719,20 +741,24 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                 if(questionCounter===jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions.length)
                 {  
                     
-                   
-                       
+                    
+                      
                     levelCounter++;
                     questionCounter=0;
                        
                     if(levelCounter===jsonObj[ChallengeCounter].challengeLevels.length)
                     {
-                        
-                        
-                        
                         ChallengeCounter++;
+                        
                         levelCounter=0;
                         questionCounter=0;
+                        if(ChallengeCounter===jsonObj[ChallengeCounter].length)
+                        {
+                            alert("last challenge");
+                        }
                         $scope.setUserProgress(jsonObj[ChallengeCounter].challengeName, levelCounter+1);
+                        
+                        
                     }
                     
                     $scope.setUserProgress(jsonObj[ChallengeCounter].challengeName, levelCounter+1);
@@ -740,8 +766,12 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                 }
                 else
                 {
-                    return;
+                   return;
                 }
+                document.cookie="count"+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName+"=0";
+                $("#goo").attr("disabled", true);
+                
+                
               }).
               error(function(response)
               {
@@ -756,7 +786,7 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
             
             var encodedString = 'progress='+challengeName+'-Level '+levelNo;
     
-           
+             
 
     
             $http({
