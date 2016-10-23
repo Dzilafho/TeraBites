@@ -142,6 +142,28 @@
 			\paragraph{Objective :}The purpose of this test is to validate whether the expression contains valid tokens. An expressions which is ran in the esolang is also ran in java code and the end results of the two same but differently executed methods are compared for equality through the assert methods.
 			\paragraph{Input :} Both valid and invalid entries will be construcuted to ensure that exceptions are raised if pre-conditions are not met.
 			\paragraph{Outcome :} Upon recognizing an invalid token the test raises an exception and if no invalid token is found, the test returns the  appropriate response object  which was outlined on the functional requirements.  \\
+			
+				\subsection{Test Case 4: Assignment statements testing} 
+				\includegraphics[width=\linewidth]{assignment.png}
+				
+				\subsubsection{Condition 1: The back-end server must be running } 
+				\subsubsection{Condition 2: All variables on the assignment statement must be initialized with valid values } 
+				\paragraph{Objective :} The main objective of the following test is to validate whether the assignment operator of our esolang language produces the expected results, that is assigns the correct values to declared variables.
+				\paragraph{Input :} For every use case, both valid and invalid entries will be construcuted to ensure that exceptions are raised if pre-condiions are not met. Further all return values are checked to ensure that the returned object is correct according the stated
+				functional requirements. In this case a string of user  esolang input expression will be our input.
+				
+				\paragraph{Outcome :}The test case returns a boolean value which state whether the assignment was valid or not and if invalid an assert function is used to terminate the test with a fail\\
+				
+				\subsection{Test Case 4: Assignment statements testing} 
+				\includegraphics[width=\linewidth]{wrong.png}
+				
+				\subsubsection{Condition 1: The back-end server must be running } 
+				\subsubsection{Condition 2: All variables on the assignment statement must be initialized with valid values } 
+				\paragraph{Objective :} The main objective of the following test is to validate whether a given expression produces the correct results after compiling it with the compiler.
+				\paragraph{Input :} For every use case, both valid and invalid entries will be construcuted to ensure that exceptions are raised if pre-condiions are not met. Further all return values are checked to ensure that the returned object is correct according the stated
+				functional requirements. In this case a string of user  esolang input expression will be our input.
+				
+				\paragraph{Outcome :}An assert function is used based on the results of the test. if the test is not succesfull we terminate the function with a fail \\
 				
 		 	
 	\newpage
