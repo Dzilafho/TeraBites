@@ -3,6 +3,7 @@
 
 \usepackage{graphicx}
 \usepackage{grffile}
+\usepackage{float}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 
@@ -76,7 +77,7 @@
 		\subsection{Arcane Arcade as the Solution}
 		The candidate is presented with a problem and must use an unfamiliar and custom esoteric programming languages (esolang) to solve the problem. The test must make use of gamification principles such as making new keywords available that can be used in following challenges when a specific challenge is completed. 
 		\\[12pt]
-		Each challenge is harder than the previous and all incorporate some programming principle such as general arithmetic, condition checking, iteration, recursion, functions and embedded functions. The platform must have the ability to interpret or compile the esolang and to allow the candidate to “run” the program. The platform must be available on-line or on a tablet device and be secure enough to disallow unauthorized use. The candidate will be emailed a link and a user-name to access the platform. 
+		Each challenge is harder than the previous and all incorporate some programming principle such as general arithmetic, condition checking, iteration, recursion, functions and embedded functions. The platform must have the ability to interpret or compile the esolang and to allow the candidate to run the program. The platform must be available on-line or on a tablet device and be secure enough to disallow unauthorized use. The candidate will be emailed a link and a user-name to access the platform. 
 		\\[12pt]
 		All the challenges are be timed and all results and times must be persisted. Once the candidate completes the whole challenge or decides to stop before the last challenge, a final score is shown. The candidate cannot access the challenge again once it reaches this state. In addition to the challenge/game, an administrator must be able to manage users, questions, esolang keywords (dependent on time) and result on-line.
 		
@@ -91,23 +92,104 @@ technologies will be discussed). The host must be connected to the
 internet in order to allow any required dependencies to be installed and set
 up for the operating system environment. The configuration of the server
 requires an active internet connection to facilitate communication between the
-system and end users.
-	\\[12pt]
- The types of data that will communicated and stored will be in a PostgresSQL database. The challenges that are to be passed to the candidate's system reside in the database, there will have to be retrieved for display in the pages. The levels and questions that the challenges entail will be stored too. The challenges that the system houses can be added to
-the home page by the administrator in order to populate the navigation bar and pages. The administrators are the only users who are able to  edit any data in the database.
+system and end users.\\
+\newline
+ The challenges that are to be passed to the candidate's system reside in the database, there will have to be retrieved for display in the pages. The levels and questions that the challenges entail will be stored too. The challenges that the system houses can be added to the system by the administrator.The administrators are the only users who are able to  edit any data in the database.
 \newpage
- The candidate users will just be able to view the challenges on the page. The user's sign up information will also be stored and will be used on the user's profile page. Each user will only have access to their own information. The administrators, however, will be able to search for users and update their IDs or delete them from the system. The administrators will have access to the challenge history of each user in order to view their attempts and performance.
+ The users will only be allowed to view and play the challenges on the game page. The user's sign up information will also be stored and will be used on the user's profile page. Each user will only have access to their own information. The administrators, however, will be able to search for users and update their IDs or delete them from the system. The administrators will have access to the challenge history of each user in order to view their attempts and performance.
+ \newline
 
-	
+	\begin{figure}[H]
+	  
+	 	\includegraphics[width=1.0\textwidth]{systemOverview.png}
+	 	\caption{Overview of System - Servers and Clients}
+	\end{figure}
+ \newpage
+ 
+ \section {Installation}
+ 
+ \subsection{Prerequisites}
+ For the programmer, who will maintain the code: \\ 
+ \newline
+ The Arcane Arcade System must have the associated technologies, PosgreSQL,\\AngularJs,Maven and Glassfish web server.The programmer will also require an IDE most preferably Netbeans for further development and maintenance purposes. Arcane Arcade is a maven project meaning you will need an Internet connection to download all the required project dependencies from remote sites to your machine in order for your project to build succesfully\\
+ 
+The following command can be used to clean the project from the terminal
+ \begin{itemize}
+	 
+	 \item mvn clean
+\end{itemize}
+
+ The user can also clean the project with Netbeans as shown below\\
+ 
+ 	\begin{figure}[H]
+ 		
+ 		\includegraphics[width=1.0\textwidth]{clean.png}
+ 		\caption{Cleaning the project machine files}
+ 	\end{figure}
+  
+ 
+After cleaning the project you have to build. This will download all the dependencies declared on the project POM file from a remote locations into your local machine.
+Some of these dependencies include Java Jersey fro REST services etc. \\
+
+The following command can be used to build the project from the terminal
+  \begin{itemize}
+  	
+  	\item mvn build
+  	
+  \end{itemize}
+  The user can also build the project with Netbeans as shown below\\
+  
+  \begin{figure}[H]
+  	
+  	\includegraphics[width=1.0\textwidth]{build.png}
+  	\caption{Building the project machine files}
+  \end{figure}
+
+  
+  Once the project has been built one has to deploy it on glassfish server which comes with the Netbeans installation or can be downloaded separately on the glassfish website.
+  The project can also be deployed on any other web server depending on the user's preference.
+  \begin{figure}[H]
+    \includegraphics[width=1.0\textwidth]{glassfish.png}
+  	\caption{Server used to deploy the project}
+  \end{figure}
+    
+  
+	Once the server is set up we deploy and run the project on Netbeans using glassfish server and the project is deployed on localhost or on the local machine and can be accessed with the command below on the browser.
+  
+    \begin{itemize}
+    	
+    	\item http://localhost:10530/ArcaneArcade/
+    	
+    \end{itemize}
+  
+  The screen shot below shows below shows the project while being deployed on glassfish server on Netbeans.
+   \begin{figure}[H]
+   	\includegraphics[width=1.0\textwidth]{deploy.png}
+   	\caption{Server used to deploy the project}
+   \end{figure}
+ 
+ 
 	
 	\section{System Usage}
-	Arcane Arcade is primarily accessed through a web browser. The system has different pages that outline the functionalities that the different types of users can access. The users can be either administrators or candidates. 
-		\\[12pt]
-	Administrators have global access to the whole system which also grants them management capabilities. The administrators can modify the structure of the challenges and how the candidates interact with the system controlling access, modifying questions, adding challenges, and others.
+	
+	Access to Arcane Arcade is through a standard web browser. Different types of users have access to different facets of the system. The system has an administrator user account, who is responsible for the management of the entire system and they also have global access to the whole system. The system also has a player account which can only access the game part of the system to complete the challenges
+	\newline
+
+	Any user that wishes to use Arcane Arcade will need an Internet connection and a web browser to access the website. Any operating system will run ﬁne and the website is accessable from The following browsers: 
+	\begin{itemize}
+		\item Google
+		\item Chrome Mozilla 
+		\item FireFox 
+		\item Internet Explorer 
+		\item Safari 
+	\end{itemize}
+	If your browser is not listed here, the site may work with limited functionality.\\
+	
+Administrators have global access to the whole system which also grants them management capabilities. The administrators can modify the structure of the challenges and how the candidates interact with the system controlling access, modifying questions, adding challenges, and others.
 		\\[12pt]
 	Candidates only have access to the challenges page and all-sub pages that can be found/clicked from that particular page.
 	
-		\newpage
+	
 		\subsection{Administrative Use}
 		Arcane Arcade initially starts with a couple of administrator user accounts. These accounts have access to the management web page which can be used to cater for the following.\newline
 			\subsubsection{User Management}
@@ -162,7 +244,7 @@ To add a new Challenge you simply specify the Challenge name and click on the Ad
 			
 				
 				
-			\newpage		
+				
 			\subsubsection{Level Management}
 				\includegraphics[width=\linewidth]{Level.png}				\newline
 				The very first section in the administration page is user management. This is used to manage the user accounts related to the system.
