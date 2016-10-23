@@ -1,0 +1,498 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.1)  23 OCT 2016 22:30
+entering extended mode
+**./functionalSpecification.tex
+(functionalSpecification.tex
+LaTeX2e <2016/03/31> patch level 1
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2016/06/02 v1.0s Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2016/06/17 v0.06h Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grffile.sty"
+Package: grffile 2016/05/16 v1.17 Extended file name support for graphics (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grffile Info: Option `multidot' is set to `true'.
+Package grffile Info: Option `extendedchars' is set to `false'.
+Package grffile Info: Option `space' is set to `true'.
+Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2016/04/23 3.9r The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen105
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count89
+\float@exts=\toks15
+\float@box=\box26
+\@float@everytoks=\toks16
+\@floatcapt=\box27
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ms\ragged2e.sty"
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ms\everysel.sty"
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip43
+\RaggedLeftLeftskip=\skip44
+\RaggedRightLeftskip=\skip45
+\CenteringRightskip=\skip46
+\RaggedLeftRightskip=\skip47
+\RaggedRightRightskip=\skip48
+\CenteringParfillskip=\skip49
+\RaggedLeftParfillskip=\skip50
+\RaggedRightParfillskip=\skip51
+\JustifyingParfillskip=\skip52
+\CenteringParindent=\skip53
+\RaggedLeftParindent=\skip54
+\RaggedRightParindent=\skip55
+\JustifyingParindent=\skip56
+)
+(functionalSpecification.aux)
+\openout1 = `functionalSpecification.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count90
+\scratchdimen=\dimen106
+\scratchbox=\box28
+\nofMPsegments=\count91
+\nofMParguments=\count92
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count93
+\MPscratchDim=\dimen107
+\MPnumerator=\count94
+\makeMPintoPDFobject=\count95
+\everyMPtoPDFconversion=\toks18
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 31.
+
+<Pictures/up_logo.png, id=1, 376.40625pt x 112.92188pt>
+File: Pictures/up_logo.png Graphic file (type png)
+
+<use Pictures/up_logo.png>
+Package pdftex.def Info: Pictures/up_logo.png used on input line 35.
+(pdftex.def)             Requested size: 345.0pt x 103.50685pt.
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 39--40
+ | 
+ []
+
+
+Overfull \hbox (25.0pt too wide) in paragraph at lines 43--44
+ []| 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 52.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 52.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./Pictures/up_logo.png>]
+(functionalSpecification.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+)
+\tf@toc=\write3
+\openout3 = `functionalSpecification.toc'.
+
+ [1] [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 76.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+<Pictures/ArcaneArcade.jpg, id=25, 1253.68375pt x 761.84625pt>
+File: Pictures/ArcaneArcade.jpg Graphic file (type jpg)
+
+<use Pictures/ArcaneArcade.jpg>
+Package pdftex.def Info: Pictures/ArcaneArcade.jpg used on input line 103.
+(pdftex.def)             Requested size: 398.33669pt x 426.78212pt.
+ [4 <./Pictures/ArcaneArcade.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+<Pictures/Authenticate.jpg, id=29, 1128.215pt x 685.56125pt>
+File: Pictures/Authenticate.jpg Graphic file (type jpg)
+
+<use Pictures/Authenticate.jpg>
+Package pdftex.def Info: Pictures/Authenticate.jpg used on input line 109.
+(pdftex.def)             Requested size: 451.278pt x 274.21964pt.
+ [5 <./Pictures/Authenticate.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+ []
+
+<Pictures/userManagement.jpg, id=33, 853.68938pt x 536.0025pt>
+File: Pictures/userManagement.jpg Graphic file (type jpg)
+
+<use Pictures/userManagement.jpg>
+Package pdftex.def Info: Pictures/userManagement.jpg used on input line 122.
+(pdftex.def)             Requested size: 341.4697pt x 214.3972pt.
+ [6 <./Pictures/userManagement.jpg>]
+<Pictures/AddUserContract.jpg, id=38, 1138.2525pt x 704.6325pt>
+File: Pictures/AddUserContract.jpg Graphic file (type jpg)
+
+<use Pictures/AddUserContract.jpg>
+Package pdftex.def Info: Pictures/AddUserContract.jpg used on input line 135.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+
+<Pictures/addUser1.jpg, id=39, 887.315pt x 543.02875pt>
+File: Pictures/addUser1.jpg Graphic file (type jpg)
+
+<use Pictures/addUser1.jpg>
+Package pdftex.def Info: Pictures/addUser1.jpg used on input line 148.
+(pdftex.def)             Requested size: 354.91971pt x 217.20764pt.
+ [7 <./Pictures/AddUserContract.jpg>] [8 <./Pictures/addUser1.jpg>]
+<Pictures/UpdateUserContract.jpg, id=46, 1138.2525pt x 704.6325pt>
+File: Pictures/UpdateUserContract.jpg Graphic file (type jpg)
+
+<use Pictures/UpdateUserContract.jpg>
+Package pdftex.def Info: Pictures/UpdateUserContract.jpg used on input line 164
+.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+ [9 <./Pictures/UpdateUserContract.jpg>]
+<Pictures/removeUserlContract.jpg, id=50, 1138.2525pt x 704.6325pt>
+File: Pictures/removeUserlContract.jpg Graphic file (type jpg)
+
+<use Pictures/removeUserlContract.jpg>
+Package pdftex.def Info: Pictures/removeUserlContract.jpg used on input line 18
+0.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+
+<Pictures/RemoveUser1.jpg, id=51, 887.315pt x 543.02875pt>
+File: Pictures/RemoveUser1.jpg Graphic file (type jpg)
+
+<use Pictures/RemoveUser1.jpg>
+Package pdftex.def Info: Pictures/RemoveUser1.jpg used on input line 193.
+(pdftex.def)             Requested size: 354.91971pt x 217.20764pt.
+ [10 <./Pictures/removeUserlContract.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+<Pictures/challengeManagement.jpg, id=55, 846.16125pt x 514.17094pt>
+File: Pictures/challengeManagement.jpg Graphic file (type jpg)
+
+<use Pictures/challengeManagement.jpg>
+Package pdftex.def Info: Pictures/challengeManagement.jpg used on input line 20
+3.
+(pdftex.def)             Requested size: 338.45851pt x 205.66473pt.
+ [11 <./Pictures/RemoveUser1.jpg>]
+[12 <./Pictures/challengeManagement.jpg>]
+<Pictures/AddChallengeContract.jpg, id=63, 1138.2525pt x 704.6325pt>
+File: Pictures/AddChallengeContract.jpg Graphic file (type jpg)
+
+<use Pictures/AddChallengeContract.jpg>
+Package pdftex.def Info: Pictures/AddChallengeContract.jpg used on input line 2
+13.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+ [13 <./Pictures/AddChallengeContract.jpg>] <Pictures/removeChallengeContract.j
+pg, id=67, 1138.2525pt x 704.6325pt>
+File: Pictures/removeChallengeContract.jpg Graphic file (type jpg)
+
+<use Pictures/removeChallengeContract.jpg>
+Package pdftex.def Info: Pictures/removeChallengeContract.jpg used on input lin
+e 228.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+
+<Pictures/viewChallengesContract.jpg, id=68, 1138.2525pt x 704.6325pt>
+File: Pictures/viewChallengesContract.jpg Graphic file (type jpg)
+
+<use Pictures/viewChallengesContract.jpg>
+Package pdftex.def Info: Pictures/viewChallengesContract.jpg used on input line
+ 243.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+ [14 <./Pictures/removeChallengeContract.jpg>] [15 <./Pictures/viewChallengesCo
+ntract.jpg>]
+<Pictures/ViewChallenges.jpg, id=75, 887.315pt x 543.02875pt>
+File: Pictures/ViewChallenges.jpg Graphic file (type jpg)
+
+<use Pictures/ViewChallenges.jpg>
+Package pdftex.def Info: Pictures/ViewChallenges.jpg used on input line 255.
+(pdftex.def)             Requested size: 354.91971pt x 217.20764pt.
+
+<Pictures/levelManagement.jpg, id=76, 892.83563pt x 514.17094pt>
+File: Pictures/levelManagement.jpg Graphic file (type jpg)
+
+<use Pictures/levelManagement.jpg>
+Package pdftex.def Info: Pictures/levelManagement.jpg used on input line 267.
+(pdftex.def)             Requested size: 357.12793pt x 205.66473pt.
+ [16 <./Pictures/ViewChallenges.jpg>]
+<Pictures/AddLevelContract.jpg, id=80, 1138.2525pt x 704.6325pt>
+File: Pictures/AddLevelContract.jpg Graphic file (type jpg)
+
+<use Pictures/AddLevelContract.jpg>
+Package pdftex.def Info: Pictures/AddLevelContract.jpg used on input line 279.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+ [17 <./Pictures/levelManagement.jpg>]
+<Pictures/removeLevelContract.jpg, id=84, 1138.2525pt x 704.6325pt>
+File: Pictures/removeLevelContract.jpg Graphic file (type jpg)
+
+<use Pictures/removeLevelContract.jpg>
+Package pdftex.def Info: Pictures/removeLevelContract.jpg used on input line 29
+3.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+ [18 <./Pictures/AddLevelContract.jpg>]
+<Pictures/ViewLevelsContract.jpg, id=89, 1138.2525pt x 704.6325pt>
+File: Pictures/ViewLevelsContract.jpg Graphic file (type jpg)
+
+<use Pictures/ViewLevelsContract.jpg>
+Package pdftex.def Info: Pictures/ViewLevelsContract.jpg used on input line 309
+.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+ [19 <./Pictures/removeLevelContract.jpg>] <Pictures/questionManagement.jpg, id
+=93, 1128.215pt x 675.52374pt>
+File: Pictures/questionManagement.jpg Graphic file (type jpg)
+
+<use Pictures/questionManagement.jpg>
+Package pdftex.def Info: Pictures/questionManagement.jpg used on input line 320
+.
+(pdftex.def)             Requested size: 451.278pt x 270.20471pt.
+ [20 <./Pictures/ViewLevelsContract.jpg>]
+<Pictures/addQuestionContract.jpg, id=97, 1138.2525pt x 704.6325pt>
+File: Pictures/addQuestionContract.jpg Graphic file (type jpg)
+
+<use Pictures/addQuestionContract.jpg>
+Package pdftex.def Info: Pictures/addQuestionContract.jpg used on input line 33
+3.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+ [21 <./Pictures/questionManagement.jpg>] <Pictures/removeQuestion.jpg, id=101,
+ 1138.2525pt x 704.6325pt>
+File: Pictures/removeQuestion.jpg Graphic file (type jpg)
+
+<use Pictures/removeQuestion.jpg>
+Package pdftex.def Info: Pictures/removeQuestion.jpg used on input line 350.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+ [22 <./Pictures/addQuestionContract.jpg>]
+<Pictures/viewQuestionsContract.jpg, id=105, 1138.2525pt x 704.6325pt>
+File: Pictures/viewQuestionsContract.jpg Graphic file (type jpg)
+
+<use Pictures/viewQuestionsContract.jpg>
+Package pdftex.def Info: Pictures/viewQuestionsContract.jpg used on input line 
+364.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+ [23 <./Pictures/removeQuestion.jpg>]
+<Pictures/Compile.jpg, id=109, 1138.2525pt x 704.6325pt>
+File: Pictures/Compile.jpg Graphic file (type jpg)
+
+<use Pictures/Compile.jpg>
+Package pdftex.def Info: Pictures/Compile.jpg used on input line 379.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+
+<Pictures/CompileModule.jpg, id=110, 1141.26375pt x 675.52374pt>
+File: Pictures/CompileModule.jpg Graphic file (type jpg)
+
+<use Pictures/CompileModule.jpg>
+Package pdftex.def Info: Pictures/CompileModule.jpg used on input line 386.
+(pdftex.def)             Requested size: 456.49742pt x 270.20471pt.
+ [24 <./Pictures/viewQuestionsContract.jpg>]
+[25 <./Pictures/Compile.jpg>]
+<Pictures/Player.jpg, id=118, 1138.2525pt x 704.6325pt>
+File: Pictures/Player.jpg Graphic file (type jpg)
+
+<use Pictures/Player.jpg>
+Package pdftex.def Info: Pictures/Player.jpg used on input line 397.
+(pdftex.def)             Requested size: 455.29294pt x 281.848pt.
+
+<Pictures/PlayerInteraction.jpg, id=119, 1141.26375pt x 675.52374pt>
+File: Pictures/PlayerInteraction.jpg Graphic file (type jpg)
+
+<use Pictures/PlayerInteraction.jpg>
+Package pdftex.def Info: Pictures/PlayerInteraction.jpg used on input line 404.
+
+(pdftex.def)             Requested size: 456.49742pt x 270.20471pt.
+ [26 <./Pictures/CompileModule.jpg>]
+[27 <./Pictures/Player.jpg>]
+<Pictures/domainModel v2.png, id=126, 505.13719pt x 378.66469pt>
+File: Pictures/domainModel v2.png Graphic file (type png)
+
+<use Pictures/domainModel v2.png>
+Package pdftex.def Info: Pictures/domainModel v2.png used on input line 413.
+(pdftex.def)             Requested size: 426.79425pt x 319.93666pt.
+ [28 <./Pictures/PlayerInteraction.jpg>]
+[29 <./Pictures/domainModel v2.png>] [30] (functionalSpecification.aux) ) 
+Here is how much of TeX's memory you used:
+ 2484 strings out of 493335
+ 37153 string characters out of 3136690
+ 96846 words of memory out of 3000000
+ 5970 multiletter control sequences out of 15000+200000
+ 15463 words of font info for 36 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,6n,25p,538b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\U
+sers\EY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
+> <C:\Users\EY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti
+1000.pk> <C:\Users\EY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
+00\ecrm1000.pk> <C:\Users\EY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecbx1000.pk> <C:\Users\EY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
+nappen\ec\dpi600\ecbx1440.pk> <C:\Users\EY\AppData\Local\MiKTeX\2.9\fonts\pk\lj
+four\jknappen\ec\dpi600\ectt1200.pk> <C:\Users\EY\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\EY\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\EY\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on functionalSpecification.pdf (31 pages, 2791490 bytes).
+PDF statistics:
+ 419 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+
