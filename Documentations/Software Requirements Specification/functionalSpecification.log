@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.1)  23 OCT 2016 22:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.1)  23 OCT 2016 22:36
 entering extended mode
 **./functionalSpecification.tex
 (functionalSpecification.tex
@@ -453,12 +453,12 @@ File: Pictures/Player.jpg Graphic file (type jpg)
 Package pdftex.def Info: Pictures/Player.jpg used on input line 397.
 (pdftex.def)             Requested size: 455.29294pt x 281.848pt.
 
-<Pictures/PlayerInteraction.jpg, id=119, 1141.26375pt x 675.52374pt>
-File: Pictures/PlayerInteraction.jpg Graphic file (type jpg)
+<Pictures/PlayerInteraction1.jpg, id=119, 1141.26375pt x 675.52374pt>
+File: Pictures/PlayerInteraction1.jpg Graphic file (type jpg)
 
-<use Pictures/PlayerInteraction.jpg>
-Package pdftex.def Info: Pictures/PlayerInteraction.jpg used on input line 404.
-
+<use Pictures/PlayerInteraction1.jpg>
+Package pdftex.def Info: Pictures/PlayerInteraction1.jpg used on input line 404
+.
 (pdftex.def)             Requested size: 456.49742pt x 270.20471pt.
  [26 <./Pictures/CompileModule.jpg>]
 [27 <./Pictures/Player.jpg>]
@@ -468,11 +468,11 @@ File: Pictures/domainModel v2.png Graphic file (type png)
 <use Pictures/domainModel v2.png>
 Package pdftex.def Info: Pictures/domainModel v2.png used on input line 413.
 (pdftex.def)             Requested size: 426.79425pt x 319.93666pt.
- [28 <./Pictures/PlayerInteraction.jpg>]
+ [28 <./Pictures/PlayerInteraction1.jpg>]
 [29 <./Pictures/domainModel v2.png>] [30] (functionalSpecification.aux) ) 
 Here is how much of TeX's memory you used:
  2484 strings out of 493335
- 37153 string characters out of 3136690
+ 37157 string characters out of 3136690
  96846 words of memory out of 3000000
  5970 multiletter control sequences out of 15000+200000
  15463 words of font info for 36 fonts, out of 3000000 for 9000
@@ -490,7 +490,7 @@ s\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\EY\AppData\Local\MiKTeX\2
 .9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\EY\AppData\Local\M
 iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on functionalSpecification.pdf (31 pages, 2791490 bytes).
+Output written on functionalSpecification.pdf (31 pages, 2791439 bytes).
 PDF statistics:
  419 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
