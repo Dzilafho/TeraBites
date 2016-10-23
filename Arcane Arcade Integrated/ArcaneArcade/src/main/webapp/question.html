@@ -12,6 +12,7 @@
     <title>Arcane Arcade</title>
     
      <script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+      <script type="text/javascript" src="html5-maze/lib/gameplay/man.js" ></script>
      <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap Core CSS -->
@@ -35,26 +36,31 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index"  >
 <div ng-controller="CheckAnswers" ng-init="loadUserProgress()">
     <!-- Header -->
     <header>
-    <div class="container">
-	<div class="obj-wrapper">
-		<div id="gamifcation"> <!-- make this fixed size -->
+    <div class="container" >
+        <div class="obj-wrapper" >
+            <div id="gamifcation" > <!-- make this fixed size -->
 			<div class="col-sm-2">
-                            <h3><a href="#"><font color="#4B0082">Hints</font> <span class="badge">42</span></a></h3>
+                            <br><br>
+                            <h4><font color="#4B0082">D Mulugisi</font> <br/></h4>
+                            
 			</div>
 			<div class="col-sm-8">
-                            <h3 id="levelName"><font color="#4B0082"></font></h3>
+                            <h3 id="levelName"><font color="#4B0082">Level</font></h3>
+                                                        <h5  id="movesNo"><font color="#4B0082">Currently Available Moves</font> <br/><span class="badge">5</span></h5>
+
+                            <h5  id="hintsNo"><font color="#4B0082">Available Hints</font> <br/><span class="badge">0</span></h5><br/>
 			</div>
-			<div class="col-sm-2">
-                            <h3><font color ="#4B0082">Badge</font></h3>
+			<div class="col-sm-2" style="padding-top: 8px;">
+				<img src="img/logos/Badge.png" alt="HTML5 Icon" width="128" height="128">
 			</div>
 		</div>
 	</div>
 	
-	<div class="obj-wrapper2">
+        <div class="obj-wrapper2"  onmouseover="getNumHints()" onclick="decrementMoves()" onkeypress="decrementMoves()">
 		<div id="game" class="responsive-iframe-container"> <!-- make this fixed size -->
                     <iframe src="html5-maze/index.html"  align="center"></iframe>
 		</div>
@@ -63,13 +69,13 @@
 	<div class="obj-wrapper3"> <!-- Question and answer panel -->
 		<form ng-submit="CheckAnswer()" ng-controller="CheckAnswers" class="form-inline">
 			<div id="submitButton">
-                            <h4 class=""><font color="#4B0082" >What will the following piece of code output?</font></h4> <br/>
+                            <h4 class=""><font color="#4B0082" >What will the following piece of code output?</font></h4> 
                             
-                            <h3 id="questionString"><font color="#4B0082" >Question</font></h3> <br/> 
+                            <h3 id="questionString"><font color="#4B0082" >Question </font></h3> <br/>
                                
-				<input type="text" size="20" id="answer" ng-model="userAnswer" placeholder="Enter answer here"> 
-				<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="goo">Go</button>  
-				<a href="challenge.html"><button  class="btn btn-primary" >Next Level</button></a>  
+				<input type="text" size="40" id="answer" ng-model="userAnswer" placeholder="Enter answer here">
+				<button type="submit"  class="btn btn-primary"  data-toggle="modal"  data-target="#myModal" id="goo">Go</button>  
+                                <a href="challenge.html"><button  class="btn btn-primary" >Next Level</button></a>  <img src="img/logos/info.png" data-toggle="modal" data-target="#hintModal" alt="Info & Clue" style="width:35px;height:35px; " ng-mouseup="getHint()" ng-controller="CheckAnswers">
 			</div>
 		</form> 
 	</div>
@@ -84,10 +90,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h1 class="modal-title"><center><font color="#4B0082">Outcome</font></center></h1>
+          <center><h4 class="modal-title"><font color="#4B0082">Outcome</font></h4></center>
         </div>
         <div class="modal-body">
-            <p id="modalp"><font color="#4B0082">Some text in the modal.</font></p>
+            <p id="modalp"><font color="#4B0082">Question Outcome.</font></p>
           <div class="row">
           </div>
         </div>
@@ -97,7 +103,7 @@
  </div>
  
           
-                    <!-- Hint Modal -->
+     <!-- Modal -->
   <div class="modal fade" id="hintModal" role="dialog">
     <div class="modal-dialog">
     
@@ -105,16 +111,15 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Here is your hint</h4>
+          <center><h4 class="modal-title"><font color="#4B0082">Here's A Hint</font></h4></center>
         </div>
-        <div class="modal-body">
-          <p id="theHint">Question Hint.</p>
-          <div class="row">
-            
-            </div>
-      </div>
+          <div class="modal-body" ng-controller="CheckAnswers">
+             <p id="theHint"><font color="#4B0082">This text is your hint.</font></p>
+        </div>
       
-    </div>
+      </div>
+  </div>
+ </div>
     
     <!-- Portfolio Modal 3 -->
     <div class="portfolio-modal modal fade" id="result" tabindex="-1"  role="dialog" aria-hidden="true" >

@@ -89,7 +89,6 @@ h1
     text-align: left;
     color: #ccc;
     padding:30px 10%;
-	min-height: 320px;
 }
 .features li{
     padding:15px 0;
@@ -163,7 +162,6 @@ h1
 
 .fl
 {
-	min-width: 190px;
 	margin-top: 5px;
 }
 

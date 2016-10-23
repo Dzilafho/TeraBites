@@ -21,7 +21,7 @@ public class GetUser {
         
         ConcreteDAO manager = new ConcreteDAO();
         
-        Users result = manager.getUser("gershom12");
+        Users result = manager.getUser("dzilafho3");
       
          
         return Response.ok().entity(new GenericEntity<Users>(result){})

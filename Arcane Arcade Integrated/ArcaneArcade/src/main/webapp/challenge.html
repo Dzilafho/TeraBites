@@ -31,6 +31,7 @@
 
     <!-- Theme CSS -->
     <link href="css/agency.min.css" rel="stylesheet">
+    <link href="css/profile_style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -82,15 +83,17 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome To Arcane Arcade!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#contact" class="page-scroll btn btn-xl">Tell Me More</a>
+                <div class="intro-heading">It's Nice To See You Here</div>
+                <a href="#Challenges" class="page-scroll btn btn-xl">Begin</a>
             </div>
         </div>
     </header>
     
     <section id="Challenges" class="bg-light-gray" ng-init="getChallenge()" ng-controller="getChallenges">
 	<div class="container">
+                        <br/>
             <h2>Challenges</h2>
+            <br/>
                 <div class="panel-group" ng-repeat="challenge in challenges">
                     <div class="panel panel-default">
                             <div class="panel-heading">
@@ -98,12 +101,13 @@
                                 <a data-toggle="collapse" href="#chal{{$index}}">{{challenge.challengeName}}</a>
                               </h4>
                             </div>
-                        <div id="chal{{$index}}" class="panel-collapse collapse" ng-mouseover="loadProgress()" ng-controller="loadQuestions">
+                        <div id="chal{{$index}}" class="panel-collapse collapse" ng-mouseover="loadProgress()" ng-controller="loadQuestions" >
                                 <ul class="list-group" >
                                     <li ng-repeat="level in challenge.challengeLevels" id="{{challenge.challengeName}}-Level {{$index+1}}" class="list-group-item disabled" >{{level.levelName}}<div align="right"><i class='fa fa-lock'></i></div></li>
                                 </ul>
                         </div>
                     </div>
+                                            <br/>
                 </div>	
 	</div>
 
@@ -119,7 +123,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    
+                        <br/>
                 </div>
             </div>
             <div class="row">
@@ -149,7 +153,10 @@
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
+                                                                <br/>
+
                                 <button type="submit" class="btn btn-xl">Send Message</button>
+                                <br/>
                             </div>
                         </div>
                     </form>
@@ -162,17 +169,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016</span>
+                    <span class="copyright">Copyright &copy; TeraBites 2016</span>
                 </div>
                 <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
+                    
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
@@ -574,58 +574,60 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body" ng-controller="viewProfiles" ng-click="viewProfile()">
-                                <!-- User Details Go Here -->
-                                <h2>Hi, {{users.name}}</h2>
-                                <img class="img-responsive img-centered" height="250" width="250" src="img/portfolio/User.png" alt="Profile Photo">
-                                <table class = "table table-bordered">
-                                        <tr>
-                                            <th>First Name</th> 
-                                            <td>{{users.name}}</td> 
-                                        </tr>
-                                         <tr>
-                                            <th>Surname</th>
-                                            <td>{{users.surname}}</td> 
-                                        </tr>
-                                             <tr>
-                                       <th>Username</th>
-                                            <td>{{users.userName}}</td> 
-                                        </tr>
-                                             <tr>
-                                       <th>User Email</th>
-                                            <td>{{users.emailAddress}}</td> 
-                                        </tr>
-                                             <tr>
-                                       <th>User Type</th>
-                                            <td>{{users.userType}}</td>
-                                        </tr>
-                                        <tr>
-                                       <th>Current Progress</th>
-                                            <td>{{users.currentLevel}}</td>
-                                        </tr>
-                                            
-                                        
-                                 </table>
-                                <br/>
-                                                                      <br/>
-                                 <h2>Earned Badges</h2>
-                                 <br/>
-                                                                      <br/>
-                                 <ul style="list-style-type:none">
-                                    <li>Badge 1 {{badge.badgeName}}</li>
-                                  </ul>
-                                 <br/>
-                                                                      <br/>
+                    <div class="profileDiv group" ng-controller="viewProfiles" ng-mouseover="viewProfile()">
 
-                                                                  <br/>
+				<div class="heading">
+					<img id="pro" class="img-responsive img-centered" height="170" width="170" src="images/User.png" alt="Profile Photo"><br>
+					<h1>{{users.name}}</h1>
+				</div>
+			    
+				<div class="profileBlock personal fl">
+					<h2 class="title">Personal details</h2>
 
-                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Profile</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+					<div class="content">
+					</div>
+					
+					<ul class="features">
+						<li>Full Names: {{users.name}} {{users.surname}}</li>
+						<li>Username: {{users.userName}}</li>
+						<li>Email: {{users.emailAddress}}</li>
+						<li>Usertype: {{users.userType}}</li>		    
+					</ul>
+
+					<div class="pt-footer">
+						<p>...</p>
+					</div>
+				</div>
+			    
+				<div class="profileBlock graph fr">
+					<h2 class="title">Achievements</h2>
+                                                                                    <p>Test not yet completed.</p>
+                                                                                    
+                                                                                    <h4>Current Medal</h4><br/>
+                                                                                    				<img src="img/logos/Badge.png" alt="HTML5 Icon" width="138" height="138">
+                                                                                <br/>
+                                                                                                                                                                <br/>
+
+                                                                                                                <div class="pt-footer">
+						<p>...</p>
+					</div>
+				</div>
+				</div>
+				
+				<!--<div class="profileBlock position fl">
+					<h2 class="title">Suitable Position </h2>
+
+					<div class="content">
+					</div>
+
+					<ul class="features">
+					</ul>
+
+					<div class="pt-footer">
+						<p>...</p>
+					</div>
+				</div>-->
+			</div>
             </div>
         </div>
     </div>

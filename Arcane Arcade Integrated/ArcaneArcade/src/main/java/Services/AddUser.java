@@ -147,7 +147,7 @@ public class AddUser {
         byte[] salt = getSalt();
         String securePassword = getSecurePassword(passwordToHash, salt);
         //send email with code
-        sendEmail(username,password);
+        sendEmail(email,password);
         // String regeneratedPassowrdToVerify = getSecurePassword(passwordToHash, salt);
         //System.out.println(regeneratedPassowrdToVerify); //Prints 83ee5baeea20b6c21635e4ea67847f66
         Users users=new Users(name,surname,username,securePassword,userType,email,salt);

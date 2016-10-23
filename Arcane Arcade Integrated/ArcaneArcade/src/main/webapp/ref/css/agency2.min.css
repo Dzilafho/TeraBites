@@ -76,8 +76,7 @@ input
  }
 
   
-  .responsive-iframe-container {
-    padding-bottom: 60%;
+  .responsive-iframe-container {    
     padding-top: 0px;
     height: 55vh;
     overflow: hidden;

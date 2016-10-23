@@ -7,8 +7,46 @@ var levelCounter=-1;
 var questionCounter=0;
 var currentUser;
 
-function getHint() {
-    alert("This is the hint");              // The function returns the product of p1 and p2
+var availableHints=2;
+var hintIndex =1;
+
+
+var availableMoves=4;
+var totalMoves=0;
+
+var hintsArray = [
+                                "Rember, ':' works similarly to '=' in dominant labguages.",
+                                "Statements are executed from right to left.",
+                                "Expressions can be assigned to variables.",
+                                "Spaces are vital between each and every item in a statement.",
+                                "Hint 5"
+];
+
+function getNumHints() {
+   document.getElementById("hintsNo").innerHTML="<font color=\"#4B0082\">Available Hints</font> <br/><span class=\"badge\">"+availableHints+"</span>";
+}
+
+function getMoves() {
+    return availableMoves;              // The function returns the product of p1 and p2
+}
+
+
+function setMoves(moves) {
+
+
+        availableMoves=moves;
+        
+                  document.getElementById("movesNo").innerHTML="<font color=\"#4B0082\">Currently Available Moves</font> <br/><span class=\"badge\">"+availableMoves+"</span>";
+
+}
+
+function decrementMoves() {
+    availableMoves--;
+    setMoves(getMoves());
+}
+
+function incrementMoves() {
+    totalMoves++;
 }
 
 /*myApp.controller('QuitLevel', ["$scope", "$window", "$http", function($scope, $window, $http) {
@@ -134,7 +172,7 @@ myApp.controller('ViewLevels', ["$scope", "$window", "$http", function($scope, $
                 headers: {'Content-Type': 'application/json'}
             }).success(function(response)
             {
-		alert("success");
+		//alert("success");
                   
              }).
               error(function(response)
@@ -176,7 +214,8 @@ myApp.controller('addUser', ["$scope", "$window", "$http", function($scope, $win
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function(response) {
                 
-                    alert(response);
+                    $("#addu").removeClass('hidden');          
+                    
                   
              }).
               error(function(response)
@@ -206,7 +245,7 @@ myApp.controller('addLevels', ["$scope", "$window", "$http", function($scope, $w
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function(response)
             {
-                alert(response);
+                    $("#addl").removeClass('hidden');          
                   
              }).
               error(function(response)
@@ -243,7 +282,7 @@ myApp.controller('addQuestions', ["$scope", "$window", "$http", function($scope,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function(response)
             {
-                alert(response);
+                    $("#addq").removeClass('hidden');          
                   
              }).
               error(function(response)
@@ -270,8 +309,7 @@ myApp.controller('AddChallenges', ["$scope", "$window", "$http", function($scope
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function(response)
             {
-                alert(response);
-                  
+                    $("#addc").removeClass('hidden');          
              }).
               error(function(response)
               {
@@ -299,7 +337,7 @@ myApp.controller('removeChallenges', ["$scope", "$window", "$http", function($sc
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function(response)
             {
-                alert(response);
+                    $("#removec").removeClass('hidden');          
                   
              }).
               error(function(response)
@@ -328,7 +366,7 @@ myApp.controller('removeQuestions', ["$scope", "$window", "$http", function($sco
                 data: encodedString,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function(response) {
-                    alert("sucess");
+                    $("#removeq").removeClass('hidden');          
 
                 }).
                 error(function(response)
@@ -355,7 +393,7 @@ myApp.controller('removeUsers', ["$scope", "$window", "$http", function($scope, 
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function(response) {
 		    
-                    alert("success");
+                    $("#removeu").removeClass('hidden');          
 
                 }).
                 error(function(response)
@@ -383,8 +421,7 @@ myApp.controller('removeLevels', ["$scope", "$window", "$http", function($scope,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function(response) {
 		    
-                    alert("success");
-
+                    $("#removl").removeClass('hidden');          
                 }).
                 error(function(response)
                 {
@@ -669,12 +706,13 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                  if(typeof userAnswer !== 'undefined' )
                  {
                     var originalAnswer=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].answer.answer;
-                   alert(originalAnswer);
-                   alert(userAnswer);
-                    if(originalAnswer===userAnswer)
+               //     alert(originalAnswer);
+                //                        alert(userAnswer);
+
+                    if(originalAnswer==userAnswer)
                     {
                         //pass the data in the modal body adding html elements
-                        $('#myModal .modal-body').html('<h3><center><font color="#4B0082" >Correct Answer</font></center></h3>') ;
+                        $('#myModal .modal-body').html('<h4><center><font color="#4B0082" >That\'s Correct.You\'ve earned 15 moves.</font></center></h4>') ;
                         //open the modal
                         $('#myModal').modal('show') ;
                         if(getCookie("count")!=="")
@@ -684,24 +722,24 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                             counter++;
                             
                             document.cookie="count=1;levelName="+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
-                            alert(counter);
                         }
                         else
                         {
                            document.cookie="count=1;levelName="+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName; 
                         }
+                        setMoves(15);
 
                     }
                     else
                     {
                          
                         //pass the data in the modal body adding html elements
-                        $('#myModal .modal-body').html('<h3><center><font color="#4B0082" >Wrong Answer</font></center></h3>') ;
+                        $('#myModal .modal-body').html('<h4><center><font color="#4B0082" >Sorry, that\'s incorrect. You\'ve earned 0 moves.</font></center></h4>') ;
                         //open the modal
                         $('#myModal').modal('show') ;
-                        
-                    
-
+                        //var variables=2;
+                     //   document.cookie="move=34;";
+                     //setMoves(3);
                     }
                      
                  }
@@ -713,7 +751,7 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                 counter++;
                 
                 document.getElementById("questionString").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions[questionCounter].questionString;
-                document.getElementById("levelName").innerHTML="Level Name : "+jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
+                document.getElementById("levelName").innerHTML=jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelName;
                 questionCounter++;
                 
                 if(questionCounter===jsonObj[ChallengeCounter].challengeLevels[levelCounter].levelQuestions.length)
@@ -775,6 +813,20 @@ myApp.controller('CheckAnswers', ["$scope", "$window", "$http", function($scope,
                    $window.alert("Server error........request not sent");
               });
 
+        };
+        
+        $scope.getHint = function() 
+        {
+            if(availableHints === 0){
+                 document.getElementById("theHint").innerHTML= "<font color=\"#4B0082\">Oops, sorry. You have run out of hints.</font>";
+            }   
+            else
+            {
+                document.getElementById("theHint").innerHTML= "<font color=\"#4B0082\">"+hintsArray[hintIndex]+".</font>";
+                hintIndex++;
+                availableHints--;
+                getNumHints();
+            }
         };
          
           $scope.loadUserProgress = function() 

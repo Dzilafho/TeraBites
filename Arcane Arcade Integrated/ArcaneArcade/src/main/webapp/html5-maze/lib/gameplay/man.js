@@ -6,9 +6,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 var manPosition = new MazeCell(0,0);
-
 var _oldPosition = null;
-
 var manMoved = false;
 
 //////////////////////////////////////////////////////////////////////////////
@@ -34,6 +32,8 @@ function initializeMan()
  */
 function moveMan(direction)
 {
+    
+    
     var newPos = new MazeCell(manPosition.x,manPosition.y);
     
     //calculate change in position based on direction input
@@ -54,7 +54,11 @@ function moveMan(direction)
         case "left":
             newPos.x -= 1;
             break;
+          
+         //document.cookie="x=";
+         
     }
+     
     
     //assert cells are neighbours - this will stop man going out of edge
     if(!areNeighbours(newPos,manPosition))
@@ -76,6 +80,9 @@ function moveMan(direction)
     
     //flag man as moved so he gets redrawn next animation frame
     manMoved = true;
+    
+    decrementMoves(); 
+    incrementMoves();
     
     _checkWin();
     
@@ -138,7 +145,7 @@ function _checkWin()
 {
     if(manPosition.x == GOAL_CELL.x && manPosition.y == GOAL_CELL.y)
     {
-        alert("You are the maze master!");
+        alert("Success! You finished the maze.");
         
         newGame();
     }
