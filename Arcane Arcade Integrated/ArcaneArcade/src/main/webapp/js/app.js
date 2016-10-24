@@ -19,7 +19,6 @@ var hintsArray = [
                                 "Statements are executed from right to left.",
                                 "Expressions can be assigned to variables.",
                                 "Spaces are vital between each and every item in a statement.",
-                                "Hint 5"
 ];
 
 function getNumHints() {
